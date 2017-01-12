@@ -1,0 +1,18 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Related work}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Appearance descriptors}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Metric learning}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Hierarchical gaussian descriptor}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Single pixel modelling}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Riemannian manifold based SPD transformation}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{Dimension reduction based on kernel local fisher discriminant analysis }{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Background of kernel LFDA}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Kernel LFDA}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Mahalanobis metric learning}{}% 11
+\BOOKMARK [1][-]{section.6}{Experiment}{}% 12
+\BOOKMARK [2][-]{subsection.6.1}{Datasets and evaluation settings}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.2}{The influence of mean removal and L2 normalization}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.3}{Parameters setting of gradient descent iteration}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.4}{Performance analysis}{section.6}% 16
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 17
+\BOOKMARK [1][-]{section*.1}{References}{}% 18
