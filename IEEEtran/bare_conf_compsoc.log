@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 JAN 2017 15:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 JAN 2017 23:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -309,6 +309,10 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count116
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -325,14 +329,14 @@ Package graphics Info: Driver file: pdftex.def on input line 94.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count116
+\Gread@gobject=\count117
 ))
 \Gin@req@height=\dimen139
 \Gin@req@width=\dimen140
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count117
+\c@float@type=\count118
 \float@exts=\toks21
 \float@box=\box30
 \@float@everytoks=\toks22
@@ -341,35 +345,35 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (./bare_conf_compsoc.aux)
 \openout1 = `bare_conf_compsoc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 329.
-LaTeX Font Info:    ... okay on input line 329.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 329.
-LaTeX Font Info:    ... okay on input line 329.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 329.
-LaTeX Font Info:    ... okay on input line 329.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 329.
-LaTeX Font Info:    ... okay on input line 329.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 329.
-LaTeX Font Info:    ... okay on input line 329.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 329.
-LaTeX Font Info:    ... okay on input line 329.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 329.
-LaTeX Font Info:    ... okay on input line 329.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
 
 -- Lines per column: 58 (exact).
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 329.
+Package hyperref Info: Link coloring OFF on input line 340.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count118
+\c@section@level=\count119
 )
-LaTeX Info: Redefining \ref on input line 329.
-LaTeX Info: Redefining \pageref on input line 329.
-LaTeX Info: Redefining \nameref on input line 329.
+LaTeX Info: Redefining \ref on input line 340.
+LaTeX Info: Redefining \pageref on input line 340.
+LaTeX Info: Redefining \nameref on input line 340.
 
 (./bare_conf_compsoc.out) (./bare_conf_compsoc.out)
 \@outlinefile=\write3
@@ -378,16 +382,16 @@ LaTeX Info: Redefining \nameref on input line 329.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count119
+\scratchcounter=\count120
 \scratchdimen=\dimen141
 \scratchbox=\box33
-\nofMPsegments=\count120
-\nofMParguments=\count121
+\nofMPsegments=\count121
+\nofMParguments=\count122
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count122
+\MPscratchCnt=\count123
 \MPscratchDim=\dimen142
-\MPnumerator=\count123
-\makeMPintoPDFobject=\count124
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
 \everyMPtoPDFconversion=\toks24
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -403,91 +407,79 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 397.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 408.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.05249> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 397.
-LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 44
-3.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 408.
+LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 45
+4.
  [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 672.
+] [2] [3]
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 829.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 856.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.03749> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 672.
- [3]
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 810.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 856.
 
-Underfull \hbox (badness 10000) in paragraph at lines 807--835
-
+Overfull \hbox (0.77266pt too wide) detected at line 859
+\OML/cmm/m/it/10 nR \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 ; nG \OT1/cmr/m/n/10 =
+ []\OML/cmm/m/it/10 ; nB \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 :
  []
 
-[4]
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 86
-7.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 867.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 867.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 867.
-
-
-Overfull \hbox (1.07014pt too wide) in paragraph at lines 872--888
-[][] 
- []
-
-
-Overfull \hbox (1.07014pt too wide) in paragraph at lines 893--909
-[][] 
- []
-
-
-Overfull \hbox (1.07014pt too wide) in paragraph at lines 913--929
-[][] 
- []
-
-[5pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
+[4pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.929 \end{table}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.2}) has been already used, duplicate ignored
+l.891 \subsection
+                 {The influence of mean removal and $L_2$ normalization}]
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 89
+1.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.929 \end{table}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.3}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.929 \end{table}
-                 ]
-Overfull \hbox (1.07014pt too wide) in paragraph at lines 934--950
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 891.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 891.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 891.
+
+
+Overfull \hbox (1.07014pt too wide) in paragraph at lines 898--914
 [][] 
  []
 
 
-Overfull \hbox (1.07014pt too wide) in paragraph at lines 954--970
+Overfull \hbox (1.07014pt too wide) in paragraph at lines 919--935
+[][] 
+ []
+
+
+Overfull \hbox (1.07014pt too wide) in paragraph at lines 939--955
+[][] 
+ []
+
+
+Overfull \hbox (1.07014pt too wide) in paragraph at lines 960--976
+[][] 
+ []
+
+
+Overfull \hbox (1.07014pt too wide) in paragraph at lines 980--996
 [][] 
  []
 
@@ -499,14 +491,14 @@ Package epstopdf Info: Source file: <Rank1scoresAlpha.eps>
 (epstopdf)                    size: 9577 bytes
 (epstopdf)             Command: <repstopdf --outfile=Rank1scoresAlpha-eps-conve
 rted-to.pdf Rank1scoresAlpha.eps>
-(epstopdf)             \includegraphics on input line 978.
+(epstopdf)             \includegraphics on input line 1004.
 Package epstopdf Info: Output file is already uptodate.
-<Rank1scoresAlpha-eps-converted-to.pdf, id=141, 1267.73625pt x 655.44875pt>
+<Rank1scoresAlpha-eps-converted-to.pdf, id=115, 1267.73625pt x 655.44875pt>
 File: Rank1scoresAlpha-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Rank1scoresAlpha-eps-converted-to.pdf>
 Package pdftex.def Info: Rank1scoresAlpha-eps-converted-to.pdf used on input li
-ne 978.
+ne 1004.
 (pdftex.def)             Requested size: 243.91125pt x 126.10677pt.
 Package epstopdf Info: Source file: <Rank5scoresAlpha.eps>
 (epstopdf)                    date: 2017-01-10 22:08:57
@@ -516,81 +508,81 @@ Package epstopdf Info: Source file: <Rank5scoresAlpha.eps>
 (epstopdf)                    size: 9712 bytes
 (epstopdf)             Command: <repstopdf --outfile=Rank5scoresAlpha-eps-conve
 rted-to.pdf Rank5scoresAlpha.eps>
-(epstopdf)             \includegraphics on input line 986.
+(epstopdf)             \includegraphics on input line 1012.
 Package epstopdf Info: Output file is already uptodate.
 
-<Rank5scoresAlpha-eps-converted-to.pdf, id=142, 1267.73625pt x 655.44875pt>
+<Rank5scoresAlpha-eps-converted-to.pdf, id=116, 1267.73625pt x 655.44875pt>
 File: Rank5scoresAlpha-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Rank5scoresAlpha-eps-converted-to.pdf>
 Package pdftex.def Info: Rank5scoresAlpha-eps-converted-to.pdf used on input li
-ne 986.
+ne 1012.
 (pdftex.def)             Requested size: 243.91125pt x 126.10677pt.
 
-Underfull \hbox (badness 1960) in paragraph at lines 1006--1007
+Underfull \hbox (badness 1960) in paragraph at lines 1032--1033
 []\OT1/ptm/b/n/10.03749 Performance mea-sur-ing \OT1/ptm/m/n/10.03749 The cu-mu
 -la-tive match-ing
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 1008--1041
+Underfull \hbox (badness 1931) in paragraph at lines 1034--1066
 \OT1/ptm/m/n/10.03749 Those two met-ric are proved to have state-of-the-art
  []
 
 
-Underfull \hbox (badness 2080) in paragraph at lines 1008--1041
-\OT1/ptm/m/n/10.03749 of GOGrgb+XQDA, and the rank-1, rank-5, rank-10,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1008--1041
+Underfull \hbox (badness 10000) in paragraph at lines 1034--1066
 
  []
 
-[6pdfTeX warning (ext4): destination with the same identifier (name{table.4}) h
+[5pdfTeX warning (ext4): destination with the same identifier (name{table.2}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1041 \end{table}
+l.1066 \end{table}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{table.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1066 \end{table}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{table.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1066 \end{table}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{table.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1041 \end{table}
+l.1066 \end{table}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{table.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1041 \end{table}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{table.7}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1041 \end{table}
+l.1066 \end{table}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{figure.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1041 \end{table}
+l.1066 \end{table}
                   pdfTeX warning (ext4): destination with the same identifier (
-name{figure.2}) has been already used, duplicate ignored
+name{table.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1041 \end{table}
+l.1066 \end{table}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{table.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1041 \end{table}
-                   <./Rank1scoresAlpha-eps-converted-to.pdf> <./Rank5scoresAlph
-a-eps-converted-to.pdf>]
+l.1066 \end{table}
+                   <./Rank1scoresAlpha-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <VIPeR.eps>
 (epstopdf)                    date: 2017-01-11 12:27:11
 (epstopdf)                    size: 21002 bytes
@@ -599,14 +591,14 @@ Package epstopdf Info: Source file: <VIPeR.eps>
 (epstopdf)                    size: 9342 bytes
 (epstopdf)             Command: <repstopdf --outfile=VIPeR-eps-converted-to.pdf
  VIPeR.eps>
-(epstopdf)             \includegraphics on input line 1046.
+(epstopdf)             \includegraphics on input line 1071.
 Package epstopdf Info: Output file is already uptodate.
 
-<VIPeR-eps-converted-to.pdf, id=180, 1251.67625pt x 654.445pt>
+<VIPeR-eps-converted-to.pdf, id=142, 1251.67625pt x 654.445pt>
 File: VIPeR-eps-converted-to.pdf Graphic file (type pdf)
 
 <use VIPeR-eps-converted-to.pdf>
-Package pdftex.def Info: VIPeR-eps-converted-to.pdf used on input line 1046.
+Package pdftex.def Info: VIPeR-eps-converted-to.pdf used on input line 1071.
 (pdftex.def)             Requested size: 243.91125pt x 127.5214pt.
 Package epstopdf Info: Source file: <CUHK1.eps>
 (epstopdf)                    date: 2017-01-11 12:27:11
@@ -616,18 +608,53 @@ Package epstopdf Info: Source file: <CUHK1.eps>
 (epstopdf)                    size: 9463 bytes
 (epstopdf)             Command: <repstopdf --outfile=CUHK1-eps-converted-to.pdf
  CUHK1.eps>
-(epstopdf)             \includegraphics on input line 1086.
+(epstopdf)             \includegraphics on input line 1111.
 Package epstopdf Info: Output file is already uptodate.
 
-<CUHK1-eps-converted-to.pdf, id=181, 1251.67625pt x 654.445pt>
+<CUHK1-eps-converted-to.pdf, id=143, 1251.67625pt x 654.445pt>
 File: CUHK1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use CUHK1-eps-converted-to.pdf>
-Package pdftex.def Info: CUHK1-eps-converted-to.pdf used on input line 1086.
+Package pdftex.def Info: CUHK1-eps-converted-to.pdf used on input line 1111.
 (pdftex.def)             Requested size: 243.91125pt x 127.5214pt.
+ [6pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
+ has been already used, duplicate ignored
 
-Underfull \vbox (badness 1067) has occurred while \output is active []
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1150 
+       pdfTeX warning (ext4): destination with the same identifier (name{table.
+9}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1150 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1150 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1150 
+       pdfTeX warning (ext4): destination with the same identifier (name{table.
+10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1150 
+       pdfTeX warning (ext4): destination with the same identifier (name{table.
+11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1150 
+        <./Rank5scoresAlpha-eps-converted-to.pdf> <./VIPeR-eps-converted-to.pdf
+> <./CUHK1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <prid2011.eps>
 (epstopdf)                    date: 2017-01-11 12:27:11
 (epstopdf)                    size: 19335 bytes
@@ -636,14 +663,14 @@ Package epstopdf Info: Source file: <prid2011.eps>
 (epstopdf)                    size: 9503 bytes
 (epstopdf)             Command: <repstopdf --outfile=prid2011-eps-converted-to.
 pdf prid2011.eps>
-(epstopdf)             \includegraphics on input line 1128.
+(epstopdf)             \includegraphics on input line 1153.
 Package epstopdf Info: Output file is already uptodate.
 
-<prid2011-eps-converted-to.pdf, id=182, 1251.67625pt x 650.43pt>
+<prid2011-eps-converted-to.pdf, id=183, 1251.67625pt x 650.43pt>
 File: prid2011-eps-converted-to.pdf Graphic file (type pdf)
 
 <use prid2011-eps-converted-to.pdf>
-Package pdftex.def Info: prid2011-eps-converted-to.pdf used on input line 1128.
+Package pdftex.def Info: prid2011-eps-converted-to.pdf used on input line 1153.
 
 (pdftex.def)             Requested size: 243.91125pt x 126.73904pt.
 Package epstopdf Info: Source file: <prid450s.eps>
@@ -654,60 +681,16 @@ Package epstopdf Info: Source file: <prid450s.eps>
 (epstopdf)                    size: 9544 bytes
 (epstopdf)             Command: <repstopdf --outfile=prid450s-eps-converted-to.
 pdf prid450s.eps>
-(epstopdf)             \includegraphics on input line 1168.
+(epstopdf)             \includegraphics on input line 1193.
 Package epstopdf Info: Output file is already uptodate.
 
-<prid450s-eps-converted-to.pdf, id=183, 1251.67625pt x 650.43pt>
+<prid450s-eps-converted-to.pdf, id=184, 1251.67625pt x 650.43pt>
 File: prid450s-eps-converted-to.pdf Graphic file (type pdf)
 
 <use prid450s-eps-converted-to.pdf>
-Package pdftex.def Info: prid450s-eps-converted-to.pdf used on input line 1168.
+Package pdftex.def Info: prid450s-eps-converted-to.pdf used on input line 1193.
 
 (pdftex.def)             Requested size: 243.91125pt x 126.73904pt.
- [7pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1204 
-       pdfTeX warning (ext4): destination with the same identifier (name{table.
-9}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1204 
-       pdfTeX warning (ext4): destination with the same identifier (name{table.
-10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1204 
-       pdfTeX warning (ext4): destination with the same identifier (name{figure
-.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1204 
-       pdfTeX warning (ext4): destination with the same identifier (name{figure
-.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1204 
-       pdfTeX warning (ext4): destination with the same identifier (name{table.
-11}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1204 
-       pdfTeX warning (ext4): destination with the same identifier (name{table.
-12}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1204 
-        <./VIPeR-eps-converted-to.pdf> <./CUHK1-eps-converted-to.pdf> <./prid20
-11-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <GRID.eps>
 (epstopdf)                    date: 2017-01-11 12:27:11
 (epstopdf)                    size: 19671 bytes
@@ -716,14 +699,14 @@ Package epstopdf Info: Source file: <GRID.eps>
 (epstopdf)                    size: 9363 bytes
 (epstopdf)             Command: <repstopdf --outfile=GRID-eps-converted-to.pdf 
 GRID.eps>
-(epstopdf)             \includegraphics on input line 1207.
+(epstopdf)             \includegraphics on input line 1232.
 Package epstopdf Info: Output file is already uptodate.
 
-<GRID-eps-converted-to.pdf, id=220, 1251.67625pt x 650.43pt>
+<GRID-eps-converted-to.pdf, id=185, 1251.67625pt x 650.43pt>
 File: GRID-eps-converted-to.pdf Graphic file (type pdf)
 
 <use GRID-eps-converted-to.pdf>
-Package pdftex.def Info: GRID-eps-converted-to.pdf used on input line 1207.
+Package pdftex.def Info: GRID-eps-converted-to.pdf used on input line 1232.
 (pdftex.def)             Requested size: 243.91125pt x 126.73904pt.
  (./bare_conf_compsoc.bbl)
 
@@ -737,77 +720,85 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1263.
-[8pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1289.
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1263 \end{document}
+l.1289 \end{document}
                      pdfTeX warning (ext4): destination with the same identifie
-r (name{figure.7}) has been already used, duplicate ignored
+r (name{figure.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1263 \end{document}
+l.1289 \end{document}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{table.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1289 \end{document}
                      pdfTeX warning (ext4): destination with the same identifie
 r (name{table.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1263 \end{document}
-                     
+l.1289 \end{document}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{figure.7}) has been already used, duplicate ignored
 
- <./prid450s-eps-converted-to.pdf> <./GRID-eps-converted-to.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1263.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1289 \end{document}
+                      <./prid2011-eps-converted-to.pdf> <./prid450s-eps-convert
+ed-to.pdf> <./GRID-eps-converted-to.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1289.
  (./bare_conf_compsoc.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1263.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1263.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1289.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1289.
 
 Package rerunfilecheck Info: File `bare_conf_compsoc.out' has not changed.
-(rerunfilecheck)             Checksum: 9AB9E317968FB5207153C9B1CF82172A;1148.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1263.
+(rerunfilecheck)             Checksum: CF6F52783E289FC1ECAA1FEE7C572361;914.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1289.
  ) 
 Here is how much of TeX's memory you used:
- 6969 strings out of 493089
- 106546 string characters out of 6134842
- 212391 words of memory out of 5000000
- 10303 multiletter control sequences out of 15000+600000
- 51275 words of font info for 107 fonts, out of 8000000 for 9000
+ 7249 strings out of 493089
+ 109765 string characters out of 6134842
+ 225092 words of memory out of 5000000
+ 10588 multiletter control sequences out of 15000+600000
+ 48525 words of font info for 103 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 29i,13n,31p,1846b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,13n,31p,1846b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/time
-s/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on bare_conf_compsoc.pdf (8 pages, 344732 bytes).
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on bare_conf_compsoc.pdf (7 pages, 310613 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
- 67 named destinations out of 1000 (max. 500000)
- 164 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 313 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 140 words of extra memory for PDF output out of 10000 (max. 10000000)
 
