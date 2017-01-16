@@ -12,62 +12,66 @@ Database file #1: citation.bib
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty booktitle in KLFDA
-Warning--empty booktitle in SDALF
+Warning--empty journal in TDL
 Warning--empty booktitle in LOMO
+Warning--empty booktitle in GOG
 Warning--empty booktitle in RegionCovariance
-Warning--empty journal in LADF
+Warning--empty booktitle in SDALF
 Warning--empty journal in KISSME
-Warning--empty journal in NFST
-Warning--empty journal in KernelVersionMetrics
+Warning--empty journal in PCCA
+Warning--empty journal in PRDC
 Warning--empty journal in LMNN
 Warning--empty journal in KCCA
+Warning--empty journal in KernelVersionMetrics
+Warning--empty journal in NFST
 Warning--empty journal in ITML
-Warning--empty journal in TDL
-Warning--empty booktitle in GOG
-Warning--empty journal in PRDC
+Warning--empty journal in MetricSurvey
+Warning--empty journal in ImportantFeat
+Warning--empty journal in MetricEnsembles
+Warning--empty journal in SemanticREID
 Warning--empty journal in PersonNetCNN
 Warning--empty journal in RecurrentCNN
 
 Done.
-You've used 17 entries,
+You've used 22 entries,
             4039 wiz_defined-function locations,
-            899 strings with 9666 characters,
-and the built_in function-call counts, 11864 in all, are:
-= -- 870
-> -- 324
-< -- 93
-+ -- 161
-- -- 58
-* -- 586
-:= -- 1732
-add.period$ -- 37
-call.type$ -- 17
-change.case$ -- 17
-chr.to.int$ -- 231
-cite$ -- 33
-duplicate$ -- 874
-empty$ -- 990
-format.name$ -- 73
-if$ -- 2692
+            924 strings with 10471 characters,
+and the built_in function-call counts, 15493 in all, are:
+= -- 1151
+> -- 410
+< -- 128
++ -- 207
+- -- 71
+* -- 757
+:= -- 2256
+add.period$ -- 48
+call.type$ -- 22
+change.case$ -- 22
+chr.to.int$ -- 321
+cite$ -- 42
+duplicate$ -- 1137
+empty$ -- 1281
+format.name$ -- 90
+if$ -- 3523
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 156
-newline$ -- 74
-num.names$ -- 17
-pop$ -- 437
+int.to.str$ -- 22
+missing$ -- 198
+newline$ -- 89
+num.names$ -- 22
+pop$ -- 546
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 836
+skip$ -- 1099
 stack$ -- 0
-substring$ -- 549
-swap$ -- 675
-text.length$ -- 16
+substring$ -- 760
+swap$ -- 891
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 17
-warning$ -- 16
-while$ -- 81
-width$ -- 19
-write$ -- 158
-(There were 16 warnings)
+type$ -- 22
+warning$ -- 20
+while$ -- 106
+width$ -- 24
+write$ -- 199
+(There were 20 warnings)

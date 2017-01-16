@@ -25,35 +25,45 @@
 M.~Sugiyama, ``{Local Fisher Discriminant Analysis for Supervised
   Dimensionality Reduction},'' Dec. 2016.
 
-\bibitem{SDALF}
-M.~Farenzena, L.~Bazzani, A.~Perina, V.~Murino, and M.~Cristani, ``{Person
-  Re-Identification by Symmetry-Driven Accumulation of Local Features}.''\hskip
-  1em plus 0.5em minus 0.4em\relax CVPR, Mar. 2016, pp. 1--8.
+\bibitem{TDL}
+J.~You, A.~Wu, X.~Li, and W.-S. Zheng, ``{Top-push Video-based Person
+  Re-identification},'' pp. 1--9, Jan. 2017.
 
 \bibitem{LOMO}
 S.~Liao, Y.~Hu, X.~Zhu, and S.~Z. Li, ``{Person Re-identification by Local
   Maximal Occurrence Representation and Metric Learning}.''\hskip 1em plus
   0.5em minus 0.4em\relax CVPR, Apr. 2015, pp. 1--10.
 
+\bibitem{GOG}
+T.~Matsukawa, T.~Okabe, E.~Suzuki, and Y.~Sato, ``{Hierarchical Gaussian
+  Descriptor for Person Re-Identification},'' Dec. 2016, pp. 1--10.
+
 \bibitem{RegionCovariance}
 O.~Tuzel, F.~Porikli, and P.~Meer, ``{Region Covariance: A Fast Descriptor for
   Detection and Classification},'' Dec. 2016, pp. 1--14.
 
-\bibitem{LADF}
-Z.~Li, S.~Chang, and F.~Liang, ``{Learning Locally-Adaptive Decision Functions
-  for Person Verification},'' pp. 1--8, Apr. 2013.
+\bibitem{SDALF}
+M.~Farenzena, L.~Bazzani, A.~Perina, V.~Murino, and M.~Cristani, ``{Person
+  Re-Identification by Symmetry-Driven Accumulation of Local Features}.''\hskip
+  1em plus 0.5em minus 0.4em\relax CVPR, Mar. 2016, pp. 1--8.
 
 \bibitem{KISSME}
 M.~Kostinger, M.~Hirzer, P.~Wohlhart, P.~M. Roth, and H.~Bischof, ``{Large
   Scale Metric Learning from Equivalence Constraints},'' pp. 1--8, Apr. 2012.
 
-\bibitem{NFST}
-L.~Zhang, T.~Xiang, and S.~Gong, ``{Learning a Discriminative Null Space for
-  Person Re-identification},'' pp. 1--10, Mar. 2016.
+\bibitem{LFDA}
+S.~Pedagadi, J.~Orwell, Velastin, Sergio, and B.~Boghos, ``Local fisher
+  discriminant analysis for pedestrian re-identification,'' in \emph{2013 IEEE
+  Conference on Computer Vision and Pattern Recognition (CVPR)}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, Jan. 2013, pp. 3318--3325.
 
-\bibitem{KernelVersionMetrics}
-F.~Xiong, M.~Gou, O.~Camps, and S.~Mario, ``{Person Re-Identification using
-  Kernel-based Metric Learning Methods},'' pp. 1--16, Jul. 2014.
+\bibitem{PCCA}
+A.~Mignon and F.~Jurie, ``{PCCA: A New Approach for Distance Learning from
+  Sparse Pairwise Constraints},'' pp. 1--7, Apr. 2012.
+
+\bibitem{PRDC}
+W.~Zheng, S.~Gong, and T.~Xiang, ``{Person Re-identification by Probabilistic
+  Relative Distance Comparison},'' pp. 1--8, Nov. 2016.
 
 \bibitem{LMNN}
 Weinberger, K.~Q, Saul, and L.~K, ``{Distance Metric Learning for Large Margin
@@ -62,27 +72,40 @@ Weinberger, K.~Q, Saul, and L.~K, ``{Distance Metric Learning for Large Margin
 \bibitem{KCCA}
 M.~Welling, ``{Kernel Canonical Correlation Analysis},'' pp. 1--3, Mar. 2005.
 
+\bibitem{KernelVersionMetrics}
+F.~Xiong, M.~Gou, O.~Camps, and S.~Mario, ``{Person Re-Identification using
+  Kernel-based Metric Learning Methods},'' pp. 1--16, Jul. 2014.
+
+\bibitem{NFST}
+L.~Zhang, T.~Xiang, and S.~Gong, ``{Learning a Discriminative Null Space for
+  Person Re-identification},'' pp. 1--10, Mar. 2016.
+
 \bibitem{ITML}
 J.~V. Davis, B.~Kulis, P.~Jain, S.~Sra, and I.~S. Dhillon,
   ``Information-theoretic metric learning,'' pp. 1--8, Jun. 2007.
 
-\bibitem{TDL}
-J.~You, A.~Wu, X.~Li, and W.-S. Zheng, ``{Top-push Video-based Person
-  Re-identification},'' pp. 1--9, Jan. 2017.
+\bibitem{MetricSurvey}
+L.~Yang, ``{Distance Metric Learning: A Comprehensive Survey},'' pp. 1--51, May
+  2006.
 
-\bibitem{GOG}
-T.~Matsukawa, T.~Okabe, E.~Suzuki, and Y.~Sato, ``{Hierarchical Gaussian
-  Descriptor for Person Re-Identification},'' Dec. 2016, pp. 1--10.
+\bibitem{ImportantFeat}
+S.~G. C. C.~L. Chunxiao~Liu and X.~Lin, ``{LNCS 7583 - Person
+  Re-identification: What Features Are Important?}'' pp. 1--11, Nov. 2015.
 
-\bibitem{PRDC}
-W.~Zheng, S.~Gong, and T.~Xiang, ``{Person Re-identification by Probabilistic
-  Relative Distance Comparison},'' pp. 1--8, Nov. 2016.
+\bibitem{MetricEnsembles}
+S.~Paisitkriangkrai, C.~Shen, and A.~van~den Hengel, ``{Learning to Rank in
+  Person Re-Identification With Metric Ensembles},'' pp. 1--10, Jan. 2015.
 
 \bibitem{novelEMD}
 P.~Li, Q.~Wang, and L.~Zhang, ``{A Novel Earth Mover's Distance Methodology for
   Image Matching with Gaussian Mixture Models},'' in \emph{2013 IEEE
   International Conference on Computer Vision (ICCV)}.\hskip 1em plus 0.5em
   minus 0.4em\relax IEEE, Dec. 2013, pp. 1689--1696.
+
+\bibitem{SemanticREID}
+Z.~Shi, T.~M. Hospedales, and T.~Xiang, ``{Transferring a Semantic
+  Representation for Person Re-Identification and Search},'' pp. 1--10, Apr.
+  2015.
 
 \bibitem{PersonNetCNN}
 L.~Wu, C.~Shen, and A.~van~den Hengel, ``{PersonNet: Person Re-identification

@@ -410,8 +410,7 @@ qiangsenhe@gmail.com}
 % in the abstract
 \begin{abstract}
 
-Person re-identification has been an intense research area recently. 
-It's very important to choose robust descriptors and metric learning to improve accuracy. Mahanalobis based metric learning is a popular method to measure similarity. However, since directly extracted descriptors usually have high dimension(thousands or more), it's intractable to learn a high dimensional Mahanalobis matrix without dimension reduction.  Many subspace learning methods are used to project high dimensional descriptors to lower dimension space while preserving those discriminative information as much as possible. In this paper the KLFDA \cite{KLFDA} is used to reduce dimension given that kernelization method can greatly improve re-identification performance for nonlinearity. Then a Mahanalobis distance metric is learned on lower dimensional descriptors based on the limitation that the within class distance is at least 1 unit smaller than the minimum inter class distance. This method turns to have excellent performance compared with other advanced metric learning.
+In person re-identification(re-ID) it's very important to choose robust descriptors and metric learning to improve accuracy. Mahanalobis distance based metric learning is a popular method for metric learning. However, since directly extracted descriptors usually have high dimension(thousands or more), it's intractable to learn a high dimensional semi-definite positive(SPD) matrix without dimension reduction.  Many subspace learning metrics have been proposed to learn a subspace while preserving those discriminative information as much as possible. However, few work has been done to probe the metric learning on those subspace after the first-time metric learning. In this paper the KLFDA \cite{KLFDA} is used to reduce dimension given that kernelization method can greatly improve re-identification performance for nonlinearity. Then a Mahanalobis distance metric is learned on lower dimensional descriptors based on the limitation that the intraclass distance is at least 1 unit smaller than the minimum interclass distance. By comparing the intraclass distance only with the interclass distance the computation complexity is reduced. This method turns to have excellent performance compared with other advanced metric learning.
 
 
 %In this paper a new descriptor based on hierarchical gaussian distribution of pixel feature is proposed.
@@ -444,14 +443,14 @@ It's very important to choose robust descriptors and metric learning to improve 
 
 \section{Introduction}
 % no \IEEEPARstart
-Person re-identification(re-ID) has received increasing attention in recent years. The task of re-ID is to match a given person with a list of identities with known labels. This problem is very challenging caused by many factors like low image resolution, occlusion, background noise and different camera color response, etc. According to sample size of each person, re-ID can be divided into single shot and multi-shot re-ID. In the single shot re-ID problem, since only one image is provided in each camera for each person, it might be quite confusing when different people have similar pose or clothes. Also, in the multi-shots case, there might exist quite much difference even in different frames of the same person for different pose and illuminations. Therefore, good descriptors are supposed to be robust to illumination change and occlusions.
+Person re-identification(re-ID) has received increasing attention in recent years. This task is very challenging caused by many factors like low image resolution, occlusion, background noise and different camera color response, etc. In the single shot re-ID problem, since only one image is provided in each camera for each person, it might be quite confusing when different people have similar pose or clothes. Also, in the multi-shots case, there might exist quite much difference even in different frames of the same person for different pose and illuminations \cite{TDL}. Therefore, good descriptors are supposed to be robust to illumination change and occlusions.
 
 % -------the descriptor part
-Since most datasets are well images with well cropped bounding boxes, classical re-ID focus on descriptors extraction and metric learning. It's important to select a proper descriptor for images. Most descriptors are color and texture based descriptors. One simple descriptor is the histogram descriptor. In [] the image is divided into a few horizontal strides, for each slide the color histogram is extracted, then the color histograms are concatenated together as the whole image's descriptor. This descriptor is simple but has low performance for it doesn't consider the texture and pixel spatial distribution and is not robust to person with similar color but different texture.  In \cite{SDALF,LOMO} the symmetry and asymmetry of foreground is considered. The maximally stable color region is also exploited in this paper. In \cite{RegionCovariance} the covariance descriptors of local patches are used to represent people. \\
+Most previous work try to find better feature representation \cite{LOMO, GOG, RegionCovariance, SDALF} and metric learning \cite{KISSME, LFDA, PCCA, TDL, PRDC, LMNN, KLFDA, KCCA, KernelVersionMetrics, NFST, ITML}, or a subspace learning. Most descriptors are color and texture based descriptors. Distance metric learning has been fully studied in \cite{MetricSurvey}, most existing metric learning are based on Mahanalobis distance to learn a metric which outputs small intraclass distance and large interclass distance. Though much progress has been made, there still exists some challenges caused by classical problems like small sample problem(SSS), computation complexity on large datasets. 
 %Metric learning 
-\indent Given descriptors of individuals, a matching algorithm is needed to re-identify people. To compute similarity, the Mahanalobis distance based metric learning is very popular. Many proposed work \cite{LADF,LOMO,KISSME} try to learn an efficient subspace and a metric on the subspace. In \cite{KISSME} the author uses a log ratio likelihood based on zeros mean multivariate gaussian functions to learn a metric on the subspace. In \cite{NFST} the author learns a null space to make sample points from same class collapse to the same point. \cite{LOMO} learns a subspace and a metric on the subspace by a log ratio likelihood function.  There are many other subspace learning methods like MFA \cite{KernelVersionMetrics}, LMNN \cite{LMNN}, kCCA \cite{KCCA}, ITML \cite{ITML}, LADF \cite{LADF}.  One common thing of these methods is they transform the metric learning to a eigenvalue decomposition and eigenvalue selection problem.\\
-\indent For descriptors with high dimension($d\ge1000$), it's hard to directly learn a Mahanalobis distance matrix $M$ for the small sample size $n(n<<d)$. A popular method is to use principal component analysis(PCA) to reduce dimension. PCA is a very popular preprocessing method which uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called principal components. One problem is  PCA doesn't consider the information between classes thus many discriminant information will be lost after dimension reduction. In this paper kernel local fisher discriminant Analysis(KLFDA) \cite{KLFDA} is used to reduce dimension, this supervised dimension reduction combines the linear discriminant analysis and locality preserving projection. Moreover, the kernelization version of LFDA proves to improve performance and reduce computation cost. \\
-\indent In this paper, KLFDA is only used to reduce dimension instead of being used as an unique subspace learning method. Previous work uses Euclidean distance to measure the similarity after dimension reduction with KLFDA, and the metric learning on the projected vector space by KLFDA has not been fully probed. In this paper for the dimension reduced data, a Mahanalobis distance matrix $M$ on the  is learned based on the limitation that intra distance is at least 1 unit smaller than inter class distance. This is inspired by the \cite{TDL} paper. A target function respect $M$ is created to penalize big intra class distance and small inter class distance. So we transformed re-ID into a optimization problem in the lower dimension space. With the target function, the gradient descent method is used to get a optimal $M$.
+\indent Among all those metric learning methods, fisher discriminant analysis(FDA) proves to be one of advanced metrics to improve re-ID performance. It tries to maximize the ration of interclass scatter matrix versus intraclass scatter distance and this problem is transformed as a eigenvalue decomposition problem. Local fisher discriminant analysis combines locality preserving projection(LPP) with FDA to exploit locality of sample points. Besides, kernel method \cite{KernelVersionMetrics} has been shown to improve re-ID performance since it exploits the nonlinearity of data.\\
+\indent For descriptors with high dimension($d\ge1000$), it's hard to directly learn a Mahanalobis distance matrix $M$ for the small sample size $n(n<<d)$. A popular method is to use principal component analysis(PCA) to reduce dimension. PCA is a very popular preprocessing method which uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called principal components. One problem is  PCA doesn't consider the information between classes thus many discriminant information will be lost after dimension reduction. In this paper kernel local fisher discriminant Analysis(KLFDA) \cite{KLFDA} is used to reduce dimension, this supervised dimension reduction combines the linear discriminant analysis and locality preserving projection. Moreover, the kernelization version of LFDA proves to improve performance and reduce computation cost. However, the metric learning on dimension reduced vectors by KLFDA hasn't been fully probed.\\
+\indent In this paper, KLFDA is only used to reduce dimension instead of being used as an unique subspace learning method. Previous work uses Euclidean distance to measure the similarity after dimension reduction with KLFDA, and the metric learning on the projected vector space by KLFDA has not been fully probed. In this paper for the dimension reduced data, a Mahanalobis distance matrix $M$ is learned based on the limitation that intra distance is at least 1 unit smaller than interclass distance. This iterative metric learning method is inspired by the \cite{TDL} paper. A target function respect $M$ is created to penalize big intraclass distance and small interclass distance. So we transformed re-ID into a optimization problem in the lower dimension space. With the target function, the gradient descent method is used to get a optimal $M$.
 
 
 %There are a few differences between LDA and PCA, LDA is a supervised method while PCA is unsupervised, and LDA is more used independently while PCA is more used as a preprocessing method. The advantage of LDA is it distinguishes different classes by maximize the ratio of inter-class scatter matrix versus intra-class scatter matrix. 
@@ -568,9 +567,9 @@ Since most datasets are well images with well cropped bounding boxes, classical 
 % \fnbelowfloat command of the stfloats package.
 \section{Related work}
 %\subsection{Appearance descriptors}
-Previous work focus on find more discriminative descriptors and better metric learning. A good descriptor is robust to problems like illumination, low resolution and viewpoint, etc. In \cite{SDALF} the symmetry and asymmetry property of pedestrian foreground is considered. But this descriptor depends much on foreground extraction performance. In \cite{LOMO} densely sampled overlapping small windows are adopted to concur viewpoint variation. In each sample window the scale invariant local ternary pattern(SILTP) and local binary pattern(LBP) is extracted, then the local maximal occurrence of patterns of all windows are extracted to consist of LOMO descriptor. The LOMO descriptor succeeds in characterizing images with viewpoint changes. In \cite{GOG} a two-level multivariate gaussian descriptors are proposed to exploit the stochastic property of the color, texture. By a Riemannian manifold based mapping, this descriptors embeds $d$ dimensional multivariate gaussian function to a $d+1$ dimensional semi-positive definite space. Then by matrix vectorization we can get the gaussian of gaussian descriptor(GOG). The combination of GOG and cross view quadratic discriminative analysis outperforms most advanced works.
+Previous work focus on find more discriminative descriptors and better metric learning. A good descriptor is robust to problems like illumination, low resolution and viewpoint, etc. In \cite{SDALF} the symmetry and asymmetry property of pedestrian foreground is considered. But this descriptor depends much on foreground extraction performance. In \cite{ImportantFeat} the image is divided into a few horizontal strides, for each slide the color histogram is extracted, then the color histograms are concatenated together as the whole image's descriptor. This descriptor is simple but has low performance for it doesn't consider the texture and pixel spatial distribution. In \cite{RegionCovariance} the covariance descriptors of local patches are used to represent people. In \cite{LOMO} densely sampled overlapping small windows are adopted to overcome viewpoint variation. In each sample window the scale invariant local ternary pattern(SILTP) and local binary pattern(LBP) is extracted, then the local maximal occurrence of patterns of all windows are extracted to consist of LOMO descriptor. The LOMO descriptor succeeds in characterizing images with viewpoint changes. In \cite{GOG} a two-level multivariate gaussian descriptors are proposed to exploit the stochastic property of the color, texture. By a Riemannian manifold based mapping, this descriptors embeds $d$ dimensional multivariate gaussian function to a $d+1$ dimensional semi-positive definite space. Then by matrix vectorization we can get the gaussian of gaussian descriptor(GOG). The combination of GOG and cross view quadratic discriminative analysis outperforms most advanced works.
 
-Other works try to use metric learning to improve re-ID performance. In \cite{PRDC} the distance between positive pairs must be smaller than the distance between negative pairs. Since it has to compare possible positive and negative pairs, computation complexity will be quite huge. In [NFST] the author proposes to to learn a null space in which the descriptors of the same class will collapse into the same point while descriptors of different classed are projected onto different points. In [Metric ensemble] the author exploits the combination of different metrics by assigning weights to different metrics and optimize the weights to maximize probability that any of these top k matches are correct. In \cite{novelEMD} the author proposed a earth mover's distance(EMD) based metric learning for descriptors of gaussian mixture model(GMM). It's more complex to compute similarity of GMM model. However, one problem this EMD-based distance metric is it's huge time complexity, which limits its real-time application. In [semantic] the author presents a new semantic at- tribute learning approach for person re-identification and search but this method suffers from low performance. In \cite{LOMO} the author extends the Bayesian face and keep it simple and straightforward(KISSME) approaches to learn a discriminant low dimensional subspace by cross-view quadratic discriminant analysis(XQDA), this work has a top performance in most datasets when combined with LOMO descriptor and GOG descriptors. 
+Other works try to use metric learning to improve re-ID performance. In \cite{PRDC} the distance between positive pairs must be smaller than the distance between negative pairs. Since it has to compare possible positive and negative pairs, computation complexity will be quite huge. In \cite{NFST} the author proposes to to learn a null space in which the descriptors of the same class will collapse into the same point while descriptors of different classed are projected onto different points. In \cite{MetricEnsembles} the author exploits the combination of different metrics by assigning weights to different metrics and optimize the weights to maximize probability that any of these top k matches are correct. In \cite{novelEMD} the author proposed a earth mover's distance(EMD) based metric learning for descriptors of gaussian mixture model(GMM). It's more complex to compute similarity of GMM model. However, one problem this EMD-based distance metric is it's huge time complexity, which limits its real-time application. In \cite{SemanticREID} the author presents a new semantic attribute learning approach for person re-identification and search but this method suffers from low performance. In \cite{LOMO} the author extends the Bayesian face and keep it simple and straightforward(KISSME) approaches to learn a discriminant low dimensional subspace by cross-view quadratic discriminant analysis(XQDA), this work has a top performance in most datasets when combined with LOMO descriptor and GOG descriptors. 
 
 There are also some works which tries to use convolutional neural network \cite{PersonNetCNN,RecurrentCNN} to improve accuracy. However, person re-identification may be one of the area which CNN won't work for the small sample size(SSS) problem. In most datasets, the sample size of each pedestrian is quite small. Especially in single shot re-ID only one frame is provided in each view for each person. So re-ID will more rely on classical machine learning.
 
@@ -691,7 +690,7 @@ There are also some works which tries to use convolutional neural network \cite{
 %The original descriptor has a high dimension and dimensionality disaster will be brought about if the original high-dimensional descriptor is used to learn a metric matrix. One popular method is to reduce the high dimension then learn a metric matrix in the lower dimension data. Among those methods to reduce dimension, principal component analysis is often used. However, PCA is a unsupervised dimension reduction and may have a low performance for those reasons, $(1)$, PCA is to maximize the variance of dimension reduced data, and as a unsupervised method it doesn't has a full consideration of the the relation of between and within classes, it is very likely that the descriptors of different classes can be mixed up in the dimension reduction; $(2)$ PCA may suffer from the small sample size problem. In some re-ID datasets, there may be two or less images for each pedestrian in each viewpoint (like VIPeR), if the dimension of descriptor is much bigger than sample size, much information can be lost with PCA.
 
 %In this paper the kernel local fisher discriminant analysis is adopted. This method is a combination of Fisher discriminant analysis[ ] and and the locality preserving projection in [LPP ]. 
-Fisher discriminant analysis is a supervised dimension reduction algorithm, whose input includes the original descriptors and the class labels. Here a brief review of Fisher linear analysis and LPP is given. For a set of $d$-dimensional observations $\bm{x}_i$, where $i\in\{1,2,\cdots,n\}$, the label $l_i\in\{1,2,\cdots,l\}$. Two matrix are defined as the within class scatter matrix $\bm{S}^{(w)}$ and between class matrix
+Fisher discriminant analysis is a supervised dimension reduction algorithm, whose input includes the original descriptors and the class labels. Here a brief review of Fisher linear analysis and LPP is given. For a set of $d$-dimensional observations $\bm{x}_i$, where $i\in\{1,2,\cdots,n\}$, the label $l_i\in\{1,2,\cdots,l\}$. Two matrix are defined as the intraclass scatter matrix $\bm{S}^{(w)}$ and between class matrix
 $\bm{S}^{(b)}$, 
 \begin{equation}
 \begin{aligned}
@@ -711,7 +710,7 @@ The Fisher Discriminant Analysis transform matrix $\bm{T}$ can be represented as
 \begin{equation}
 \bm{T} = \arg\max \frac{\bm{T}^T\bm{S}^{(b)}\bm{T}}{\bm{T}^T\bm{S}^{(w)}\bm{T}}
 \end{equation}
-Fisher discriminant analysis tries to minimize the within-class distance while maximize the between class distance. The $\bm{T}$ is computed by the eigenvalue decomposition so that the between class scatter is maximized and the within class scatter matrix is minimized. $\bm{T}$ can be represented as the set of all the corresponding eigenvectors, as $ \bm{T} = (\bm{\phi}_1,\bm{\phi}_2,\cdots,\bm{\phi}_k)$.
+Fisher discriminant analysis tries to minimize the within-class distance while maximize the between class distance. The $\bm{T}$ is computed by the eigenvalue decomposition so that the between class scatter is maximized and the intraclass scatter matrix is minimized. $\bm{T}$ can be represented as the set of all the corresponding eigenvectors, as $ \bm{T} = (\bm{\phi}_1,\bm{\phi}_2,\cdots,\bm{\phi}_k)$.
 
 FDA analysis has a form similar with signal and noise ratio, however, the FDA dimension reduction may have poor performance for it doesn't consider the locality of data. In[Hexiaofei] locality preserving projection is proposed to exploit data locality. In LPP an affinity matrix is created to record the affinity of sample $\bm{x}_i$ and $\bm{x}_j$,  typically the range of elements in $\bm{A}_{i,j}$ is $[0,1]$. There are many manners to define a $n \times n$ affinity matrix $\bm{A}$, usually the two sample points with a smaller distance measured by Euclidean or other distance has a higher affinity value than those with bigger distance value. One of them is if  $\bm{x}_i$ is within k-nearest neighbours of $\bm{x}_j$ then $\bm{A}_{i,j} = 1$ otherwise  $\bm{A}_{i,j} = 0$.  Another diagonal matrix $D$ can be defined that each diagonal element is the sum of corresponding column in $\bm{A}$,
 \begin{equation}
@@ -764,7 +763,7 @@ When applying the LFDA to original high dimensional descriptors, one problem is 
  % klfda 
  \subsection{Kernel LFDA}
  
- Kernelization is proved to greatly improve performance since the non-linearity is exploited. In \cite{KernelVersionMetrics} it has been demonstrated that kernelization improves the performance of many dimension reduction and metric learning. Kernelization is a projection from low dimension to high dimension, which may make classification and clustering much more accurate.  The difference of kernel version LFDA is that the between class and within class scatter matrix will be transformed into kernel space and the eigenvalue decomposition will be operated on kernel space.  Suppose a set of sample points $\bm{x}_i, i\in\{1,2,\cdots, n\} $, can be mapped to a implicit higher feature space by a function $\phi(\bm{x}_i)$. It has been proved that kernel function can be implicit and only the inner product of mapped vectors $\phi(\bm{x}_i)$ and $\phi(\bm{x}_j)$ need to be known. The kernel trick is proposed to solve this problem by defining a function $k(\bm{x}_i,\bm{x}_j) = <\phi(\bm{x}_i),\phi(\bm{x}_j)>$, the $< \cdot >$ is the inner product. There are many kinds of kernel like linear kernel, polynomial kernel and radial basis function(RBF) kernel. In this paper the RBF kernel is adopted. A RBF kernel is defined as $k_{RBF}(\bm{x}_i,\bm{x}_j) = \exp^{(-\gamma||\bm{x}_i-\bm{x}_j||^2)}$. 
+ Kernelization is proved to greatly improve performance since the non-linearity is exploited. In \cite{KernelVersionMetrics} it has been demonstrated that kernelization improves the performance of many dimension reduction and metric learning. Kernelization is a projection from low dimension to high dimension, which may make classification and clustering much more accurate.  The difference of kernel version LFDA is that the between class and intraclass scatter matrix will be transformed into kernel space and the eigenvalue decomposition will be operated on kernel space.  Suppose a set of sample points $\bm{x}_i, i\in\{1,2,\cdots, n\} $, can be mapped to a implicit higher feature space by a function $\phi(\bm{x}_i)$. It has been proved that kernel function can be implicit and only the inner product of mapped vectors $\phi(\bm{x}_i)$ and $\phi(\bm{x}_j)$ need to be known. The kernel trick is proposed to solve this problem by defining a function $k(\bm{x}_i,\bm{x}_j) = <\phi(\bm{x}_i),\phi(\bm{x}_j)>$, the $< \cdot >$ is the inner product. There are many kinds of kernel like linear kernel, polynomial kernel and radial basis function(RBF) kernel. In this paper the RBF kernel is adopted. A RBF kernel is defined as $k_{RBF}(\bm{x}_i,\bm{x}_j) = \exp^{(-\gamma||\bm{x}_i-\bm{x}_j||^2)}$. 
  
  
 \section{Metric learning on dimension reduced space by gradient descent method}
@@ -778,7 +777,7 @@ D(\bm{x},\bm{y}) = (\bm{x} - \bm{y})^T\bm{W}^T\bm{W}(\bm{x} - \bm{y})= ||\bm{W}(
 \end{equation}
  Therefore, Mahanalobis distance can be regarded as a variant of Euclidean distance. 
 % There are many methods proposed for metric learning[ ]. Inspired by [], in this paper, a similar metric learning based on iteration computation is used. For a  sample descriptor $\bm{x}_i$,  its positive pairwise set is defined as $\{\bm{x}_i,\bm{x}_j\}$, where class ID $y_i = y_j$. Also the negative pairwise set can be defined as $\{\bm{x}_i,\bm{x}_j\}$, where $y_i \ne y_j$. Similar with [PRDC], this method is also based on similarity comparison. The difference is in [PRDC], for all possible positive and negative pairs, the distance between positive pairs must be smaller than the distance between negative pairs. Since it has to compare possible positive and negative pairs, computation complexity will be quite huge.  To decrease complexity, a simplified version is proposed as the top-push distance metric learning[ ].  
-Since re-identification is a problem of ranking, it is desired that the rank-1 descriptor should be the right match. In this paper, instead compare all the possible positive and negative pairs, a simplified version is proposed that the intra class distance should be at 1 unit smaller than inter distance. This will decrease computation complexity quite much. Given a Mahanalobis matrix $\bm{M}$, for samples $\bm{x}_i, i = 1,2,3,\cdots,n$, $n$ is the number of all samples, the requirement is distance between positive pair should be smaller than the minimum of all negative distance. This can be denoted as 
+Since re-identification is a problem of ranking, it is desired that the rank-1 descriptor should be the right match. In this paper, instead compare all the possible positive and negative pairs, a simplified version is proposed that the intraclass distance should be at 1 unit smaller than inter distance. This will decrease computation complexity quite much. Given a Mahanalobis matrix $\bm{M}$, for samples $\bm{x}_i, i = 1,2,3,\cdots,n$, $n$ is the number of all samples, the requirement is distance between positive pair should be smaller than the minimum of all negative distance. This can be denoted as 
  \begin{equation}
  D(\bm{x}_i,\bm{x}_j) + \rho < \min D(\bm{x}_i,\bm{x}_k), y_i = y_j, y_i\ne y_k.
  \end{equation}
@@ -787,26 +786,26 @@ Since re-identification is a problem of ranking, it is desired that the rank-1 d
  \arg \min \sum_{y_i = y_j} \max \{D(\bm{x}_i,\bm{x}_j) -  \min_{ y_i\ne y_k} D(\bm{x}_i,\bm{x}_k)  + \rho \}.
  \end{equation}
  
- However, the equation above only penalize small inter class distance. Another term is needed to penalize large intra class distance. That is, to make the sum of intraclass distance as small as possible. This term is denoted as 
+ However, the equation above only penalize small interclass distance. Another term is needed to penalize large intraclass distance. That is, to make the sum of intraclass distance as small as possible. This term is denoted as 
  \begin{equation}
  \min \sum D(\bm{x}_i,\bm{x}_j),y_i = y_j.
  \end{equation}
  
- To combine equations above, a ratio factor $\alpha$ is assigned to equation [] so that the target function can be denote as 
+ To combine equations above, a ratio factor $\alpha$ is assigned to term 12 so that the target function can be denote as 
   \begin{equation}
   \begin{aligned}
  f(\bm{M}) = (1-\alpha)\sum_{\bm{x}_i,x_j,\bm{y}_i=y_j} D(\bm{x}_i,\bm{x}_j) + \\ 
  \alpha \sum_{\bm{x}_i,\bm{x}_j,y_i=y_j}\max\{{D(\bm{x}_i,\bm{x}_j)-\min_{y_i\ne y_k}{D(\bm{x}_i,\bm{x}_k)}+\rho,0}\}
  \end{aligned}
  \end{equation}
- In this way the problem is transformed to an optimization problem. Notice that equation 16 can be denoted as 
+ In this way the problem is transformed to an optimization problem. Notice that equation 9 can be denoted as 
  \begin{equation}
  D(\bm{x},\bm{y}) = (\bm{x} - \bm{y})^T\bm{M}(\bm{x} - \bm{y})\\ = Tr(\bm{M}\bm{X}_{i,j})
  \end{equation}
- where $\bm{X}_{i,j} = \bm{x}_i*\bm{x}_j^T$, and $Tr$ is to compute matrix trace. Therefore, equation 21 can be transformed as follow,
+ where $\bm{X}_{i,j} = \bm{x}_i*\bm{x}_j^T$, and $Tr$ is to compute matrix trace. Therefore, equation 14 can be transformed as follow,
  \begin{equation}
  \begin{aligned}
- \bm{G} = f(\bm{M}) = (1-\alpha)\sum_{y_i = y_j}Tr(\bm{M}\bm{X}_{i,j}) \\
+ f(\bm{M}) = (1-\alpha)\sum_{y_i = y_j}Tr(\bm{M}\bm{X}_{i,j}) \\
   + \alpha \sum_{y_i = y_j,y_i\ne y_k}\max\{Tr(\bm{M}\bm{X}_{i,j}) - Tr(\bm{M}\bm{X}_{i,k} )+ \rho,0\}
  \end{aligned}
  \end{equation}
@@ -814,12 +813,12 @@ Since re-identification is a problem of ranking, it is desired that the rank-1 d
  To minimize equation 23, the gradient descent method is used. The gradient respect to $\bm{M}$ is computed as
  \begin{equation}
  \begin{aligned}
- \frac{\partial f}{\partial \bm{M}} = (1-\alpha) \sum_{y_i = y_j} \bm{X}_{i,j} 
+ \bm{G} =\frac{\partial f}{\partial \bm{M}} = (1-\alpha) \sum_{y_i = y_j} \bm{X}_{i,j} \\
  + \alpha \sum_{y_i = y_j, y_i \ne y_k}(\bm{X}_{i,j} - \bm{X}_{i,k})
  \end{aligned}
  \end{equation}
  
- The iteration process can be summarized as in table [];
+ The iteration process is summarized as in Table 1;
  \begin{table}
  \centering
  \caption{Optimization algorithm on dimension reduced vectors }
@@ -886,7 +885,7 @@ since nB component can be computed by nR and nG, only those first two components
 %\end{table}
 %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{The influence of mean removal and $L_2$ normalization}
-In \cite{GOG}, mean removal and $L_2$  normalization is found to improve performance by $5.1\%$. The reason for this is mean removal and normalization can reduce the impact of extrema in a single descriptor. A comparison between performance of original descriptors and preprocessed descriptors is shown in Tables [2,3,4,5,6], all those datasets are tested by proposed metric. Original GOG means no mean removal and normalization. It shows that the mean removal and normalization has a slight improvement around 0.5\% on the performance on all five datasets. In \cite{GOG} the mean removal and normalization is adopted, to compare with results in this paper, the mean removal and normalization are also adopted in this experiment. 
+In \cite{GOG}, mean removal and $L_2$  normalization is found to improve performance by $5.1\%$. The reason for this is mean removal and normalization can reduce the impact of extrema in a single descriptor. A comparison between performance of original descriptors and preprocessed descriptors is shown in Tables [2, 3, 4, 5, 6], all those datasets are tested by proposed metric. Original GOG means no mean removal and normalization. It shows that the mean removal and normalization has a slight improvement around 0.5\% on the performance on all five datasets. In \cite{GOG} the mean removal and normalization is adopted, to compare with results in this paper, the mean removal and normalization are also adopted in this experiment. 
 
 \begin{table}[H]
 \setlength{\abovecaptionskip}{-0.1cm}
@@ -919,13 +918,13 @@ Preprocessed GOGfusion &48.32&76.90&87.78&91.93& 94.49\\
  \hline
 Terms  &1 &5 & 10 &15& 20\\
 \hline
-Original GOGrgb&56.15&83.79&90.08& 92.63&94.26 \\
+Original GOGrgb&56.11&83.77&90.10& 92.65&94.28 \\
 \hline
-Preprocessed GOGrgb &55.86&84.28&90.45& 93.09&94.65\\
+Preprocessed GOGrgb &55.91&84.24&90.41& 93.15&94.67\\
  \hline
-Original GOGfusion &57.00&84.55& 90.37& 92.82&94.69\\
+Original GOGfusion &57.10&84.65& 90.35& 92.88&94.65\\
 \hline
-Preprocessed GOGfusion &56.69&84.40& 90.53& 93.27&94.90\\
+Preprocessed GOGfusion &56.67&84.49& 90.51& 93.31&94.84\\
  \hline
  
 \end{tabular}
@@ -994,7 +993,7 @@ Preprocessed GOGfusion &23.92& 44.64& 54.88& 62.32& 66.40\\
 
 %--------------------------------------------------
 \subsection{Parameters setting of gradient descent iteration}
-In this experiment, there are a few parameters for the iteration computing including slack variable $\rho$, maximal iteration $T$, gradient step $\lambda$, the inter and intra class limitation factor $\alpha$ and the updating ratio $\beta$. Firstly the slack variable $\rho$ is initialized as 1 to ensure the minimum inter class distance is 1 larger than intra class distance at least. The step size of gradient updating $\lambda$ is initialized as 0.01. When target value $f$ increases,  $\lambda$ is scaled by a factor 0.5, and  $\lambda$ is scaled by 1.01 when target value $f$ decreases. To judge if target value converges, the thresh $\beta$ is defined as the ratio target value change versus previous target value, that is, $\beta = \frac{(f_{t+1}-f_t)}{f_t}$. According many experiment trials, when it satisfies $\beta = 10^{-5}$, the target value converges and the iteration is stopped. The maximal iteration times is set to 100 since the target value $f$ will converge in around 15 iterations.  The last parameter for the iteration is $\alpha$, to know the best value for $\alpha$, we tried 11 different values ranges from 0 to 1 with a step of 0.1, and find that the rank 1 and rank 5 scores reach maxima at interval $[0.7,0.8]$. Then another ten trials with alpha ranging from $[0.7,0.8]$ with a step of 0.01. The best $\alpha$ value should have as large top rank scores as possible and at last we find that the optimal value for $\alpha$ is 0.76.
+In this experiment, there are a few parameters for the iteration computing including slack variable $\rho$, maximal iteration $T$, gradient step $\lambda$, the inter and intraclass limitation factor $\alpha$ and the updating ratio $\beta$. Firstly the slack variable $\rho$ is initialized as 1 to ensure the minimum interclass distance is 1 larger than intraclass distance at least. The step size of gradient updating $\lambda$ is initialized as 0.01. When target value $f$ increases,  $\lambda$ is scaled by a factor 0.5, and  $\lambda$ is scaled by 1.01 when target value $f$ decreases. To judge if target value converges, the thresh $\beta$ is defined as the ratio target value change versus previous target value, that is, $\beta = \frac{(f_{t+1}-f_t)}{f_t}$. According many experiment trials, when it satisfies $\beta = 10^{-5}$, the target value converges and the iteration is stopped. The maximal iteration times is set to 100 since the target value $f$ will converge in around 15 iterations.  The last parameter for the iteration is $\alpha$, to know the best value for $\alpha$, we tried 11 different values ranges from 0 to 1 with a step of 0.1, and find that the rank 1 and rank 5 scores reach maxima at interval $[0.7,0.8]$. Then another ten trials with alpha ranging from $[0.7,0.8]$ with a step of 0.01. The best $\alpha$ value should have as large top rank scores as possible and at last we find that the optimal value for $\alpha$ is 0.76.
 
 %%-------------------------------------------------
 %\begin{figure}
@@ -1030,7 +1029,7 @@ Values &0.76&$10^{-5}$&0.01&100&1\\
 %\textbf{Performance measuring} The cumulative matching curve is used to measure the descriptor performance. The score means the probability that the right match is within the top $n$ samples. A perfect CMC curve is expected to have a high rank-1 value and reaches 1 as fast as possible.
 \subsection{Performance analysis}
 In this paper, we compare proposed metric with other state-of-the-art metrics including NFST \cite{NFST}, XQDA \cite{LOMO}. NFST is a metric which learn a null space for descriptors so that the the same class descriptors will be projected to  
-a single point to minimize within class scatter matrix while different classes are projected to different points. This metric is a good solution to small sample problems in person re-identification. XQDA is quite similar with many other metrics, which learns a projection matrix $W$ and then a Mahanalobis SPD matrix $M$ is learned in the subspace. Those two metric are proved to have state-of-the-art performance compared with many other methods. The GOGrgb in all forms stands for the hierarchical gaussian descriptor in RGB color space while GOGfusion stands for the one in four different color spaces \{RGB, Lab, HSV, nRnG\}.\\
+a single point to minimize intraclass scatter matrix while different classes are projected to different points. This metric is a good solution to small sample problems in person re-identification. XQDA is quite similar with many other metrics, which learns a projection matrix $W$ and then a Mahanalobis SPD matrix $M$ is learned in the subspace. Those two metric are proved to have state-of-the-art performance compared with many other methods. The GOGrgb in all forms stands for the hierarchical gaussian descriptor in RGB color space while GOGfusion stands for the one in four different color spaces \{RGB, Lab, HSV, nRnG\}.\\
 \textbf{VIPeR} A comparison form is given in Table 8. Some of recent results are also included in this form. We can find that the rank scores are better than those of NFST and XQDA in terms of both GOGrgb and GOGfusion. More specifically, the rank 1, rank 5, rank 10, rank 15 and rank 20 scores of proposed metric learning are 0.76\%, 0.92\%, 1.39\%, 1.08\%, 1.52\% higher than those of GOGrgb+XQDA, and the rank 1, rank 5, rank 10, rank 15 and rank 20 GOGfusion scores of proposed metric learning are 0.35\%, -0.54\%, 0.98\%, 0.66\%, 0.79\% higher than GOGfusion + XQDA respectively. Also we can see that the proposed metric learning has a better performance than NFST. \newline 
 %-----------------------------------------------------------------------VIPeR
 \begin{table}[H]
@@ -1062,7 +1061,7 @@ GOGfusion+Proposed&48.32&76.90&87.78&91.93&94.49\\ %48.16%, 76.65%, 87.66%, 91.9
 %--------------------------------------------------------------
 \end{tabular}
 \end{table}
-\textbf{CUHK1} We can find that the rank 1, rank5, rank 10, rank 15, rank 20 score of GOGrgb combined with proposed metric are 5.35\%, 4.22\%,3.35\%,2.1\%,1.44\% higher than XQDA, and 0.26\%,1.26\%,1.38\%,1.11\%, 1.09\% than NFST.  Also the  rank 1, rank5, rank 10, rank 15, rank 20 score of GOGfusion combined with proposed metric are 4.59\%, 2.55\%, 0.72\%, 1.29\%, 0.89\% higher than GOGfusion combined with XQDA, and 0.4\%, 0.74\%, 0.6\%, 1.05\%, 1.2\% than GOGfusion combined with NFST. 
+\textbf{CUHK1} We can find that the rank 1, rank5, rank 10, rank 15, rank 20 score of GOGrgb combined with proposed metric are 5.4\%, 4.18\%,3.31\%,2.16\%,1.46\% higher than XQDA, and 0.31\%,1.22\%,1.34\%,1.17\%, 1.11\% than NFST.  Also the  rank 1, rank5, rank 10, rank 15, rank 20 score of GOGfusion combined with proposed metric are 4.57\%, 2.64\%, 0.70\%, 1.33\%, 0.83\% higher than GOGfusion combined with XQDA, and 0.41\%, 0.83\%, 0.88\%, 1.09\%, 1.14\% than GOGfusion combined with NFST. 
 
 \begin{figure}
 \begin{raggedleft}
@@ -1089,7 +1088,7 @@ GOGrgb+XQDA&50.51 &80.06 &87.10 &90.99&93.21 \\
 \hline
 %GOGrgb+KLFDA&55.66&84.32&90.66&93.07& 94.63\\
 %\hline
-GOGrgb+Proposed&55.86&84.28&90.45&93.09&94.65\\  %55.86%, 84.28%, 90.45%, 93.09%, 94.65%
+GOGrgb+Proposed&55.91&84.24&90.41& 93.15&94.67\\  %55.86%, 84.28%, 90.45%, 93.09%, 94.65% 
 \hline
 GOGfusion+NFST&56.26 &83.66 &89.63 &92.22&93.70 \\ 
 \hline
@@ -1097,7 +1096,7 @@ GOGfusion+XQDA&52.10 &81.85&88.81 &91.98&94.01\\
 \hline
 %GOGfusion+KLFDA & 56.60&84.67&90.41&93.13&94.81\\
 %\hline
-GOGfusion+Proposed&56.69&84.40&90.53& 93.27&94.90\\
+GOGfusion+Proposed&56.67&84.49& 90.51& 93.31&94.84\\
 
 \hline
 
@@ -1234,6 +1233,8 @@ GOGfusion+Proposed&23.92&44.64&54.88&62.32&66.40\\ %23.84%, 44.64%, 55.04%, 62.2
 \end{figure}
 
 \textbf{GRID} We can see that the rank 1 score of proposed metric are 0.24\% higher than XQDA and 0.88\% higher than NFST in terms of GOGfusion, but XQDA outperforms proposed metric on rank 5, rank 10, rank 15 and rank 20 scores. Besides, proposed metric outperforms NFST on rank 5, rank 10, rank 15 scores.
+
+
 %------------------------------------------------------------------------
 
 \section{Conclusion}
