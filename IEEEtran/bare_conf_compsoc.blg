@@ -26,52 +26,48 @@ Warning--empty journal in KernelVersionMetrics
 Warning--empty journal in NFST
 Warning--empty journal in ITML
 Warning--empty journal in MetricSurvey
-Warning--empty journal in ImportantFeat
-Warning--empty journal in MetricEnsembles
-Warning--empty journal in SemanticREID
-Warning--empty journal in PersonNetCNN
-Warning--empty journal in RecurrentCNN
+Warning--empty journal in LPP
 
 Done.
-You've used 22 entries,
+You've used 17 entries,
             4039 wiz_defined-function locations,
-            924 strings with 10471 characters,
-and the built_in function-call counts, 15493 in all, are:
-= -- 1151
-> -- 410
-< -- 128
-+ -- 207
-- -- 71
-* -- 757
-:= -- 2256
-add.period$ -- 48
-call.type$ -- 22
-change.case$ -- 22
-chr.to.int$ -- 321
-cite$ -- 42
-duplicate$ -- 1137
-empty$ -- 1281
-format.name$ -- 90
-if$ -- 3523
+            902 strings with 9539 characters,
+and the built_in function-call counts, 11783 in all, are:
+= -- 866
+> -- 315
+< -- 93
++ -- 157
+- -- 56
+* -- 577
+:= -- 1726
+add.period$ -- 37
+call.type$ -- 17
+change.case$ -- 17
+chr.to.int$ -- 231
+cite$ -- 33
+duplicate$ -- 869
+empty$ -- 986
+format.name$ -- 70
+if$ -- 2673
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 198
-newline$ -- 89
-num.names$ -- 22
-pop$ -- 546
+int.to.str$ -- 17
+missing$ -- 154
+newline$ -- 74
+num.names$ -- 17
+pop$ -- 430
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1099
+skip$ -- 834
 stack$ -- 0
-substring$ -- 760
-swap$ -- 891
-text.length$ -- 21
+substring$ -- 549
+swap$ -- 670
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 22
-warning$ -- 20
-while$ -- 106
-width$ -- 24
-write$ -- 199
-(There were 20 warnings)
+type$ -- 17
+warning$ -- 16
+while$ -- 81
+width$ -- 19
+write$ -- 158
+(There were 16 warnings)

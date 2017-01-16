@@ -88,31 +88,8 @@ J.~V. Davis, B.~Kulis, P.~Jain, S.~Sra, and I.~S. Dhillon,
 L.~Yang, ``{Distance Metric Learning: A Comprehensive Survey},'' pp. 1--51, May
   2006.
 
-\bibitem{ImportantFeat}
-S.~G. C. C.~L. Chunxiao~Liu and X.~Lin, ``{LNCS 7583 - Person
-  Re-identification: What Features Are Important?}'' pp. 1--11, Nov. 2015.
-
-\bibitem{MetricEnsembles}
-S.~Paisitkriangkrai, C.~Shen, and A.~van~den Hengel, ``{Learning to Rank in
-  Person Re-Identification With Metric Ensembles},'' pp. 1--10, Jan. 2015.
-
-\bibitem{novelEMD}
-P.~Li, Q.~Wang, and L.~Zhang, ``{A Novel Earth Mover's Distance Methodology for
-  Image Matching with Gaussian Mixture Models},'' in \emph{2013 IEEE
-  International Conference on Computer Vision (ICCV)}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, Dec. 2013, pp. 1689--1696.
-
-\bibitem{SemanticREID}
-Z.~Shi, T.~M. Hospedales, and T.~Xiang, ``{Transferring a Semantic
-  Representation for Person Re-Identification and Search},'' pp. 1--10, Apr.
-  2015.
-
-\bibitem{PersonNetCNN}
-L.~Wu, C.~Shen, and A.~van~den Hengel, ``{PersonNet: Person Re-identification
-  with Deep Convolutional Neural Networks},'' pp. 1--7, Jun. 2016.
-
-\bibitem{RecurrentCNN}
-N.~McLaughlin, J.~M. del Rincon, and P.~Miller, ``{Recurrent Convolutional
-  Network for Video-Based Person Re-Identification},'' pp. 1--10, Jul. 2016.
+\bibitem{LPP}
+X.~He and P.~Niyogi, ``{Locality Preserving Projections},'' pp. 1--8, Nov.
+  2010.
 
 \end{thebibliography}

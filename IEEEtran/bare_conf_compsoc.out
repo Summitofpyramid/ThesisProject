@@ -1,12 +1,9 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Related work}{}% 2
-\BOOKMARK [1][-]{section.3}{Dimension reduction based on kernel local fisher discriminant analysis }{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{Background of kernel LFDA}{section.3}% 4
-\BOOKMARK [2][-]{subsection.3.2}{Kernel LFDA}{section.3}% 5
-\BOOKMARK [1][-]{section.4}{Metric learning on dimension reduced space by gradient descent method}{}% 6
-\BOOKMARK [1][-]{section.5}{Experiment}{}% 7
-\BOOKMARK [2][-]{subsection.5.1}{Datasets and evaluation settings}{section.5}% 8
-\BOOKMARK [2][-]{subsection.5.2}{The influence of mean removal and L2 normalization}{section.5}% 9
-\BOOKMARK [2][-]{subsection.5.3}{Parameters setting of gradient descent iteration}{section.5}% 10
-\BOOKMARK [2][-]{subsection.5.4}{Performance analysis}{section.5}% 11
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 12
+\BOOKMARK [1][-]{section.2}{Dimension reduction based on kernel local fisher discriminant analysis }{}% 2
+\BOOKMARK [1][-]{section.3}{Metric learning on dimension reduced space by gradient descent method}{}% 3
+\BOOKMARK [1][-]{section.4}{Experiment}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Datasets and evaluation settings}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{The influence of mean removal and L2 normalization}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Parameters setting of gradient descent iteration}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.4}{Performance analysis}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 9
