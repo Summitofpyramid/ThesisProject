@@ -21,35 +21,40 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{KLFDA}
-M.~Sugiyama, ``{Local Fisher Discriminant Analysis for Supervised
-  Dimensionality Reduction},'' Dec. 2016.
-
 \bibitem{TDL}
 J.~You, A.~Wu, X.~Li, and W.-S. Zheng, ``{Top-push Video-based Person
-  Re-identification},'' pp. 1--9, Jan. 2017.
+  Re-identification},'' in \emph{Proceedings of the IEEE Conference on Computer
+  Vision and Pattern Recognition}, Jan. 2016, pp. 1--9.
 
 \bibitem{LOMO}
 S.~Liao, Y.~Hu, X.~Zhu, and S.~Z. Li, ``{Person Re-identification by Local
-  Maximal Occurrence Representation and Metric Learning}.''\hskip 1em plus
-  0.5em minus 0.4em\relax CVPR, Apr. 2015, pp. 1--10.
+  Maximal Occurrence Representation and Metric Learning},'' in
+  \emph{Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition}, Apr. 2015, pp. 1--10.
 
 \bibitem{GOG}
 T.~Matsukawa, T.~Okabe, E.~Suzuki, and Y.~Sato, ``{Hierarchical Gaussian
-  Descriptor for Person Re-Identification},'' Dec. 2016, pp. 1--10.
+  Descriptor for Person Re-Identification},'' in \emph{Proceedings of the IEEE
+  Conference on Computer Vision and Pattern Recognition}, Dec. 2016, pp.
+  1363--1372.
 
 \bibitem{RegionCovariance}
 O.~Tuzel, F.~Porikli, and P.~Meer, ``{Region Covariance: A Fast Descriptor for
-  Detection and Classification},'' Dec. 2016, pp. 1--14.
+  Detection and Classification},'' in \emph{European conference on computer
+  vision}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, Dec. 2016, pp.
+  1--14.
 
 \bibitem{SDALF}
 M.~Farenzena, L.~Bazzani, A.~Perina, V.~Murino, and M.~Cristani, ``{Person
-  Re-Identification by Symmetry-Driven Accumulation of Local Features}.''\hskip
-  1em plus 0.5em minus 0.4em\relax CVPR, Mar. 2016, pp. 1--8.
+  Re-Identification by Symmetry-Driven Accumulation of Local Features},'' in
+  \emph{Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference
+  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, Mar. 2016, pp. 1--8.
 
 \bibitem{KISSME}
 M.~Kostinger, M.~Hirzer, P.~Wohlhart, P.~M. Roth, and H.~Bischof, ``{Large
-  Scale Metric Learning from Equivalence Constraints},'' pp. 1--8, Apr. 2012.
+  Scale Metric Learning from Equivalence Constraints},'' in \emph{Computer
+  Vision and Pattern Recognition (CVPR), 2012 IEEE Conference on}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, Apr. 2012, pp. 2288--2295.
 
 \bibitem{LFDA}
 S.~Pedagadi, J.~Orwell, Velastin, Sergio, and B.~Boghos, ``Local fisher
@@ -59,37 +64,43 @@ S.~Pedagadi, J.~Orwell, Velastin, Sergio, and B.~Boghos, ``Local fisher
 
 \bibitem{PCCA}
 A.~Mignon and F.~Jurie, ``{PCCA: A New Approach for Distance Learning from
-  Sparse Pairwise Constraints},'' pp. 1--7, Apr. 2012.
+  Sparse Pairwise Constraints},'' in \emph{Computer Vision and Pattern
+  Recognition (CVPR), 2012 IEEE Conference on}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, Apr. 2012, pp. 1--7.
 
 \bibitem{PRDC}
 W.~Zheng, S.~Gong, and T.~Xiang, ``{Person Re-identification by Probabilistic
-  Relative Distance Comparison},'' pp. 1--8, Nov. 2016.
+  Relative Distance Comparison},'' in \emph{Computer vision and pattern
+  recognition (CVPR), 2011 IEEE conference on}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, Nov. 2016, pp. 1--8.
 
 \bibitem{LMNN}
 Weinberger, K.~Q, Saul, and L.~K, ``{Distance Metric Learning for Large Margin
-  Nearest Neighbor Classification},'' pp. 1--38, Feb. 2009.
+  Nearest Neighbor Classification},'' \emph{Journal of Machine Learning
+  Research}, vol.~10, pp. 207--244, Feb. 2009.
 
 \bibitem{KCCA}
 M.~Welling, ``{Kernel Canonical Correlation Analysis},'' pp. 1--3, Mar. 2005.
 
 \bibitem{KernelVersionMetrics}
 F.~Xiong, M.~Gou, O.~Camps, and S.~Mario, ``{Person Re-Identification using
-  Kernel-based Metric Learning Methods},'' pp. 1--16, Jul. 2014.
+  Kernel-based Metric Learning Methods},'' in \emph{European conference on
+  computer vision}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, Jul. 2014,
+  pp. 1--16.
 
 \bibitem{NFST}
 L.~Zhang, T.~Xiang, and S.~Gong, ``{Learning a Discriminative Null Space for
-  Person Re-identification},'' pp. 1--10, Mar. 2016.
+  Person Re-identification},'' in \emph{Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition}, Mar. 2016, pp. 1239--1248.
 
 \bibitem{ITML}
 J.~V. Davis, B.~Kulis, P.~Jain, S.~Sra, and I.~S. Dhillon,
-  ``Information-theoretic metric learning,'' pp. 1--8, Jun. 2007.
-
-\bibitem{MetricSurvey}
-L.~Yang, ``{Distance Metric Learning: A Comprehensive Survey},'' pp. 1--51, May
-  2006.
+  ``Information-theoretic metric learning,'' in \emph{Proceedings of the 24th
+  international conference on Machine learning}.\hskip 1em plus 0.5em minus
+  0.4em\relax ACM, Jun. 2007, pp. 209--216.
 
 \bibitem{LPP}
-X.~He and P.~Niyogi, ``{Locality Preserving Projections},'' pp. 1--8, Nov.
-  2010.
+X.~He and P.~Niyogi, ``{Locality Preserving Projections},'' in \emph{NIPS},
+  Nov. 2003, pp. 1--8.
 
 \end{thebibliography}

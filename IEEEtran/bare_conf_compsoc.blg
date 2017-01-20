@@ -8,66 +8,53 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: citation.bib
+Warning--I didn't find a database entry for "KLFDA"
+Warning--I didn't find a database entry for "MetricSurvey"
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--empty booktitle in KLFDA
-Warning--empty journal in TDL
-Warning--empty booktitle in LOMO
-Warning--empty booktitle in GOG
-Warning--empty booktitle in RegionCovariance
-Warning--empty booktitle in SDALF
-Warning--empty journal in KISSME
-Warning--empty journal in PCCA
-Warning--empty journal in PRDC
-Warning--empty journal in LMNN
 Warning--empty journal in KCCA
-Warning--empty journal in KernelVersionMetrics
-Warning--empty journal in NFST
-Warning--empty journal in ITML
-Warning--empty journal in MetricSurvey
-Warning--empty journal in LPP
 
 Done.
-You've used 17 entries,
+You've used 15 entries,
             4039 wiz_defined-function locations,
-            902 strings with 9539 characters,
-and the built_in function-call counts, 11783 in all, are:
-= -- 866
-> -- 315
-< -- 93
-+ -- 157
-- -- 56
-* -- 577
-:= -- 1726
-add.period$ -- 37
-call.type$ -- 17
-change.case$ -- 17
-chr.to.int$ -- 231
-cite$ -- 33
-duplicate$ -- 869
-empty$ -- 986
-format.name$ -- 70
-if$ -- 2673
+            908 strings with 9859 characters,
+and the built_in function-call counts, 13013 in all, are:
+= -- 964
+> -- 325
+< -- 111
++ -- 173
+- -- 54
+* -- 645
+:= -- 1797
+add.period$ -- 38
+call.type$ -- 15
+change.case$ -- 15
+chr.to.int$ -- 285
+cite$ -- 16
+duplicate$ -- 925
+empty$ -- 1162
+format.name$ -- 68
+if$ -- 3047
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 154
-newline$ -- 74
-num.names$ -- 17
-pop$ -- 430
+int.to.str$ -- 15
+missing$ -- 170
+newline$ -- 68
+num.names$ -- 15
+pop$ -- 445
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 834
+skip$ -- 949
 stack$ -- 0
-substring$ -- 549
-swap$ -- 670
+substring$ -- 677
+swap$ -- 745
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 17
-warning$ -- 16
-while$ -- 81
-width$ -- 19
-write$ -- 158
-(There were 16 warnings)
+type$ -- 15
+warning$ -- 1
+while$ -- 75
+width$ -- 17
+write$ -- 157
+(There were 3 warnings)

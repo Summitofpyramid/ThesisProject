@@ -410,7 +410,7 @@ qiangsenhe@gmail.com}
 % in the abstract
 \begin{abstract}
 
-In person re-identification (Re-ID) it's very important to choose robust descriptors and metric learning to improve accuracy. Mahanalobis distance based metric learning is a popular method for metric learning. However, since directly extracted descriptors usually have high dimension (thousands or more), it's intractable to learn a high dimensional semi-definite positive (SPD) matrix without dimension reduction.  Many subspace learning metrics have been proposed to learn a subspace while preserving those discriminative information as much as possible. However, few work has been done to probe the metric learning on those subspace after the first-time metric learning. In this paper the KLFDA \cite{KLFDA} is used to reduce dimension given that kernelization method can greatly improve re-identification performance for nonlinearity. Then a Mahanalobis distance metric is learned on lower dimensional descriptors based on the limitation that the intraclass distance is at least 1 unit smaller than the minimum interclass distance. By comparing the intraclass distance only with the interclass distance the computation complexity is reduced. This method turns to have excellent performance compared with other advanced metric learning.
+In person re-identification (Re-ID) it's very important to choose robust descriptors and metric learning to improve accuracy. Mahanalobis distance based metric learning is a popular method for metric learning. However, directly extracted descriptors usually have high dimensionality (thousands or more), it's intractable to learn a high dimensional semi-definite positive (SPD) matrix without dimension reduction.  Many metric learning methods have been proposed to learn a subspace while preserving those discriminative information. However, few work has been done to probe the metric learning on those subspace after the first-time metric learning. In this paper the kernel local fisher discriminant analysis (KLFDA) \cite{KLFDA} is used to reduce dimension given that kernelization method can greatly improve Re-ID performance for nonlinearity. Then a Mahanalobis distance metric is learned on lower dimensional descriptors based on the limitation that the intraclass distance is at least one unit smaller than the minimum interclass distance. By comparing the intraclass distance only with the minimum interclass distance the computation complexity is reduced. This method turns to have excellent performance compared with other advanced metric learning methods.
 
 
 %In this paper a new descriptor based on hierarchical gaussian distribution of pixel feature is proposed.
@@ -443,14 +443,14 @@ In person re-identification (Re-ID) it's very important to choose robust descrip
 
 \section{Introduction}
 % no \IEEEPARstart
-Person re-identification (Re-ID) has received increasing attention in recent years. This task is very challenging caused by many factors like low image resolution, occlusion, background noise and different camera color response, etc. In the single shot Re-ID problem, since only one image is provided in each camera for each person, it might be quite confusing when different people have similar pose or clothes. Also, in the multi-shots case, there might exist quite much difference even in different frames of the same person for different pose and illuminations \cite{TDL}. Therefore, good descriptors are supposed to be robust to illumination change and occlusions.
+Person re-identification (Re-ID) has received increasing attention in recent years. Re-ID is very challenging caused by many factors like low image resolution, occlusion, background noise and different camera color response, etc. In the single shot Re-ID problem, since only one image is provided in each camera for each person, it might be confusing when different people have similar pose or clothes. Also, in the multi-shots case, there might exist much difference even in different frames of the same person for different pose and illuminations \cite{TDL}. Therefore, good descriptors are supposed to be robust to illumination change and occlusions.
 
 % -------the descriptor part
-Most previous work try to find better feature representation \cite{LOMO, GOG, RegionCovariance, SDALF} and metric learning \cite{KISSME, LFDA, PCCA, TDL, PRDC, LMNN, KLFDA, KCCA, KernelVersionMetrics, NFST, ITML}, or a subspace learning. Most descriptors are color and texture based descriptors. Distance metric learning has been fully studied in \cite{MetricSurvey}, most existing metric learning are based on Mahanalobis distance to learn a metric which outputs small intraclass distance and large interclass distance. Though much progress has been made, there still exists some challenges caused by classical problems like small sample problem (SSS) and computation complexity on large datasets. \\
+Most previous work try to find better feature representation \cite{LOMO, GOG, RegionCovariance, SDALF} or metric learning \cite{KISSME, LFDA, PCCA, TDL, PRDC, LMNN, KLFDA, KCCA, KernelVersionMetrics, NFST, ITML}, and a subspace learning. Most descriptors are color and texture based descriptors. Distance metric learning has been fully studied in \cite{MetricSurvey} and most existing metric learning are based on Mahanalobis distance to learn a metric which has small intraclass distance and large interclass distance. Though much progress has been made, there still exists some challenges caused by classical problems like small sample problem (SSS) and high computation complexity on large datasets. \\
 %Metric learning 
 %\indent Among all those metric learning methods, fisher discriminant analysis (FDA) proves to be one of advanced metrics to improve Re-ID performance. It tries to maximize the ration of interclass scatter matrix versus intraclass scatter distance and this problem is transformed as a eigenvalue decomposition problem. Local fisher discriminant analysis combines locality preserving projection (LPP) with FDA to exploit locality of sample points. Besides, kernel method \cite{KernelVersionMetrics} has been shown to improve Re-ID performance since it exploits the nonlinearity of data.\\
-\indent For descriptors with high dimension ($d\ge1000$), it's hard to directly learn a Mahanalobis distance matrix $M$ for the small sample size $n (n<<d)$. A popular method is to use principal component analysis (PCA) to reduce dimension. PCA is a very popular dimension reducing method, but one problem is  PCA doesn't consider the information between classes thus many discriminant information will be lost after dimension reduction. In this paper kernel local fisher discriminant Analysis (KLFDA) \cite{KLFDA} is used to reduce dimension, this supervised dimension reduction combines the linear discriminant analysis and locality preserving projection. Moreover, the kernelization version of LFDA proves to improve performance and reduce computation cost. However, the metric learning on dimension reduced vectors by KLFDA hasn't been fully probed.\\
-\indent The contributions of this paper are as follows, (1) KLFDA and metric learning are combined together to improve Re-ID performance. Previous works mainly use KLFDA as a subspace learning method and Euclidean distance to measure the similarity after dimension reduction. The Mahanalobis distance metric learning on the projected space by KLFDA has not been fully probed. In this paper, metric learning is performed by an iterative computation. (2) Inspired by \cite{TDL}, this work proposes to learn a Mahanalobis distance matrix based on the limitation that intraclass distance is at least 1 unit smaller than the minimum interclass distance. Therefore, metric learning in the lower dimension space is transformed into an optimization problem. It's important to only compare the intraclass distance with the minimum interclass distance in each iteration to reduce computation complexity, because there is no need to compute every possible possible positive and negative pairs. (3) Extensive experiments are performed on VIPeR, CUHK01, prid\_450s and GRID dataset. It proves the proposed work has advanced performance on those datasets.
+\indent For descriptors with high dimensionality, it's hard to directly learn a Mahanalobis distance matrix $M$ for the small sample size $n (n<<d)$. A popular method is to use principal component analysis (PCA) to reduce dimension. PCA is very popular for dimensionality reducing, but one problem is  PCA doesn't consider the discriminant information between different classes thus many discriminant information will be lost after dimensionality reduction. In this paper kernel local fisher discriminant analysis (KLFDA) \cite{KLFDA} is used to reduce dimensionality, this supervised dimension reduction combines the linear discriminant analysis and locality preserving projection. Moreover, the kernelization version of LFDA proves to improve performance and reduce computation cost. However, the metric learning on dimensionality reduced vectors by KLFDA hasn't been fully probed.\\
+\indent The contributions of this paper are as follows. (1) KLFDA and metric learning are combined together to improve Re-ID performance. Previous works mainly use KLFDA as a subspace learning method and Euclidean distance to measure the similarity after dimension reduction. The Mahanalobis distance metric learning on the projected space by KLFDA has not been fully studied. In this paper, metric learning is performed by an iterative computation. (2) Inspired by \cite{TDL}, in this work we propose to learn a Mahanalobis distance matrix based on the limitation that intraclass distance is at least one unit smaller than the minimum interclass distance. Therefore, metric learning in the lower dimensional space is transformed into an optimization problem. It's important to compare the intraclass distance only with the minimum interclass distance in each iteration to reduce computation complexity because there is no need to compute every possible possible positive and negative pairs. (3) Extensive experiments are performed on VIPeR, CUHK01, prid\_450s and GRID dataset. It proves the proposed work has advanced performance on those datasets.
 %There are a few differences between LDA and PCA, LDA is a supervised method while PCA is unsupervised, and LDA is more used independently while PCA is more used as a preprocessing method. The advantage of LDA is it distinguishes different classes by maximize the ratio of inter-class scatter matrix versus intra-class scatter matrix. 
  %The local fisher discriminant analysis (LDFA) combines LDA and locality projection preserving (LPP) to exploit the locality of sample points.  
 
@@ -688,7 +688,7 @@ Most previous work try to find better feature representation \cite{LOMO, GOG, Re
 %The original descriptor has a high dimension and dimensionality disaster will be brought about if the original high-dimensional descriptor is used to learn a metric matrix. One popular method is to reduce the high dimension then learn a metric matrix in the lower dimension data. Among those methods to reduce dimension, principal component analysis is often used. However, PCA is a unsupervised dimension reduction and may have a low performance for those reasons, $(1)$, PCA is to maximize the variance of dimension reduced data, and as a unsupervised method it doesn't has a full consideration of the the relation of between and within classes, it is very likely that the descriptors of different classes can be mixed up in the dimension reduction; $(2)$ PCA may suffer from the small sample size problem. In some Re-ID datasets, there may be two or less images for each pedestrian in each viewpoint (like VIPeR), if the dimension of descriptor is much bigger than sample size, much information can be lost with PCA.
 
 %In this paper the kernel local fisher discriminant analysis is adopted. This method is a combination of Fisher discriminant analysis[ ] and and the locality preserving projection in [LPP ]. 
-KLFDA is the kernel version of local fisher discriminant analysis (LFDA) and it's a supervised method. Here a brief review of LFDA is given. For a set of $d$-dimensional observations $\bm{x}_i$, where $i\in\{1,2,\cdots,n\}$, the label $l_i\in\{1,2,\cdots,l\}$. Two matrix are defined as the intraclass scatter matrix $\bm{S}^{(w)}$ and between class matrix
+KLFDA is the kernel version of local fisher discriminant analysis (LFDA). Here a brief review of LFDA is given. For a set of $d$-dimensional observations $\bm{x}_i$, where $i\in\{1,2,\cdots,n\}$, the label $l_i\in\{1,2,\cdots,l\}$. Two matrix are defined as the intraclass scatter matrix $\bm{S}^{(w)}$ and interclass matrix
 $\bm{S}^{(b)}$, 
 \begin{equation}
 \begin{aligned}
@@ -704,13 +704,13 @@ where the $\bm{\mu}_i$ is the mean of samples whose label is $i$, and $\bm{\mu}$
 \end{aligned}
 \end{equation}
 
-The Fisher Discriminant Analysis transform matrix $\bm{T}$ can be represented as 
+The fisher discriminant analysis transform matrix $\bm{T}$ can be represented as 
 \begin{equation}
 \bm{T} = \arg\max \frac{\bm{T}^T\bm{S}^{(b)}\bm{T}}{\bm{T}^T\bm{S}^{(w)}\bm{T}}
 \end{equation}
-Fisher discriminant analysis tries to minimize the intraclass scatter matrix while maximize the interclass scatter matrix, so $\bm{T}$ is computed by the eigenvalue decomposition. $\bm{T}$ can be represented as the set of all the corresponding eigenvectors, as $ \bm{T} = (\bm{\phi}_1,\bm{\phi}_2,\cdots,\bm{\phi}_k)$.
+Fisher discriminant analysis minimizes the intraclass scatter matrix while maximize the interclass scatter matrix. $\bm{T}$ is computed by the eigenvalue decomposition and $\bm{T}$ can be represented as the set of all the corresponding eigenvectors, as $ \bm{T} = (\bm{\phi}_1,\bm{\phi}_2,\cdots,\bm{\phi}_k)$.
 
-FDA has a form similar with signal and noise ratio, however, the FDA dimension reduction may have poor performance for it doesn't consider the locality of data. In \cite{LPP} locality preserving projection (LPP) is proposed to exploit data locality. In LPP an affinity matrix is created to record the affinity of sample $\bm{x}_i$ and $\bm{x}_j$,  typically the range of elements in $\bm{A}_{i,j}$ is $[0,1]$. There are many manners to define a $n \times n$ affinity matrix $\bm{A}$, usually the two sample points with a smaller distance measured by Euclidean or other distance has a higher affinity value than those with bigger distance value. One of them is if  $\bm{x}_i$ is within k-nearest neighbours of $\bm{x}_j$ then $\bm{A}_{i,j} = 1$ otherwise  $\bm{A}_{i,j} = 0$.  LFDA combines FDA and LPP and have a more strong performance. The key in LFDA is it assigns weights to elements in $\bm{A}^{(w)}$ and $\bm{A}^{(b)}$, so that,
+FDA has a similar form with signal and noise ratio. However, the FDA dimension reduction has poor performance for it doesn't consider the locality of data when dealing with multimodality. In \cite{LPP} locality preserving projection (LPP) is proposed to exploit data locality. In LPP an affinity matrix is created to record the affinity of sample $\bm{x}_i$ and $\bm{x}_j$.  Typically the range of elements in $\bm{A}_{i,j}$ is $[0,1]$. There are many manners to define a $n \times n$ affinity matrix $\bm{A}$. Usually the two sample points with a smaller distance measured by Euclidean or other distance has a larger affinity value than those with bigger distance value. One of them is if  $\bm{x}_i$ is within k-nearest neighbours of $\bm{x}_j$ then $\bm{A}_{i,j} = 1$ otherwise  $\bm{A}_{i,j} = 0$.  LFDA combines FDA and LPP and has a more strong performance. The key in LFDA is it assigns weights to elements in $\bm{A}^{(w)}$ and $\bm{A}^{(b)}$, so that,
 
 %Another diagonal matrix $D$ can be defined that each diagonal element is the sum of corresponding column in $\bm{A}$,
 %\begin{equation}
@@ -735,7 +735,7 @@ FDA has a form similar with signal and noise ratio, however, the FDA dimension r
 
 \begin{equation}
 \begin{aligned}
-\bm{S}^{(w)} = \frac{1}{2}\sum _{i=1}^l\sum_{j:l_j = i} \bm{A}_{i,j}^w (\bm{x}_j - \bm{\mu}_i)(\bm{x}_j - \bm{\mu}_i)^T \\
+\bm{S}^{(w)} = \frac{1}{2}\sum _{i=1}^l\sum_{j:y_j = i} \bm{A}_{i,j}^w (\bm{x}_j - \bm{\mu}_i)(\bm{x}_j - \bm{\mu}_i)^T \\
 \bm{S}^{(b)} =  \frac{1}{2}\sum _{i=1}^l \bm{A}_{i,j}^b(\bm{\mu}_i - \bm{\mu})(\bm{\mu}_i - \bm{\mu})^T
 \end{aligned}
 \end{equation}
@@ -759,12 +759,12 @@ where
 \end{equation}
 where $y_i$ is the class label of sample point $\bm{x}_i$.
   
-When applying the LFDA to original high dimensional descriptors, one problem is the computation cost. Suppose the vector data has a dimension of $d$, LFDA has to solve the eigenvalue a matrix with dimension $d\times d$. In some descriptors the $d$ could be more than 20000 and thus the cost is not trivial. 
+When applying the LFDA to original high dimensional descriptors, one problem is the computation cost. Suppose the vector data has dimension of $d$, we have to solve the eigenvalue a matrix with dimension $d\times d$. In some descriptors the $d$ could be more than 20000 and thus the cost is not trivial. 
  
  % klfda 
 % \subsection{Kernel LFDA}
  
- Kernelization is proved to greatly improve performance since the non-linearity is exploited. In \cite{KernelVersionMetrics} it has been demonstrated that kernelization improves the performance of many dimension reduction and metric learning. Kernelization is a projection from low dimension to high dimension, which may make classification and clustering much more accurate.  The difference of kernel version LFDA is that the interclass and intraclass scatter matrix will be transformed into kernel space and the eigenvalue decomposition will be operated on kernel space.  Suppose a set of sample points $\bm{x}_i, i\in\{1,2,\cdots, n\} $, can be mapped to a implicit higher feature space by a function $\phi(\bm{x}_i)$. It has been proved that kernel function can be implicit and only the inner product of mapped vectors $\phi(\bm{x}_i)$ and $\phi(\bm{x}_j)$ need to be known. The kernel trick is proposed to solve this problem by defining a function $k(\bm{x}_i,\bm{x}_j) = <\phi(\bm{x}_i),\phi(\bm{x}_j)>$, the $< \cdot >$ is the inner product. There are many kinds of kernel like linear kernel, polynomial kernel and radial basis function (RBF) kernel. In this paper the RBF kernel is adopted. A RBF kernel is defined as $k_{RBF}(\bm{x}_i,\bm{x}_j) = \exp^{(-\gamma||\bm{x}_i-\bm{x}_j||^2)}$. 
+ Kernelization is proved to greatly improve performance since the non-linearity is exploited. In \cite{KernelVersionMetrics} it has been demonstrated that kernelization improves the performance of many dimension reduction and metric learning. Kernelization is a projection from low dimensional space to high dimensional space, which make classification and clustering much more accurate in high dimensional space.  The difference of KLFDA is that the interclass and intraclass scatter matrix will be kernelised and the eigenvalue decomposition will be operated on kernel space.  Suppose a set of sample points $\bm{x}_i, i\in\{1,2,\cdots, n\} $, can be mapped to a implicit higher feature space by a function $\phi(\bm{x}_i)$. The kernel function can be implicit and only the inner product of mapped vectors $\phi(\bm{x}_i)$ and $\phi(\bm{x}_j)$ needs to be known. The kernel trick is proposed to solve this problem by defining a function $k(\bm{x}_i,\bm{x}_j) = <\phi(\bm{x}_i),\phi(\bm{x}_j)>$, the $< \cdot >$ is the inner product. There are many kinds of kernels like linear kernel, polynomial kernel and radial basis function (RBF) kernel. In this paper the RBF kernel is adopted. A RBF kernel is defined as $k_{RBF}(\bm{x}_i,\bm{x}_j) = \exp^{(-\gamma||\bm{x}_i-\bm{x}_j||^2)}$, $\gamma$ is a constant term. 
  
  
 \section{Metric learning on dimension reduced space by gradient descent method}
@@ -778,12 +778,12 @@ When applying the LFDA to original high dimensional descriptors, one problem is 
 %\end{equation}
  %Therefore, Mahanalobis distance can be regarded as a variant of Euclidean distance. 
 % There are many methods proposed for metric learning[ ]. Inspired by [], in this paper, a similar metric learning based on iteration computation is used. For a  sample descriptor $\bm{x}_i$,  its positive pairwise set is defined as $\{\bm{x}_i,\bm{x}_j\}$, where class ID $y_i = y_j$. Also the negative pairwise set can be defined as $\{\bm{x}_i,\bm{x}_j\}$, where $y_i \ne y_j$. Similar with [PRDC], this method is also based on similarity comparison. The difference is in [PRDC], for all possible positive and negative pairs, the distance between positive pairs must be smaller than the distance between negative pairs. Since it has to compare possible positive and negative pairs, computation complexity will be quite huge.  To decrease complexity, a simplified version is proposed as the top-push distance metric learning[ ].  
-Since re-identification is a problem of ranking, it is desired that the rank-1 descriptor should be the right match. In this paper, instead of comparing all the possible positive and negative pairs, a simplified version is proposed that the intraclass distance should be at 1 unit smaller than inter distance. This will decrease computation complexity quite much. Given a Mahanalobis matrix $\bm{M}$, for dimension reduced sample points $\bm{x}_i, i = 1,2,3,\cdots,n$, $n$ is the number of all samples, the requirement is distance between positive pair should be at least 1 unit smaller than the minimum of all negative distance. This can be denoted as 
+Since Re-ID is a problem of ranking, it is desired that the rank 1 descriptor should be the right match. In this paper, instead of comparing all the possible positive and negative pairs, a simplified version is proposed that the intraclass distance should be at least one unit smaller than inter distance. This will decrease computation complexity quite much. Given a Mahanalobis matrix $\bm{M}$, for dimension reduced sample points $\bm{x}_i, i = 1,2,3,\cdots,n$, $n$ is the number of all samples. The requirement is distance between positive pair should be at least one unit smaller than the minimum of all negative distance. This can be denoted as 
  \begin{equation}
  D(\bm{x}_i,\bm{x}_j) + \rho < \min D(\bm{x}_i,\bm{x}_k), y_i = y_j, y_i\ne y_k.
  \end{equation}
  $\rho$ is a slack variable and $\rho \in [0,1]$. This equation can be transformed into a optimization problem with respect to descriptor $\bm{x}_i$ as
- \begin{equation}
+ \begin{equation}\label{term2}
  \arg \min \sum_{y_i = y_j} \max \{D(\bm{x}_i,\bm{x}_j) -  \min_{ y_i\ne y_k} D(\bm{x}_i,\bm{x}_k)  + \rho, 0 \}.
  \end{equation}
  
@@ -792,26 +792,26 @@ Since re-identification is a problem of ranking, it is desired that the rank-1 d
  \min \sum_{y_i = y_j} D(\bm{x}_i,\bm{x}_j),
  \end{equation}
  
- To combine equations above, a ratio factor $\alpha$ is assigned to term 12 so that the target function can be denote as 
-  \begin{equation}
+ To combine equations above, a ratio factor $\alpha$ is assigned to equation \ref{term2} so that the target function can be denote as 
+  \begin{equation}\label{targetfunc}
   \begin{aligned}
- f(\bm{M}) = (1-\alpha)\sum_{\bm{x}_i,x_j,\bm{y}_i=y_j} D(\bm{x}_i,\bm{x}_j) + \\ 
+ f(\bm{M}) = (1-\alpha)\sum_{\bm{x}_i,\bm{x}_j,\bm{y}_i=y_j} D(\bm{x}_i,\bm{x}_j) + \\ 
  \alpha \sum_{\bm{x}_i,\bm{x}_j,y_i=y_j}\max\{{D(\bm{x}_i,\bm{x}_j)-\min_{y_i\ne y_k}{D(\bm{x}_i,\bm{x}_k)}+\rho,0}\}
  \end{aligned}
  \end{equation}
- In this way the problem is transformed to an optimization problem. Notice that equation 9 can be denoted as 
+ In this way the problem is transformed to an optimization problem. Notice that $D(\bm{x},\bm{y})$ can be denoted as 
  \begin{equation}
  D(\bm{x},\bm{y}) = (\bm{x} - \bm{y})^T\bm{M}(\bm{x} - \bm{y})\\ = Tr(\bm{M}\bm{X}_{i,j})
  \end{equation}
- where $\bm{X}_{i,j} = \bm{x}_i*\bm{x}_j^T$, and $Tr$ is to compute matrix trace. Therefore, equation 14 can be transformed as follow,
- \begin{equation}
+ where $\bm{X}_{i,j} = \bm{x}_i*\bm{x}_j^T$, and $Tr$ is matrix trace. Therefore, equation \ref{targetfunc} can be transformed as follow,
+ \begin{equation}\label{targetfinal}
  \begin{aligned}
  f(\bm{M}) = (1-\alpha)\sum_{y_i = y_j}Tr(\bm{M}\bm{X}_{i,j}) \\
   + \alpha \sum_{y_i = y_j,y_i\ne y_k}\max\{Tr(\bm{M}\bm{X}_{i,j}) - Tr(\bm{M}\bm{X}_{i,k} )+ \rho,0\}
  \end{aligned}
  \end{equation}
  
- To minimize equation 23, the gradient descent method is used. The gradient respect to $\bm{M}$ is computed as
+ To minimize equation \ref{targetfinal}, the gradient descent method is used. The gradient respect to $\bm{M}$ is computed as
  \begin{equation}
  \begin{aligned}
  \bm{G} =\frac{\partial f}{\partial \bm{M}} = (1-\alpha) \sum_{y_i = y_j} \bm{X}_{i,j} \\
@@ -835,13 +835,13 @@ Since re-identification is a problem of ranking, it is desired that the rank-1 d
  Iteration count  $t = 0$;\\
 
  \textbf{while}(not converge)\\
- \indent Update $t =  t + 1$;\\
- \indent Find $\bm{x}_k$ for all sample points $\bm{x}_i$, where $y_i \ne y_k$;\\
- \indent Update gradient $\bm{G}_{t+1}$ with equation 12;\\
- \indent Update $\bm{M}$ with equation : $\bm{M}_{t+1} = \bm{M}_{t} - \lambda\bm{G}_t$;\\
- \indent Project $\bm{M}_{t+1}$ to the positive semi-positive definite space; \\ 
+ \hspace{0.5cm} Update $t =  t + 1$;\\
+\hspace{0.5cm} Find $\bm{x}_k$ for all sample points $\bm{x}_i$, where $y_i \ne y_k$;\\
+\hspace{0.5cm} Update gradient $\bm{G}_{t+1}$ with equation 12;\\
+\hspace{0.5cm} Update $\bm{M}$ with equation : $\bm{M}_{t+1} = \bm{M}_{t} - \lambda\bm{G}_t$;\\
+\hspace{0.5cm} Project $\bm{M}_{t+1}$ to the positive semi-positive definite space; \\ 
 % \indent \indent by $\bm{M}_{t+1}= \bm{V}_{t+1}\bm{S}_{t+1}\bm{V}^T_{t+1}$;\\
- \indent Update the target value $f|_{\bm{M} = \bm{M}_{t+1}}$;\\
+\hspace{0.5cm} Update the target value $f|_{\bm{M} = \bm{M}_{t+1}}$;\\
  \textbf{end while}  \\
  return $\bm{M}$\\
  \hline
@@ -851,14 +851,14 @@ Since re-identification is a problem of ranking, it is desired that the rank-1 d
  
  %% Experiment
 \section{Experiment}
-The hierarchical gaussian descriptors \cite{GOG} are used in this paper. There are two versions of gaussian of gaussian descriptor. The first one is extracted only in RGB color space, denoted as GOGrgb. While the second one is extracted from four color space \{RGB, HSV, Lab, nRGB\}. nRGB means normalized RGB color space. 
+The hierarchical gaussian descriptors \cite{GOG} are used in this paper. There are two versions of gaussian of gaussian descriptor. The first one is extracted only in RGB color space, denoted as GOG$_\text{rgb}$. While the second one is extracted from four color space \{RGB, HSV, Lab, nRGB\}. nRGB means normalized RGB color space. 
 %\begin{equation}
 %nR = \frac{R}{R+G+B}, nG = \frac{G}{R+G+B}, nB = \frac{B}{R+G+B}.
 %\end{equation}
 %since nB component can be computed by nR and nG, only those first two components are adopted to reduce redundancy. Besides, the cumulative matching curve(CMC) is used to measure metric performance in this paper.
 
 \subsection{Datasets and evaluation settings}
-\noindent \textbf{VIPeR} dataset is the most used dataset in person Re-ID. In this dataset there are 632 different individuals and for each person there are two outdoor images from different viewpoints. All the images are scaled into $48\times128$. In this experiment the we randomly select 316 individuals from cam a and cam b as the training set, the rest images in cam a are used as probe images and those in cam b as gallery images. This process is repeated 10 times to reduce error.\\
+\noindent \textbf{VIPeR} dataset is the most used dataset in person Re-ID. In this dataset there are 632 different individuals and for each person there are two outdoor images from different viewpoints. All the images are scaled into $48\times128$. In this experiment the we randomly select 316 individuals from camera a and camera b as the training set, the rest images in camera a are used as probe images and those in camera b as gallery images. This process is repeated 10 times to compute average value.\\
 %\textbf{ETHZ dataset} Three video sequences are contained in this dataset. In ETHZ there are respectively 83,35,28 persons in each sequences. All those images are outdoor and the camera is moving with the pedestrian. Images are in different sizes and may needed to resized. All those images of a certain person is shot with the same moving camera. In this paper, for each person two random images are selected as the training pair and another two random images are selected as the gallery and probe image.\\
 \textbf{CUHK1} dataset contains 971 identities from two disjoint camera views. The cameras are static in each pair of view and images are listed in the same order. For each individual, there are two images in each view. All images are scaled into $60\times160$. In this paper, we randomly select 485 image pairs as training data and the rest person pairs are used for test data. \\
 %\textbf{Prid\_2011} The dataset consists of images extracted from multiple person trajectories recorded from two different, static surveillance cameras. Images from these cameras contain a viewpoint change and a stark difference in illumination, background and camera characteristics. Camera view A shows 385 persons, camera view B shows 749 persons. The first 200 persons appear in both camera views. In this paper, we randomly select 100 persons that appeared in both camera views as training pairs, and the remaining 100 persons of camera A is used as probe set while the 649 remaining persons from camera B are used for gallery images. \\
@@ -886,9 +886,9 @@ The hierarchical gaussian descriptors \cite{GOG} are used in this paper. There a
 %\end{table}
 %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{The influence of mean removal and $L_2$ normalization}
-In \cite{GOG}, mean removal and $L_2$  normalization is found to improve performance by $5.1\%$. The reason for this is mean removal and normalization can reduce the impact of extrema in a single descriptor. 
+In \cite{GOG}, mean removal and $L_2$  normalization is shown to improve performance by $5.1\%$. The reason for this is mean removal and normalization can reduce the impact of extrema in a single descriptor. 
 %A comparison between performance of original descriptors and preprocessed descriptors is shown in Tables [2, 3, 4, 5], all those datasets are tested by proposed metric. 
-Original GOG means no mean removal and normalization. It shows that the mean removal and $L_2$ normalization has a slight improvement around 0.5\% on the performance on all five datasets. In \cite{GOG} the mean removal and normalization is adopted, to compare with results in this paper, the mean removal and $L_2$ normalization are also adopted in this experiment. 
+Original GOG means no mean removal and normalization. It shows that the mean removal and $L_2$ normalization has an improvement around 0.5\% on the performance on all five datasets. In \cite{GOG} the mean removal and normalization is adopted. To compare with results in this paper, the mean removal and $L_2$ normalization are also adopted in this experiment. 
 
 %\begin{table}[H]
 %\setlength{\abovecaptionskip}{-0.1cm}
@@ -902,11 +902,11 @@ Original GOG means no mean removal and normalization. It shows that the mean rem
 %\hline
 %Original GOG &43.01&74.91& 84.87& 89.81& 93.32 \\
 %\hline
-%Preprocessed GOGrgb &43.77&74.84&85.25& 90.32&93.89\\
+%Preprocessed GOG$_\text{rgb}$ &43.77&74.84&85.25& 90.32&93.89\\
 % \hline
-%Original GOGfusion &48.77&77.47&87.41&91.52&94.27\\
+%Original GOG$_\text{fusion}$ &48.77&77.47&87.41&91.52&94.27\\
 %\hline
-%Preprocessed GOGfusion &48.32&76.90&87.78&91.93& 94.49\\
+%Preprocessed GOG$_\text{fusion}$ &48.32&76.90&87.78&91.93& 94.49\\
 % \hline
 % 
 %\end{tabular}
@@ -921,13 +921,13 @@ Original GOG means no mean removal and normalization. It shows that the mean rem
 % \hline
 %Terms  &1 &5 & 10 &15& 20\\
 %\hline
-%Original GOGrgb&56.11&83.77&90.10& 92.65&94.28 \\
+%Original GOG$_\text{rgb}$&56.11&83.77&90.10& 92.65&94.28 \\
 %\hline
-%Preprocessed GOGrgb &55.91&84.24&90.41& 93.15&94.67\\
+%Preprocessed GOG$_\text{rgb}$ &55.91&84.24&90.41& 93.15&94.67\\
 % \hline
-%Original GOGfusion &57.10&84.65& 90.35& 92.88&94.65\\
+%Original GOG$_\text{fusion}$ &57.10&84.65& 90.35& 92.88&94.65\\
 %\hline
-%Preprocessed GOGfusion &56.67&84.49& 90.51& 93.31&94.84\\
+%Preprocessed GOG$_\text{fusion}$ &56.67&84.49& 90.51& 93.31&94.84\\
 % \hline
 % 
 %\end{tabular}
@@ -941,13 +941,13 @@ Original GOG means no mean removal and normalization. It shows that the mean rem
 %% \hline
 %%Terms  &1 &5 & 10 &15& 20\\ %alpha = 0.76
 %%\hline
-%%Original GOGrgb&24.80& 52.10& 63.20& 69.90& 72.90\\
+%%Original GOG$_\text{rgb}$&24.80& 52.10& 63.20& 69.90& 72.90\\
 %%\hline
-%%Preprocessed GOGrgb &23.80& 52.20& 63.50& 70.20& 73.50\\
+%%Preprocessed GOG$_\text{rgb}$ &23.80& 52.20& 63.50& 70.20& 73.50\\
 %%\hline
-%%Original GOGfusion &32.20& 56.60& 67.00& 73.10& 77.70\\
+%%Original GOG$_\text{fusion}$ &32.20& 56.60& 67.00& 73.10& 77.70\\
 %%\hline
-%%Preprocessed GOGfusion &32.30& 57.40& 66.30& 73.40& 78.00\\
+%%Preprocessed GOG$_\text{fusion}$ &32.30& 57.40& 66.30& 73.40& 78.00\\
 %% \hline
 %% 
 %%\end{tabular}
@@ -962,13 +962,13 @@ Original GOG means no mean removal and normalization. It shows that the mean rem
 % \hline
 %Terms  &1 &5 & 10 &15& 20\\%alpha = 0.76
 %\hline
-%Original GOGrgb&60.93& 84.31& 91.29& 94.00& 96.18\\
+%Original GOG$_\text{rgb}$&60.93& 84.31& 91.29& 94.00& 96.18\\
 %\hline
-%Preprocessed GOGrgb &60.71& 84.53& 91.29& 94.13& 96.27\\
+%Preprocessed GOG$_\text{rgb}$ &60.71& 84.53& 91.29& 94.13& 96.27\\
 %\hline
-%Original GOGfusion &63.07& 86.67& 92.53& 95.20& 96.98\\
+%Original GOG$_\text{fusion}$ &63.07& 86.67& 92.53& 95.20& 96.98\\
 %\hline
-%Preprocessed GOGfusion &62.80& 86.58& 92.36& 95.29& 96.89\\
+%Preprocessed GOG$_\text{fusion}$ &62.80& 86.58& 92.36& 95.29& 96.89\\
 % \hline
 % 
 %\end{tabular}
@@ -982,13 +982,13 @@ Original GOG means no mean removal and normalization. It shows that the mean rem
 % \hline
 %Terms  &1 &5 & 10 &15& 20\\
 %\hline
-%Original GOGrgb&22.96& 41.92& 51.68& 58.72& 64.64\\
+%Original GOG$_\text{rgb}$&22.96& 41.92& 51.68& 58.72& 64.64\\
 %\hline
-%Preprocessed GOGrgb &22.64& 43.68& 52.00& 59.04& 65.04\\
+%Preprocessed GOG$_\text{rgb}$ &22.64& 43.68& 52.00& 59.04& 65.04\\
 %\hline
-%Original GOGfusion &24.32& 44.56& 54.80& 62.40& 66.64\\
+%Original GOG$_\text{fusion}$ &24.32& 44.56& 54.80& 62.40& 66.64\\
 %\hline
-%Preprocessed GOGfusion &23.92& 44.64& 54.88& 62.32& 66.40\\
+%Preprocessed GOG$_\text{fusion}$ &23.92& 44.64& 54.88& 62.32& 66.40\\
 % \hline
 % 
 %\end{tabular}
@@ -996,12 +996,13 @@ Original GOG means no mean removal and normalization. It shows that the mean rem
 %
 %--------------------------------------------------
 \subsection{Parameters setting of gradient descent iteration}
-In this experiment, there are a few parameters for the iteration computing including slack variable $\rho$, maximal iteration $T$, gradient step $\lambda$, the interclass and intraclass limitation factor $\alpha$ and the updating ratio $\beta$. Firstly the slack variable $\rho$ is initialized as 1 to ensure the minimum interclass distance is 1 larger than intraclass distance at least. The step size of gradient updating $\lambda$ is initialized as 0.01. When target value $f$ increases,  $\lambda$ is scaled by a factor 0.5, and  $\lambda$ is scaled by 1.01 when target value $f$ decreases. To judge if target value converges, the thresh $\beta$ is defined as the ratio target value change versus previous target value, that is, $\beta = \frac{(f_{t+1}-f_t)}{f_t}$. According many experiment trials, when it satisfies $\beta = 10^{-5}$, the target value converges and the iteration is stopped. The maximal iteration times is set to 100 since the target value $f$ will converge in around 15 iterations.  The last parameter for the iteration is $\alpha$, to know the best value for $\alpha$, we tried 11 different values ranges from 0 to 1 with a step of 0.1, and find that the rank 1 and rank 5 scores reach maxima at interval $[0.7,0.8]$. Then another ten trials with alpha ranging from $[0.7,0.8]$ with a step of 0.01. The best $\alpha$ value should have as large top rank scores as possible and at last we find that the optimal value for $\alpha$ is 0.76.
+In this experiment, there are a few parameters for the iteration computing including slack variable $\rho$, maximal iteration $T$, gradient step $\lambda$, the interclass and intraclass limitation factor $\alpha$ and the updating ratio $\beta$. Firstly the slack variable $\rho$ is initialized as one to ensure the minimum interclass distance is one larger than intraclass distance at least. The step size of gradient updating $\lambda$ is initialized as 0.01. When target value $f$ increases,  $\lambda$ is scaled by a factor 0.5, and  $\lambda$ is scaled by 1.01 when target value $f$ decreases. To judge if target value converges, the threshold $\beta$ is defined as the ratio target function value change versus previous target function value, that is, $\beta = \frac{(f_{t+1}-f_t)}{f_t}$. According to many experiment trials, when it satisfies $\beta = 10^{-5}$, the target value converges and the iteration is stopped. The maximal iteration times $t$ is set to 100 since the target value $f$ will converge in around 15 iterations.  The last parameter for the iteration is factor $\alpha$ to assign weight to intercalss distance comparison. To know the best value for $\alpha$, we tried 11 different values ranges from 0 to 1 with a step of 0.1, and find that the rank 1 and rank 5 scores reach maxima at interval $[0.7,0.8]$. Then another ten trials with alpha ranging from $[0.7,0.8]$ with a step of 0.01. The best $\alpha$ value should have as large top rank scores as possible and at last we find that the optimal value for $\alpha$ is 0.76.
 \begin{table}[H]
+\centering
 \caption{Parameters setting}
 \begin{tabular}{|l|c|c|c|c|c|}
 \hline
-Paramters &$\alpha$&thresh&step&Max iteration& slack variable\\
+Paramters &$\alpha$& $\beta$& $\lambda$&$t$& $\rho$\\
 \hline
 Values &0.76&$10^{-5}$&0.01&100&1\\
 \hline
@@ -1028,8 +1029,8 @@ Values &0.76&$10^{-5}$&0.01&100&1\\
 
 %\textbf{Performance measuring} The cumulative matching curve is used to measure the descriptor performance. The score means the probability that the right match is within the top $n$ samples. A perfect CMC curve is expected to have a high rank-1 value and reaches 1 as fast as possible.
 \subsection{Performance analysis}
-In this paper, we compare proposed metric with other state-of-the-art metrics including NFST \cite{NFST}, XQDA \cite{LOMO}. NFST is a metric which learn a null space for descriptors so that the the same class descriptors will be projected to a single point to minimize intraclass scatter matrix while different classes are projected to different points. This metric is a good solution to small sample problem in person re-identification. XQDA is quite similar with many other metrics, which learns a projection matrix $W$ and then a Mahanalobis SPD matrix $M$ is learned in the subspace. Those two metric are proved to have state-of-the-art performance compared with many other methods. The GOGrgb in all forms stands for the hierarchical gaussian descriptor in RGB color space while GOGfusion stands for the one in four different color spaces \{RGB, Lab, HSV, nRnG\}.\\
-\textbf{VIPeR} A comparison form is given in Table 3. Some of recent results are also included in this form. We can find that the rank scores are better than those of NFST and XQDA in terms of both GOGrgb and GOGfusion. More specifically, the rank 1, rank 5, rank 10, rank 15 and rank 20 scores of proposed metric learning are 0.76\%, 0.92\%, 1.39\%, 1.08\%, 1.52\% higher than those of GOGrgb + XQDA, and the rank 1, rank 5, rank 10, rank 15 and rank 20 GOGfusion scores of proposed metric learning are 0.35\%, -0.54\%, 0.98\%, 0.66\%, 0.79\% higher than GOGfusion + XQDA respectively. Also we can see that the proposed metric learning has a better performance than NFST. 
+In this paper, we compare proposed metric with other state-of-the-art metrics including NFST \cite{NFST}, XQDA \cite{LOMO}. NFST is a metric which learns a null space for descriptors so that the same class descriptors will be projected to a single point to minimize intraclass scatter matrix while different classes are projected to different points. This metric is a good solution to small sample problem in Re-ID. XQDA is similar with many other metrics, which learns a projection matrix $W$ and then a Mahanalobis SPD matrix $M$ is learned in the subspace. Those two metrics are proved to have state-of-the-art performance compared with many other methods. The GOG$_\text{rgb}$ in all forms stands for the hierarchical gaussian descriptor in RGB color space while GOG$_\text{fusion}$ stands for the one in four different color spaces \{RGB, Lab, HSV, nRnG\}.\\
+\textbf{VIPeR} A comparison form is given in Table 3. Some of recent results are also included in this form. We can find that the rank scores are better than those of NFST and XQDA in terms of both GOG$_\text{rgb}$ and GOG$_\text{fusion}$. More specifically, the rank 1, rank 5, rank 10, rank 15 and rank 20 scores of proposed metric learning are 0.76\%, 0.92\%, 1.39\%, 1.08\%, 1.52\% higher than those of GOG$_\text{rgb}$ + XQDA. The rank 1, rank 5, rank 10, rank 15 and rank 20 GOG$_\text{fusion}$ scores of proposed metric learning are 0.35\%, -0.54\%, 0.98\%, 0.66\%, 0.79\% higher than GOG$_\text{fusion}$ + XQDA respectively. Also we can see that the proposed metric learning has a better performance than NFST. 
 %-----------------------------------------------------------------------VIPeR
 \begin{table}[H]
   
@@ -1042,26 +1043,26 @@ In this paper, we compare proposed metric with other state-of-the-art metrics in
 \hline
 Methods& 1 & 5 &10& 15&20\\
 \hline
-GOGrgb+NFST& 43.23&73.16 &83.64 & 89.59&92.88\\  
+GOG$_\text{rgb}$+NFST& 43.23&73.16 &83.64 & 89.59&92.88\\  
 \hline
-GOGrgb+XQDA& 43.01&73.92&83.86& 89.24& 92.37\\
+GOG$_\text{rgb}$+XQDA& 43.01&73.92&83.86& 89.24& 92.37\\
 \hline
-%GOGrgb+KLFDA&43.45 &74.68 &85.13 &90.54&93.70\\ 
+%GOG$_\text{rgb}$+KLFDA&43.45 &74.68 &85.13 &90.54&93.70\\ 
 %\hline
-GOGrgb+Proposed&43.77 &74.84&85.25&90.32&93.89\\   %43.48%, 74.59%, 85.35%, 90.47%, 93.67%
+GOG$_\text{rgb}$+Proposed&43.77 &74.84&85.25&90.32&93.89\\   %43.48%, 74.59%, 85.35%, 90.47%, 93.67%
 \hline
-GOGfusion+NFST&47.15& 76.39&87.31&91.74&94.49\\
+GOG$_\text{fusion}$+NFST&47.15& 76.39&87.31&91.74&94.49\\
 \hline
-GOGfusion+XQDA& 47.97& 77.44& 86.80& 91.27&93.70\\  
+GOG$_\text{fusion}$+XQDA& 47.97& 77.44& 86.80& 91.27&93.70\\  
 \hline
-%GOGfusion+KLFDA & 47.97&77.06& 87.56&91.80&94.18\\
+%GOG$_\text{fusion}$+KLFDA & 47.97&77.06& 87.56&91.80&94.18\\
 %\hline
-GOGfusion+Proposed&48.32&76.90&87.78&91.93&94.49\\ %48.16%, 76.65%, 87.66%, 91.90%, 94.37% 
+GOG$_\text{fusion}$+Proposed&48.32&76.90&87.78&91.93&94.49\\ %48.16%, 76.65%, 87.66%, 91.90%, 94.37% 
 \hline
 %--------------------------------------------------------------
 \end{tabular}
 \end{table}
-\textbf{CUHK1} We can find that the rank 1, rank5, rank 10, rank 15, rank 20 score of GOGrgb combined with proposed metric are 5.4\%, 4.18\%,3.31\%,2.16\%,1.46\% higher than XQDA, and 0.31\%,1.22\%,1.34\%,1.17\%, 1.11\% than NFST.  Also the  rank 1, rank5, rank 10, rank 15, rank 20 score of GOGfusion combined with proposed metric are 4.57\%, 2.64\%, 0.70\%, 1.33\%, 0.83\% higher than GOGfusion combined with XQDA, and 0.41\%, 0.83\%, 0.88\%, 1.09\%, 1.14\% than GOGfusion combined with NFST. 
+\textbf{CUHK1} We can find that the rank 1, rank5, rank 10, rank 15, rank 20 score of GOG$_\text{rgb}$ combined with proposed metric are 5.4\%, 4.18\%,3.31\%,2.16\%,1.46\% higher than XQDA, and 0.31\%, 1.22\%,1.34\%, 1.17\%, 1.11\% than NFST.  Also the  rank 1, rank5, rank 10, rank 15, rank 20 score of GOG$_\text{fusion}$ combined with proposed metric are 4.57\%, 2.64\%, 0.70\%, 1.33\%, 0.83\% higher than GOG$_\text{fusion}$ combined with XQDA, and 0.41\%, 0.83\%, 0.88\%, 1.09\%, 1.14\% than GOG$_\text{fusion}$ combined with NFST. 
 
 %\begin{figure}
 %\begin{raggedleft}
@@ -1082,21 +1083,21 @@ GOGfusion+Proposed&48.32&76.90&87.78&91.93&94.49\\ %48.16%, 76.65%, 87.66%, 91.9
 \hline
 Methods& 1 & 5 &10&15& 20\\
 \hline
-GOGrgb+NFST&55.60 &83.02 &89.07 &91.98&93.56 \\ 
+GOG$_\text{rgb}$+NFST&55.60 &83.02 &89.07 &91.98&93.56 \\ 
 \hline
-GOGrgb+XQDA&50.51 &80.06 &87.10 &90.99&93.21 \\ 
+GOG$_\text{rgb}$+XQDA&50.51 &80.06 &87.10 &90.99&93.21 \\ 
 \hline
-%GOGrgb+KLFDA&55.66&84.32&90.66&93.07& 94.63\\
+%GOG$_\text{rgb}$+KLFDA&55.66&84.32&90.66&93.07& 94.63\\
 %\hline
-GOGrgb+Proposed&55.91&84.24&90.41& 93.15&94.67\\  %55.86%, 84.28%, 90.45%, 93.09%, 94.65% 
+GOG$_\text{rgb}$+Proposed&55.91&84.24&90.41& 93.15&94.67\\  %55.86%, 84.28%, 90.45%, 93.09%, 94.65% 
 \hline
-GOGfusion+NFST&56.26 &83.66 &89.63 &92.22&93.70 \\ 
+GOG$_\text{fusion}$+NFST&56.26 &83.66 &89.63 &92.22&93.70 \\ 
 \hline
-GOGfusion+XQDA&52.10 &81.85&88.81 &91.98&94.01\\ 
+GOG$_\text{fusion}$+XQDA&52.10 &81.85&88.81 &91.98&94.01\\ 
 \hline
-%GOGfusion+KLFDA & 56.60&84.67&90.41&93.13&94.81\\
+%GOG$_\text{fusion}$+KLFDA & 56.60&84.67&90.41&93.13&94.81\\
 %\hline
-GOGfusion+Proposed&56.67&84.49& 90.51& 93.31&94.84\\
+GOG$_\text{fusion}$+Proposed&56.67&84.49& 90.51& 93.31&94.84\\
 
 \hline
 
@@ -1113,7 +1114,7 @@ GOGfusion+Proposed&56.67&84.49& 90.51& 93.31&94.84\\
 
 %-----------------------------------------------------------------------PRID_2011
 
-%\textbf{Prid\_2011}  The  rank 1, rank5, rank 10, rank 15, rank 20 score of GOGfusion  combined with proposed metric are 6.1\%, 3.9\%, 4.5\%, 2.2\% and 1.3\% lower than GOGfusion combined with XQDA. The performance of NFST is slightly better than proposed metric. Also in terms of GOGrgb XQDA and NFST has better performance than the proposed one. So in this dataset the proposed metric has worse performance than XQDA and NFST.
+%\textbf{Prid\_2011}  The  rank 1, rank5, rank 10, rank 15, rank 20 score of GOG$_\text{fusion}$  combined with proposed metric are 6.1\%, 3.9\%, 4.5\%, 2.2\% and 1.3\% lower than GOG$_\text{fusion}$ combined with XQDA. The performance of NFST is slightly better than proposed metric. Also in terms of GOG$_\text{rgb}$ XQDA and NFST has better performance than the proposed one. So in this dataset the proposed metric has worse performance than XQDA and NFST.
 %\begin{table}[H]
 %\caption{Performance of different metrics on prid\_2011}
 %\centering
@@ -1123,21 +1124,21 @@ GOGfusion+Proposed&56.67&84.49& 90.51& 93.31&94.84\\
 %\hline
 %Methods& 1 & 5 &10& 15&20\\
 %\hline
-%GOGrgb+NFST&26.60 &53.80& 62.90&71.30&75.40 \\ 
+%GOG$_\text{rgb}$+NFST&26.60 &53.80& 62.90&71.30&75.40 \\ 
 %\hline
-%GOGrgb+XQDA&31.10 & 55.70& 66.10 & 72.40&76.10\\  
+%GOG$_\text{rgb}$+XQDA&31.10 & 55.70& 66.10 & 72.40&76.10\\  
 %\hline
-%%GOGrgb+KLFDA&23.70&51.70&63.10&69.90&73.60\\ 
+%%GOG$_\text{rgb}$+KLFDA&23.70&51.70&63.10&69.90&73.60\\ 
 %%\hline
-%GOGrgb+Proposed&23.80&52.20&63.50&70.20&73.50\\  %23.80%, 52.10%, 63.50%, 70.20%, 73.50%
+%GOG$_\text{rgb}$+Proposed&23.80&52.20&63.50&70.20&73.50\\  %23.80%, 52.10%, 63.50%, 70.20%, 73.50%
 %\hline
-%GOGfusion+NFST&34.10 &58.30& 67.60&73.80&78.30 \\  
+%GOG$_\text{fusion}$+NFST&34.10 &58.30& 67.60&73.80&78.30 \\  
 %\hline
-%GOGfusion+XQDA&38.40& 61.30&70.80&75.60&79.30\\
+%GOG$_\text{fusion}$+XQDA&38.40& 61.30&70.80&75.60&79.30\\
 %\hline
-%%GOGfusion+KLFDA & 31.90&56.90&66.60&72.60&77.50\\
+%%GOG$_\text{fusion}$+KLFDA & 31.90&56.90&66.60&72.60&77.50\\
 %%\hline
-%GOGfusion+Proposed&32.30&57.40&66.30&73.40&78.00\\ %32.20%, 57.50%, 66.40%, 73.50%, 78.00(alpha = 0.7)   ()% 32.20%, 57.50%, 66.40%, 73.50%, 78.00%(alpha = 0.8)
+%GOG$_\text{fusion}$+Proposed&32.30&57.40&66.30&73.40&78.00\\ %32.20%, 57.50%, 66.40%, 73.50%, 78.00(alpha = 0.7)   ()% 32.20%, 57.50%, 66.40%, 73.50%, 78.00%(alpha = 0.8)
 %
 %\hline
 %
@@ -1163,21 +1164,21 @@ GOGfusion+Proposed&56.67&84.49& 90.51& 93.31&94.84\\
 \hline
 Methods& 1 & 5 &10& 15&20\\
 \hline
-GOGrgb+NFST& 61.96&84.98 &90.53& 94.09&96.09 \\  %61.96%, 84.98%, 90.53%, 94.09%, 96.09%
+GOG$_\text{rgb}$+NFST& 61.96&84.98 &90.53& 94.09&96.09 \\  %61.96%, 84.98%, 90.53%, 94.09%, 96.09%
 \hline
-GOGrgb+XQDA&65.29 &85.02 & 91.13&94.76& 96.49\\ 
+GOG$_\text{rgb}$+XQDA&65.29 &85.02 & 91.13&94.76& 96.49\\ 
 \hline
-%GOGrgb+KLFDA&60.04&84.09&90.93&94.04&96.00 \\ 
+%GOG$_\text{rgb}$+KLFDA&60.04&84.09&90.93&94.04&96.00 \\ 
 %\hline
-GOGrgb+Proposed&60.71&84.53&91.29&94.13&96.27\\  %60.44%, 84.44%, 91.33%, 94.00%, 96.13%
+GOG$_\text{rgb}$+Proposed&60.71&84.53&91.29&94.13&96.27\\  %60.44%, 84.44%, 91.33%, 94.00%, 96.13%
 \hline
-GOGfusion+NFST& 64.53&86.62 & 92.93&95.78&97.42 \\ 
+GOG$_\text{fusion}$+NFST& 64.53&86.62 & 92.93&95.78&97.42 \\ 
 \hline
-GOGfusion+XQDA&68.40 & 87.42&93.47 &95.69& 97.02\\ 
+GOG$_\text{fusion}$+XQDA&68.40 & 87.42&93.47 &95.69& 97.02\\ 
 \hline
-%GOGfusion+KLFDA & 62.58&86.18&92.18&95.11&96.84\\
+%GOG$_\text{fusion}$+KLFDA & 62.58&86.18&92.18&95.11&96.84\\
 %\hline
-GOGfusion+Proposed&62.80&86.58&92.36&95.29& 96.89\\ % 62.62%, 86.44%, 92.36%, 95.20%, 96.93%(alpha = 0.7) 62.89%, 86.49%, 92.49%, 95.29%, 97.07%(alpha = 0.8)
+GOG$_\text{fusion}$+Proposed&62.80&86.58&92.36&95.29& 96.89\\ % 62.62%, 86.44%, 92.36%, 95.20%, 96.93%(alpha = 0.7) 62.89%, 86.49%, 92.49%, 95.29%, 97.07%(alpha = 0.8)
 
 \hline
 
@@ -1203,21 +1204,21 @@ GOGfusion+Proposed&62.80&86.58&92.36&95.29& 96.89\\ % 62.62%, 86.44%, 92.36%, 95
 \hline
 Methods& 1 & 5 &10& 15&20\\
 \hline
-GOGrgb+NFST& 21.84&41.28 &50.96& 57.44&62.88 \\ 
+GOG$_\text{rgb}$+NFST& 21.84&41.28 &50.96& 57.44&62.88 \\ 
 \hline
-GOGrgb+XQDA& 22.64&43.92 &55.12 &61.12&66.56\\ 
+GOG$_\text{rgb}$+XQDA& 22.64&43.92 &55.12 &61.12&66.56\\ 
 \hline
-%GOGrgb+KLFDA&23.44&43.04&52.16&59.12&64.88 \\ 
+%GOG$_\text{rgb}$+KLFDA&23.44&43.04&52.16&59.12&64.88 \\ 
 %\hline
-GOGrgb+Proposed&22.64&43.68&52.00&59.04&65.04\\  %22.80%, 43.76%, 52.08%, 59.04%, 65.12%
+GOG$_\text{rgb}$+Proposed&22.64&43.68&52.00&59.04&65.04\\  %22.80%, 43.76%, 52.08%, 59.04%, 65.12%
 \hline
-GOGfusion+NFST& 23.04&44.40 &54.40 &61.84&66.56\\ 
+GOG$_\text{fusion}$+NFST& 23.04&44.40 &54.40 &61.84&66.56\\ 
 \hline
-GOGfusion+XQDA& 23.68&47.28 &58.40 &65.84&69.68 \\ 
+GOG$_\text{fusion}$+XQDA& 23.68&47.28 &58.40 &65.84&69.68 \\ 
 \hline
-%GOGfusion+KLFDA &23.76&44.40& 55.36&61.76& 66.48\\
+%GOG$_\text{fusion}$+KLFDA &23.76&44.40& 55.36&61.76& 66.48\\
 %\hline
-GOGfusion+Proposed&23.92&44.64&54.88&62.32&66.40\\ %23.84%, 44.64%, 55.04%, 62.24%, 66.24%
+GOG$_\text{fusion}$+Proposed&23.92&44.64&54.88&62.32&66.40\\ %23.84%, 44.64%, 55.04%, 62.24%, 66.24%
 
 \hline
 
@@ -1232,11 +1233,11 @@ GOGfusion+Proposed&23.92&44.64&54.88&62.32&66.40\\ %23.84%, 44.64%, 55.04%, 62.2
 %\end{raggedleft}
 %\end{figure}
 %%--------------------------------------
-\textbf{GRID} We can see that the rank 1 score of proposed metric are 0.24\% higher than XQDA and 0.88\% higher than NFST in terms of GOGfusion, but XQDA outperforms proposed metric on rank 5, rank 10, rank 15 and rank 20 scores. Besides, proposed metric outperforms NFST on rank 5, rank 10, rank 15 scores.\\
-\indent In summary, the Re-ID performance is improved in VIPeR, CUHK01 dataset, and has almost the same performance with NFST and XQDA on prid\_450s dataset. Specifically, proposed metric learning has the best rank 1 score in GRID dataset and its performance is only second to XQDA. The proposed metric has superior performance for following reasons: (1) dimension reduction by KLFDA exploits the nonlinearity and the loss of discriminant information between classes are minimized. (2) the simplified relative distance limitation optimization helps to confine the Mahanalobis distance matrix $M$ to discriminate different classes.  
+\textbf{GRID} We can see that the rank 1 score of proposed metric are 0.24\% higher than XQDA and 0.88\% higher than NFST in terms of GOG$_\text{fusion}$, but XQDA outperforms proposed metric on rank 5, rank 10, rank 15 and rank 20 scores. Besides, proposed metric outperforms NFST on rank 5, rank 10, rank 15 scores.\\
+\indent In summary, the Re-ID performance is improved in VIPeR, CUHK01 dataset, and has almost the same performance with NFST and XQDA on prid\_450s dataset. Specifically, proposed metric learning has the best rank 1 score in GRID dataset and its performance is only second to XQDA. The proposed metric has superior performance for following reasons: (1) dimension reduction by KLFDA exploits the nonlinearity and the loss of discriminant information between classes are minimized. (2) the simplified relative distance limitation optimization helps to confine the Mahanalobis distance matrix $\bm{M}$ to discriminate different classes.  
 %------------------------------------------------------------------------
 \section{Conclusion}
-In this paper we combined KLFDA with gradient descent method based metric learning. A semi-positive definite (SPD) matrix is learned on the lower dimension space after dimension reduction by kernel local fisher discriminative analysis. By analysis we can find the proposed metric has better performance than NFST and XQDA on VIPeR and CUHK1 datasets, but XQDA and NFST outperforms the proposed metric learning on Prid\_2011 and Prid\_450s, and the proposed metric learning has better rank 1 score than NFST and its performance is only second to XQDA on GRID dataset.
+In this paper we combined KLFDA with gradient descent method based metric learning. A SPD matrix is learned on the lower dimension space after dimensionality reduction by KLFDA. By comparison and analysis we can find the proposed metric has better performance than NFST and XQDA on VIPeR and CUHK1 datasets, but XQDA and NFST outperforms the proposed metric learning on Prid\_2011 and Prid\_450s. On GRID dataset the proposed metric learning has better rank 1 score than NFST and its performance is only second to XQDA.
 
 % conference papers do not normally have an appendix
 
