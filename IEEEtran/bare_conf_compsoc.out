@@ -1,6 +1,6 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Dimension reduction based on kernel local fisher discriminant analysis }{}% 2
-\BOOKMARK [1][-]{section.3}{Metric learning on dimension reduced space by gradient descent method}{}% 3
+\BOOKMARK [1][-]{section.2}{Dimension reduction based on kernel local Fisher discriminant analysis }{}% 2
+\BOOKMARK [1][-]{section.3}{Metric learning on dimension reduced space by gradient descent optimization}{}% 3
 \BOOKMARK [1][-]{section.4}{Experiment}{}% 4
 \BOOKMARK [2][-]{subsection.4.1}{Datasets and evaluation settings}{section.4}% 5
 \BOOKMARK [2][-]{subsection.4.2}{The influence of mean removal and L2 normalization}{section.4}% 6

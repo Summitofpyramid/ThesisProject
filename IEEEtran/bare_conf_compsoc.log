@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 JAN 2017 21:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 MAY 2017 19:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -429,32 +429,23 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.05249> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 408.
 
 
-Package natbib Warning: Citation `KLFDA' on page 1 undefined on input line 413.
-
-
-
-Package natbib Warning: Citation `KLFDA' on page 1 undefined on input line 449.
-
-
-
 Package natbib Warning: Citation `MetricSurvey' on page 1 undefined on input li
 ne 449.
 
 LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 45
 2.
 
-Package natbib Warning: Citation `KLFDA' on page 1 undefined on input line 452.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
-[2]
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 826.
+] [2]
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 827.
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 854.
 
- (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.03749> not available
@@ -511,7 +502,7 @@ ntifier (name{table.6}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.1239 \section
                {Conclusion}] (./bare_conf_compsoc.bbl
-Underfull \hbox (badness 8075) in paragraph at lines 60--64
+Underfull \hbox (badness 8075) in paragraph at lines 66--70
 []\OT1/ptm/m/n/10.03749 S. Peda-gadi, J. Or-well, Ve-lastin, Ser-gio, and
  []
 
@@ -538,14 +529,14 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1291.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1291.
 
 Package rerunfilecheck Info: File `bare_conf_compsoc.out' has not changed.
-(rerunfilecheck)             Checksum: 77FA97366FA611783631BB5941BFC487;693.
+(rerunfilecheck)             Checksum: 3BAB24E2ABF9903DB5C7C08276517BD0;699.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1291.
  ) 
 Here is how much of TeX's memory you used:
- 7560 strings out of 493089
- 112953 string characters out of 6134842
- 223346 words of memory out of 5000000
- 10912 multiletter control sequences out of 15000+600000
+ 7564 strings out of 493089
+ 113009 string characters out of 6134842
+ 224463 words of memory out of 5000000
+ 10915 multiletter control sequences out of 15000+600000
  52202 words of font info for 108 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  29i,13n,31p,1847b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -573,10 +564,10 @@ ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on bare_conf_compsoc.pdf (5 pages, 251415 bytes).
+Output written on bare_conf_compsoc.pdf (5 pages, 251710 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
- 49 named destinations out of 1000 (max. 500000)
+ 226 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
+ 50 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

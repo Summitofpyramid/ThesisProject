@@ -21,6 +21,12 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{KLFDA}
+M.~Sugiyama, ``{Local Fisher Discriminant Analysis for Supervised
+  Dimensionality Reduction},'' in \emph{Proceedings of the 23rd international
+  conference on Machine learning}.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
+  Dec. 2006.
+
 \bibitem{TDL}
 J.~You, A.~Wu, X.~Li, and W.-S. Zheng, ``{Top-push Video-based Person
   Re-identification},'' in \emph{Proceedings of the IEEE Conference on Computer
