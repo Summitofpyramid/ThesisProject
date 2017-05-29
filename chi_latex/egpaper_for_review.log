@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 MAY 2017 22:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 MAY 2017 10:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -395,97 +395,98 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 ) [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-Underfull \vbox (badness 6173) has occurred while \output is active []
-
- [2]
-Overfull \hbox (22.23369pt too wide) in paragraph at lines 218--241
+] [2]
+Overfull \hbox (22.23369pt too wide) in paragraph at lines 216--239
  [][] 
  []
 
-[3]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 254.
 
- (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 253.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 254.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 253.
 
-Underfull \hbox (badness 1024) in paragraph at lines 261--288
+Underfull \hbox (badness 1024) in paragraph at lines 260--287
 \OT1/ptm/m/n/10 Gallery folder con-tains 250 true match im-ages of the
  []
 
-[4] <VIPeR.jpg, id=112, 2409.0pt x 1806.75pt>
+[4] <VIPeR.jpg, id=132, 2409.0pt x 1806.75pt>
 File: VIPeR.jpg Graphic file (type jpg)
  <use VIPeR.jpg>
-Package pdftex.def Info: VIPeR.jpg used on input line 466.
+Package pdftex.def Info: VIPeR.jpg used on input line 465.
 (pdftex.def)             Requested size: 237.13594pt x 177.846pt.
 
-Underfull \vbox (badness 4108) has occurred while \output is active []
-
-
-<CUHK1.jpg, id=113, 2409.0pt x 1806.75pt>
+<CUHK1.jpg, id=133, 2409.0pt x 1806.75pt>
 File: CUHK1.jpg Graphic file (type jpg)
  <use CUHK1.jpg>
-Package pdftex.def Info: CUHK1.jpg used on input line 510.
+Package pdftex.def Info: CUHK1.jpg used on input line 505.
 (pdftex.def)             Requested size: 237.13594pt x 177.846pt.
 
-<prid_450s.jpg, id=114, 2409.0pt x 1806.75pt>
+<prid_450s.jpg, id=134, 2409.0pt x 1806.75pt>
 File: prid_450s.jpg Graphic file (type jpg)
  <use prid_450s.jpg>
-Package pdftex.def Info: prid_450s.jpg used on input line 592.
-(pdftex.def)             Requested size: 237.13594pt x 177.846pt.
- [5 <./VIPeR.jpg> <./CUHK1.jpg>] <GRID.jpg, id=126, 2409.0pt x 1806.75pt>
-File: GRID.jpg Graphic file (type jpg)
- <use GRID.jpg>
-Package pdftex.def Info: GRID.jpg used on input line 631.
+Package pdftex.def Info: prid_450s.jpg used on input line 587.
 (pdftex.def)             Requested size: 237.13594pt x 177.846pt.
 
-(./egpaper_for_review.bbl (./egpaper_for_review.brf)
+<GRID.jpg, id=135, 2409.0pt x 1806.75pt>
+File: GRID.jpg Graphic file (type jpg)
+ <use GRID.jpg>
+Package pdftex.def Info: GRID.jpg used on input line 629.
+(pdftex.def)             Requested size: 237.13594pt x 177.846pt.
+ [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./VIPeR.jpg> <./CUHK1.jpg> <./prid_450s.jpg>] (./egpaper_for_review.bbl
+(./egpaper_for_review.brf)
 \tf@brf=\write3
 \openout3 = `egpaper_for_review.brf'.
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 15--15
+Underfull \hbox (badness 1092) in paragraph at lines 36--36
 []\OT1/ptm/m/n/9 M. Faren-zena, L. Baz-zani, A. Pe-rina, V. Murino, and
  []
 
 
-Underfull \hbox (badness 5970) in paragraph at lines 52--52
+Underfull \hbox (badness 5970) in paragraph at lines 86--86
 \OT1/ptm/m/n/9 Lo-cal fisher dis-crim-i-nant anal-y-sis for pedes-trian re-
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
-[6 <./prid_450s.jpg> <./GRID.jpg>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1005.
- [7
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
+[7 <./GRID.jpg>]
+Underfull \hbox (badness 5022) in paragraph at lines 125--125
+\OT1/ptm/m/n/9 Learn-ing Deep Fea-ture Rep-re-sen-ta-tions with Do-main
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1003.
+ [8
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1005.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1003.
  (./egpaper_for_review.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1005.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1005.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1003.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1003.
 
-
-
-Package rerunfilecheck Warning: File `egpaper_for_review.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `egpaper_for_review.brf':
-(rerunfilecheck)             Before: 1039DAD66973824E2CF35D47C1E6276A;937
-(rerunfilecheck)             After:  3EB430A8713281188FBB8B5EB24BE028;876.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1005.
+Package rerunfilecheck Info: File `egpaper_for_review.brf' has not changed.
+(rerunfilecheck)             Checksum: E5D738B26AE54088CB596694EAA7FCEC;1725.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1003.
  ) 
 Here is how much of TeX's memory you used:
- 6791 strings out of 493089
- 97292 string characters out of 6134842
- 200067 words of memory out of 5000000
- 10079 multiletter control sequences out of 15000+600000
+ 6838 strings out of 493089
+ 98043 string characters out of 6134842
+ 210386 words of memory out of 5000000
+ 10115 multiletter control sequences out of 15000+600000
  44187 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,13n,26p,1575b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,13n,30p,1575b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
@@ -504,10 +505,10 @@ t/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on egpaper_for_review.pdf (7 pages, 1024443 bytes).
+Output written on egpaper_for_review.pdf (8 pages, 1031599 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 204 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
+ 288 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

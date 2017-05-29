@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: egpaper_for_review.aux
+The style file: ieee.bst
+Database file #1: citation.bib
+Warning--string name "june" is undefined
+--line 474 of file citation.bib
+Warning--empty journal in KCCA
+You've used 25 entries,
+            2120 wiz_defined-function locations,
+            639 strings with 8179 characters,
+and the built_in function-call counts, 11151 in all, are:
+= -- 1106
+> -- 513
+< -- 22
++ -- 201
+- -- 176
+* -- 759
+:= -- 1679
+add.period$ -- 85
+call.type$ -- 25
+change.case$ -- 163
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 486
+empty$ -- 900
+format.name$ -- 176
+if$ -- 2480
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 25
+newline$ -- 128
+num.names$ -- 50
+pop$ -- 232
+preamble$ -- 1
+purify$ -- 138
+quote$ -- 0
+skip$ -- 360
+stack$ -- 0
+substring$ -- 654
+swap$ -- 189
+text.length$ -- 22
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 100
+warning$ -- 1
+while$ -- 118
+width$ -- 27
+write$ -- 284
+(There were 2 warnings)

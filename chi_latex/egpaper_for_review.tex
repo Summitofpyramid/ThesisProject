@@ -69,11 +69,11 @@ Person re-identification (Re-ID) has received increasing attention in recent yea
 %-------------------------------------------------------------------------
 
 \section{Related work}
-Descriptors design and metric learning are two mainstream methods in Re-ID. In descriptor design the color, texture and their statistics properties are exploited to characterize individuals. In \cite{SDALF} Symmetry-Driven Accumulation of Local Features (SDALF) divides the human silhouette into head, torso and legs and divide those three parts and extract features according to their symmetry and asymmetry axis. In \cite{LOMO} Local Maximal Occurrence (LOMO) uses overlapping samplings and creates local histograms of pixel features and takes its maximum value for horizontal stripes. In \cite{GOG} Hierarchical Gaussian descriptor constructs a two-level model from pixel features to patch features and from patches features to region features.
-
-For the metric learning, in \cite{LOMO} the within-class and between-class difference are modelled individually with a Gaussian model and the problem to distinguish different classes is transformed into maximize the probability ratio of between-class and within-class Gaussian distribution. In \cite{NFST} Null Foley-Sammon transform (NFST) is proposed to find a null space so that with this space the intraclass points collapse to a same point in the null space while interclass points are projected to different points.
-
-In this paper, the Mahalanobis distance learning is motivated by the Top-push Distance Learning in \cite{TDL}. A target function is created based on the limitation the for each within-class person pair the distance should be at least one unit smaller than the minimal between-class person pair distance. Then the target function is optimized with gradient descent method.
+Descriptors design and metric learning are two mainstream methods in Re-ID. In descriptor design the color, texture and their statistics properties are exploited to characterize individuals. In \cite{SDALF} Symmetry-Driven Accumulation of Local Features (SDALF) divides the human silhouette into head, torso and legs and divide those three parts and extract features according to their symmetry and asymmetry axis. In \cite{LOMO} Local Maximal Occurrence (LOMO) uses overlapping samplings and creates local histograms of pixel features and takes its maximum value for horizontal stripes. In \cite{GOG} hierarchical Gaussian descriptor constructs a two-level model from pixel features to patch features and from patches features to region features.\\
+\indent For the metric learning, in \cite{LOMO} the within-class and between-class difference are modelled individually with a Gaussian model and the problem to distinguish different classes is transformed into maximize the probability ratio of between-class and within-class Gaussian distribution. In \cite{NFST} Null Foley-Sammon transform (NFST) is proposed to find a null space so that with this space the intraclass points collapse to a same point in the null space while interclass points are projected to different points.\\
+\indent Convolutional neural networks (CNN) have been exploited in Re-ID. In \cite{RecurrentCNN}, the author proposes a recurrent neural network layer and temporal pooling to combine all time-steps data to generate a feature vector of the video sequence. In \cite{MultiCNN}, the author proposes a multi-channel layer based neural network to jointly learn both local body parts and whole body information from input person images.  In \cite{DeepfeatureCNN}, a convolutional neural network learning deep feature representations from multiple domains is proposed, and this work also proposes a domain-guided dropout algorithm to dropout CNN weights when learning from different datasets. \\
+\indent There are many other works based on convolutional neural networks. However, person re-identification may be one of the areas where CNN performance may be poorer than regular machine learning methods for the small sample size problem (SSS). In most datasets, the sample size of each pedestrian is quite small. Especially in single-shot Re-ID only one frame is provided in each view for each person. This is why Re-ID more often relies on classical machine learning.\\
+\indent In this paper, the Mahalanobis distance learning is motivated by the Top-push Distance Learning in \cite{TDL}. A target function is created based on the limitation the for each within-class person pair the distance should be at least one unit smaller than the minimal between-class person pair distance. Then the target function is optimized with gradient descent method.
 
 %% metric learning
 \section{Dimension reduction based on kernel local Fisher discriminant analysis }
@@ -156,9 +156,7 @@ When applying the LFDA to original high dimensional descriptors, one problem is 
  % klfda 
 % \subsection{Kernel LFDA}
  
-Kernelization is proved to greatly improve performance since the non-linearity is exploited. In \cite{KernelVersionMetrics} it has been demonstrated that kernel-based metric learning methods has better performance than those without kernelization. Kernelization is a projection from low dimensional space to high dimensional space, which makes classification and clustering much more accurate in high dimensional space.  The difference of KLFDA is that the interclass and intraclass scatter matrix will be kernelised and the eigenvalue decomposition will be operated on kernel space.  Suppose a set of sample points $\bm{x}_i, i\in\{1,2,\cdots, n\} $, can be mapped to a implicit higher feature space by a function $\phi(\bm{x}_i)$. The kernel function can be implicit and only the inner product of mapped vectors $\phi(\bm{x}_i)$ and $\phi(\bm{x}_j)$ needs to be known. The kernel trick is proposed to solve this problem by defining a function $k(\bm{x}_i,\bm{x}_j) = <\phi(\bm{x}_i),\phi(\bm{x}_j)>$, the $< \cdot >$ is the inner product. There are many kinds of kernels like linear kernel, polynomial kernel and radial basis function (RBF) kernel. In this paper the RBF kernel is adopted. A RBF kernel is defined as $k_{RBF}(\bm{x}_i,\bm{x}_j) = \exp^{(-\gamma||\bm{x}_i-\bm{x}_j||^2)}$, $\gamma$ is a constant term. 
- 
- 
+Kernelization is proved to greatly improve performance since the non-linearity is exploited. In \cite{KernelVersionMetrics} it has been demonstrated that kernel-based metric learning methods has better performance than those without kernelization. Kernelization is a projection from low dimensional space to high dimensional space, which makes classification and clustering much more accurate in high dimensional space.  The difference of KLFDA is that the interclass and intraclass scatter matrix will be kernelised and the eigenvalue decomposition will be operated on kernel space.  Suppose a set of sample points $\bm{x}_i, i\in\{1,2,\cdots, n\} $, can be mapped to a implicit higher feature space by a function $\phi(\bm{x}_i)$. The kernel function can be implicit and only the inner product of mapped vectors $\phi(\bm{x}_i)$ and $\phi(\bm{x}_j)$ needs to be known. The kernel trick is proposed to solve this problem by defining a function $k(\bm{x}_i,\bm{x}_j) = <\phi(\bm{x}_i),\phi(\bm{x}_j)>$, the $< \cdot >$ is the inner product. There are many kinds of kernels like linear kernel, polynomial kernel and radial basis function (RBF) kernel. In this paper the RBF kernel is adopted. A RBF kernel is defined as $k_{RBF}(\bm{x}_i,\bm{x}_j) = \exp^{(-\gamma||\bm{x}_i-\bm{x}_j||^2)}$, $\gamma$ is a constant term.  
 \section{Metric learning on dimension reduced space by gradient descent optimization}
 %The Mahalanobis distance based metric learning has received much attention in similarity computing. The Mahalanobis distance of two observations $\bm{x} $ and $\bm{y}$ is defined as
 %\begin{equation}
@@ -249,7 +247,8 @@ Here $\bm{\Lambda}$ is a diagonal matrix, and its diagonal elements are eigenval
 
  %% Experiment
 \section{Experiment}
-The hierarchical Gaussian descriptors \cite{GOG} are used in this paper. This descriptor describes a local region in an image with hierarchical Gaussian distribution in which the mean and the covariance are all included in the parameters. The local region are divided into many overlapping patches at first. The pixels in each patch are first described with a vector $\bm{f} = (y, M_0,M_{90},M_{180},M_{270}, R, G, B)$. The patch is modelled with a multivariate Gaussian function based on all the pixels inside. The mean and covariance parameter are transformed into a one-dimensional vector so that the patches is described with this vector. A same process is repeated so that the region is modelled based on all the patches inside the region.
+In this paper, We apply the proposed metric that is based on the KLFDA and gradient descent method to the GOG descriptor by a few steps. First, due to the high dimension of extracted GOG descriptors, KLFDA is applied to GOG descriptor to reduce the dimension to $C-1$, where $C$ is the number of person pairs in the training dataset. A transformation matrix $\bm{T}$ is generated in the dimension reduction. Second, with the dimension-reduced descriptors, a $(C-1) \times (C-1)$-dimensional SPD matrix $\bm{M}$ is trained based on the relative distance comparison, which restricts that the maximum intraclass distance is at least one unit smaller than the minimum interclass distance. The gradient descent method is used to optimize this problem by minimizing the target function denoted by the Equation \ref{targetfinal} in Chapter 4. At last, the matrix $\bm{T}$ is used to reduce the dimension of testing data to $(C-1)$-dimensional vectors. With the trained SPD matrix $\bm{M}$, we compute the similarity scores and CMCs of the testing data.\\
+\indent The hierarchical Gaussian descriptors \cite{GOG} are used in this paper. This descriptor describes a local region in an image with hierarchical Gaussian distribution in which the mean and the covariance are all included in the parameters. The local region are divided into many overlapping patches at first. The pixels in each patch are first described with a vector $\bm{f} = (y, M_0,M_{90},M_{180},M_{270}, R, G, B)$. The patch is modelled with a multivariate Gaussian function based on all the pixels inside. The mean and covariance parameter are transformed into a one-dimensional vector so that the patches is described with this vector. A same process is repeated so that the region is modelled based on all the patches inside the region.
 
 There are two versions of Gaussian of Gaussian descriptor. The first one is extracted only in RGB color space, denoted as GOG$_\text{rgb}$. While the second one is extracted from four color space \{RGB, HSV, Lab, nRGB\}. nRGB means normalized RGB color space. For Gaussian of Gaussian descriptor in all the four color spaces, the dimensions are \{7567,7567,7567,4921\}. Therefore, the descriptor concatenating descriptors of all four color spaces has a dimension of 27622.
 %\begin{equation}
@@ -289,7 +288,6 @@ There are two versions of Gaussian of Gaussian descriptor. The first one is extr
 In \cite{GOG}, mean removal and $L_2$  normalization is shown to improve performance by $5.1\%$. The reason for this is mean removal and normalization can reduce the impact of extrema in a single descriptor. 
 %A comparison between performance of original descriptors and preprocessed descriptors is shown in Tables [2, 3, 4, 5], all those datasets are tested by proposed metric. 
 Original GOG means no mean removal and normalization. It shows that the mean removal and $L_2$ normalization has an improvement around 0.5\% on the performance on all five datasets. In \cite{GOG} the mean removal and normalization is adopted. To compare with results in this paper, the mean removal and $L_2$ normalization are also adopted in this experiment. 
-
 %\begin{table}[H]
 %\setlength{\abovecaptionskip}{-0.1cm}
 %  \setlength{\belowcaptionskip}{-0.2cm}
@@ -429,13 +427,14 @@ Values &0.76&$10^{-5}$&0.01&100&1\\
 
 %\textbf{Performance measuring} The cumulative matching curve is used to measure the descriptor performance. The score means the probability that the right match is within the top $n$ samples. A perfect CMC curve is expected to have a high rank-1 value and reaches 1 as fast as possible.
 \subsection{Performance analysis}
-In this paper, we compare proposed metric with other state-of-the-art metrics including NFST \cite{NFST}, XQDA \cite{LOMO}. NFST is a metric which learns a null space for descriptors so that the same class descriptors will be projected to a single point to minimize intraclass scatter matrix while different classes are projected to different points. This metric is a good solution to small sample problem in Re-ID. XQDA is similar with many other metrics, which learns a projection matrix $W$ and then a Mahalanobis SPD matrix $M$ is learned in the subspace. Those two metrics are proved to have state-of-the-art performance compared with many other methods. The GOG$_\text{rgb}$ in all forms stands for the hierarchical Gaussian descriptor in RGB color space while GOG$_\text{fusion}$ stands for the one in four different color spaces \{RGB, Lab, HSV, nRnG\}.\\
+In this paper, we compare proposed metric with other state-of-the-art metrics including NFST \cite{NFST}, XQDA \cite{LOMO}. NFST is a metric which learns a null space for descriptors so that the same class descriptors will be projected to a single point to minimize intraclass scatter matrix while different classes are projected to different points. This metric is a good solution to small sample problem in Re-ID. XQDA is similar with many other metrics, which learns a projection matrix $W$ and then a Mahalanobis SPD matrix $M$ is learned in the subspace. Those two metrics are proved to have state-of-the-art performance compared with many other methods. The GOG$_\text{rgb}$ in all tables means the hierarchical Gaussian descriptor in RGB color space while GOG$_\text{fusion}$ means the one in four different color spaces \{RGB, Lab, HSV, nRnG\}.\\
+In \cite{GOG}, it has been shown that GOG + XQDA outperforms many other combinations, including Metric ensemble \cite{MetricEnsembles}, SCNCD \cite{SCNCD}, Semantic method \cite{SemanticMethod}, etc. In \cite{ NFST}, it has been shown LOMO + NFST outperforms metrics including LMNN \cite{LMNN}, KCCA \cite{KCCA}, ITML \cite{ITML}, KLFDA \cite{KLFDA}, MFA \cite{KernelVersionMetrics}, KISSME \cite{KISSME}, Similarity learning \cite{SimilarityLearning}, SCNCD \cite{SCNCD}, Mid-level filters \cite{MidlevelFilters} and Improved deep learning \cite{ImprovedCNN}. Based on the result that XQDA and NFST outperform other metrics, only XQDA and NFST are used in this thesis to compare with our proposed metric learning. 
 \textbf{VIPeR} A comparison form is given in Table 3. Some of recent results are also included in this form. We can find that the rank scores are better than those of NFST and XQDA in terms of both GOG$_\text{rgb}$ and GOG$_\text{fusion}$. More specifically, the rank 1, rank 5, rank 10, rank 15 and rank 20 scores of proposed metric learning are 0.76\%, 0.92\%, 1.39\%, 1.08\%, 1.52\% higher than those of GOG$_\text{rgb}$ + XQDA. The rank 1, rank 5, rank 10, rank 15 and rank 20 GOG$_\text{fusion}$ scores of proposed metric learning are 0.35\%, -0.54\%, 0.98\%, 0.66\%, 0.79\% higher than GOG$_\text{fusion}$ + XQDA respectively. Also we can see that the proposed metric learning has a better performance than NFST. 
 %-----------------------------------------------------------------------VIPeR
 \begin{table}[H]\footnotesize
 \caption{Performance of different metrics on VIPeR}
 \centering
- \begin{tabular}{|l|c|c|c|c|c|c|}
+\begin{tabular}{|l|c|c|c|c|c|c|}
 \hline
 & \multicolumn{5}{|c|}{Rank(\%)} \\
 \hline
@@ -470,12 +469,9 @@ GOG$_\text{fusion}$+Proposed&48.32&76.90&87.78&91.93&94.49\\ %48.16%, 76.65%, 87
 \end{figure}
 
 \textbf{CUHK1} We can find that the rank 1, rank5, rank 10, rank 15, rank 20 score of GOG$_\text{rgb}$ combined with proposed metric are 5.4\%, 4.18\%,3.31\%,2.16\%,1.46\% higher than XQDA, and 0.31\%, 1.22\%,1.34\%, 1.17\%, 1.11\% than NFST.  Also the  rank 1, rank5, rank 10, rank 15, rank 20 score of GOG$_\text{fusion}$ combined with proposed metric are 4.57\%, 2.64\%, 0.70\%, 1.33\%, 0.83\% higher than GOG$_\text{fusion}$ combined with XQDA, and 0.41\%, 0.83\%, 0.88\%, 1.09\%, 1.14\% than GOG$_\text{fusion}$ combined with NFST. 
-
-
 %-------------------------------
-
 %-----------------------------------------------------------------------CUHK1
-\begin{table}[H]\footnotesize
+\begin{table}\footnotesize
 \caption{Performance of different metrics on CUHK1}
 \centering
 \begin{tabular}{|l|c|c|c|c|c|c|}
@@ -504,7 +500,6 @@ GOG$_\text{fusion}$+Proposed&56.67&84.49& 90.51& 93.31&94.84\\
 
 \end{tabular}\newline
 \end{table}
-
 \begin{figure}
 \begin{raggedleft}
 \includegraphics[width=1\linewidth]{CUHK1.jpg}
@@ -556,7 +551,8 @@ GOG$_\text{fusion}$+Proposed&56.67&84.49& 90.51& 93.31&94.84\\
 %\end{figure}
 
 %-----------------------------------------------------------------------PRID_450S
-\begin{table}[H]\footnotesize
+\textbf{Prid\_450s} In this dataset, we can find the rank 1 score of XQDA and NFST is higher than proposed metric, but they have almost the same rank 5, rank 10, rank 15, and rank 20 scores with respect to both kinds of descriptors. 
+\begin{table}\footnotesize
 \caption{Performance of different metrics on prid\_450s}
 \centering
 \begin{tabular}{|l|c|c|c|c|c|c|}
@@ -585,7 +581,6 @@ GOG$_\text{fusion}$+Proposed&62.80&86.58&92.36&95.29& 96.89\\ % 62.62%, 86.44%, 
 
 \end{tabular}
 \end{table}
-\textbf{Prid\_450s} In this dataset, we can find the rank 1 score of XQDA and NFST is higher than proposed metric, but they have almost the same rank 5, rank 10, rank 15, and rank 20 scores with respect to both kinds of descriptors. 
 %%--------------------------------------
 \begin{figure}
 \begin{raggedleft}
@@ -596,7 +591,11 @@ GOG$_\text{fusion}$+Proposed&62.80&86.58&92.36&95.29& 96.89\\ % 62.62%, 86.44%, 
 \end{figure}
 
 %-----------------------------------------------------------------------GRID
-\begin{table}[H]\footnotesize
+%%--------------------------------------
+\textbf{GRID} We can see that the rank 1 score of proposed metric are 0.24\% higher than XQDA and 0.88\% higher than NFST in terms of GOG$_\text{fusion}$, but XQDA outperforms proposed metric on rank 5, rank 10, rank 15 and rank 20 scores. Besides, proposed metric outperforms NFST on rank 5, rank 10, rank 15 scores.\\
+\indent In summary, the Re-ID performance is improved in VIPeR, CUHK01 dataset, and has almost the same performance with NFST and XQDA on prid\_450s dataset. Specifically, proposed metric learning has the best rank 1 score in GRID dataset and its performance is only second to XQDA. The proposed metric has superior performance for following reasons: (1) dimension reduction by KLFDA exploits the nonlinearity and the loss of discriminant information between classes are minimized. (2) the simplified relative distance limitation optimization helps to confine the Mahalanobis distance matrix $\bm{M}$ to discriminate different classes.  
+%------------------------------------------------------------------------
+\begin{table}\footnotesize
 \caption{Performance of different metrics on GRID}
 \centering
 \begin{tabular}{|l|c|c|c|c|c|c|}
@@ -620,7 +619,6 @@ GOG$_\text{fusion}$+XQDA& 23.68&47.28 &58.40 &65.84&69.68 \\
 %GOG$_\text{fusion}$+KLFDA &23.76&44.40& 55.36&61.76& 66.48\\
 %\hline
 GOG$_\text{fusion}$+Proposed&23.92&44.64&54.88&62.32&66.40\\ %23.84%, 44.64%, 55.04%, 62.24%, 66.24%
-
 \hline
 
 \end{tabular}
@@ -633,12 +631,12 @@ GOG$_\text{fusion}$+Proposed&23.92&44.64&54.88&62.32&66.40\\ %23.84%, 44.64%, 55
 \caption{CMC curves on GRID comparing different metric learning}
 \end{raggedleft}
 \end{figure}
-%%--------------------------------------
-\textbf{GRID} We can see that the rank 1 score of proposed metric are 0.24\% higher than XQDA and 0.88\% higher than NFST in terms of GOG$_\text{fusion}$, but XQDA outperforms proposed metric on rank 5, rank 10, rank 15 and rank 20 scores. Besides, proposed metric outperforms NFST on rank 5, rank 10, rank 15 scores.\\
-\indent In summary, the Re-ID performance is improved in VIPeR, CUHK01 dataset, and has almost the same performance with NFST and XQDA on prid\_450s dataset. Specifically, proposed metric learning has the best rank 1 score in GRID dataset and its performance is only second to XQDA. The proposed metric has superior performance for following reasons: (1) dimension reduction by KLFDA exploits the nonlinearity and the loss of discriminant information between classes are minimized. (2) the simplified relative distance limitation optimization helps to confine the Mahalanobis distance matrix $\bm{M}$ to discriminate different classes.  
-%------------------------------------------------------------------------
+
+\subsection{Time cost}
+The training time increases when the dataset size increases. For the CUHK1 dataset which has most training pairs, it takes half an hour to train the metric on a desktop PC with a 16GB RAM, Intel i5 processor. For datasets with fewer training pairs like Prid\_2011 and GRID, it takes no more than five minutes.
 \section{Conclusion}
-In this paper we combined KLFDA with gradient descent method based metric learning. A SPD matrix is learned on the lower dimension space after dimensionality reduction by KLFDA. By comparison and analysis we can find the proposed metric has better performance than NFST and XQDA on VIPeR and CUHK1 datasets, but XQDA and NFST outperforms the proposed metric learning on Prid\_2011 and Prid\_450s. On GRID dataset the proposed metric learning has better rank 1 score than NFST and its performance is only second to XQDA.
+In this paper we combined KLFDA with gradient descent method based metric learning. An SPD matrix is learned on the lower dimension space after dimensionality reduction by KLFDA. By comparison and analysis we can find the proposed metric has better performance than NFST and XQDA on VIPeR and CUHK1 datasets, but XQDA and NFST outperforms the proposed metric learning on Prid\_2011 and Prid\_450s. On GRID dataset the proposed metric learning has better rank 1 score than NFST and its performance is only second to XQDA.\\
+\indent In summary, our proposed metric improved the Re-ID accuracy in VIPeR and CUHK1 datasets, and has almost the same performance with NFST and XQDA in the prid\_450s dataset. Furthermore, the proposed metric learning has the best rank 1 score in the GRID dataset and its performance is only second to XQDA. The proposed metric has superior performance for the following reasons: (1) dimension reduction by KLFDA exploits the nonlinearity, and the loss of discriminant information between classes is minimized; (2) the simplified relative distance limitation optimization helps to confine the Mahalanobis distance matrix $\bm{M}$ to discriminate different classes.
 
 
 
