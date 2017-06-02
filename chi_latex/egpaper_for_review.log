@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 MAY 2017 10:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 JUN 2017 14:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -174,6 +174,26 @@ Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 207.
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen120
+\lightrulewidth=\dimen121
+\cmidrulewidth=\dimen122
+\belowrulesep=\dimen123
+\belowbottomsep=\dimen124
+\aboverulesep=\dimen125
+\abovetopsep=\dimen126
+\cmidrulesep=\dimen127
+\cmidrulekern=\dimen128
+\defaultaddspace=\dimen129
+\@cmidla=\count106
+\@cmidlb=\count107
+\@aboverulesep=\dimen130
+\@belowrulesep=\dimen131
+\@thisruleclass=\count108
+\@lastruleclass=\count109
+\@thisrulewidth=\dimen132
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
@@ -231,14 +251,14 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen120
-\Hy@linkcounter=\count106
-\Hy@pagecounter=\count107
+\@linkdim=\dimen133
+\Hy@linkcounter=\count110
+\Hy@pagecounter=\count111
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count108
+\Hy@SavedSpaceFactor=\count112
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -265,17 +285,17 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-\c@Hy@tempcnt=\count109
+\c@Hy@tempcnt=\count113
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen121
-\Fld@menulength=\count110
-\Field@Width=\dimen122
-\Fld@charsize=\dimen123
+\XeTeXLinkMargin=\dimen134
+\Fld@menulength=\count114
+\Field@Width=\dimen135
+\Fld@charsize=\dimen136
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -285,37 +305,37 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count111
-\c@Item=\count112
-\c@Hfootnote=\count113
+\Hy@abspage=\count115
+\c@Item=\count116
+\c@Hfootnote=\count117
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count114
-\c@bookmark@seq@number=\count115
+\Fld@listcount=\count118
+\c@bookmark@seq@number=\count119
 \Hy@SectionHShift=\skip48
 )
 (./egpaper_for_review.aux)
 \openout1 = `egpaper_for_review.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 30.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -331,16 +351,16 @@ Package color Info: Driver file: pdftex.def on input line 142.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
-\scratchdimen=\dimen124
+\scratchcounter=\count120
+\scratchdimen=\dimen137
 \scratchbox=\box32
-\nofMPsegments=\count117
-\nofMParguments=\count118
+\nofMPsegments=\count121
+\nofMParguments=\count122
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count119
-\MPscratchDim=\dimen125
-\MPnumerator=\count120
-\makeMPintoPDFobject=\count121
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen138
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
 \everyMPtoPDFconversion=\toks23
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -359,7 +379,7 @@ e
 ))
 \AtBeginShipoutBox=\box33
 Package atbegshi Info: Package `everyshi' patched.
-Package hyperref Info: Link coloring ON on input line 28.
+Package hyperref Info: Link coloring ON on input line 30.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -367,84 +387,93 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count122
+\c@section@level=\count126
 )
-LaTeX Info: Redefining \ref on input line 28.
-LaTeX Info: Redefining \pageref on input line 28.
-LaTeX Info: Redefining \nameref on input line 28.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
-LaTeX Font Info:    Try loading font information for U+msa on input line 51.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
+LaTeX Font Info:    Try loading font information for U+msa on input line 53.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 51.
+LaTeX Font Info:    Try loading font information for U+msb on input line 53.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+
+<SimilarInter.jpg, id=22, 511.9125pt x 367.3725pt>
+File: SimilarInter.jpg Graphic file (type jpg)
+ <use SimilarInter.jpg>
+Package pdftex.def Info: SimilarInter.jpg used on input line 67.
+(pdftex.def)             Requested size: 189.70947pt x 136.1443pt.
+
+<DisimilarIntra.jpg, id=23, 640.3925pt x 339.2675pt>
+File: DisimilarIntra.jpg Graphic file (type jpg)
+ <use DisimilarIntra.jpg>
+Package pdftex.def Info: DisimilarIntra.jpg used on input line 76.
+(pdftex.def)             Requested size: 237.13594pt x 125.62537pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 68.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 85.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 85.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 ) [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2]
-Overfull \hbox (22.23369pt too wide) in paragraph at lines 216--239
- [][] 
+ <./SimilarInter.jpg> <./DisimilarIntra.jpg>]
+Underfull \hbox (badness 1442) in paragraph at lines 89--94
+[]\OT1/ptm/m/n/10 For met-ric learn-ing, [[]][] rep-re-sents the within-class
  []
 
+[2] [3]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 270.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 253.
-
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 253.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 270.
 
-Underfull \hbox (badness 1024) in paragraph at lines 260--287
+Underfull \hbox (badness 1024) in paragraph at lines 277--304
 \OT1/ptm/m/n/10 Gallery folder con-tains 250 true match im-ages of the
  []
 
-[4] <VIPeR.jpg, id=132, 2409.0pt x 1806.75pt>
-File: VIPeR.jpg Graphic file (type jpg)
- <use VIPeR.jpg>
-Package pdftex.def Info: VIPeR.jpg used on input line 465.
-(pdftex.def)             Requested size: 237.13594pt x 177.846pt.
-
-<CUHK1.jpg, id=133, 2409.0pt x 1806.75pt>
-File: CUHK1.jpg Graphic file (type jpg)
- <use CUHK1.jpg>
-Package pdftex.def Info: CUHK1.jpg used on input line 505.
-(pdftex.def)             Requested size: 237.13594pt x 177.846pt.
-
-<prid_450s.jpg, id=134, 2409.0pt x 1806.75pt>
-File: prid_450s.jpg Graphic file (type jpg)
- <use prid_450s.jpg>
-Package pdftex.def Info: prid_450s.jpg used on input line 587.
-(pdftex.def)             Requested size: 237.13594pt x 177.846pt.
-
-<GRID.jpg, id=135, 2409.0pt x 1806.75pt>
-File: GRID.jpg Graphic file (type jpg)
- <use GRID.jpg>
-Package pdftex.def Info: GRID.jpg used on input line 629.
-(pdftex.def)             Requested size: 237.13594pt x 177.846pt.
- [5]
+[4]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./VIPeR.jpg> <./CUHK1.jpg> <./prid_450s.jpg>] (./egpaper_for_review.bbl
-(./egpaper_for_review.brf)
+ [5]
+<VIPeR.jpg, id=152, 2409.0pt x 1806.75pt>
+File: VIPeR.jpg Graphic file (type jpg)
+ <use VIPeR.jpg>
+Package pdftex.def Info: VIPeR.jpg used on input line 482.
+(pdftex.def)             Requested size: 237.13594pt x 177.846pt.
+
+<CUHK1.jpg, id=153, 2409.0pt x 1806.75pt>
+File: CUHK1.jpg Graphic file (type jpg)
+ <use CUHK1.jpg>
+Package pdftex.def Info: CUHK1.jpg used on input line 522.
+(pdftex.def)             Requested size: 237.13594pt x 177.846pt.
+
+<prid_450s.jpg, id=154, 2409.0pt x 1806.75pt>
+File: prid_450s.jpg Graphic file (type jpg)
+ <use prid_450s.jpg>
+Package pdftex.def Info: prid_450s.jpg used on input line 604.
+(pdftex.def)             Requested size: 237.13594pt x 177.846pt.
+
+<GRID.jpg, id=155, 2409.0pt x 1806.75pt>
+File: GRID.jpg Graphic file (type jpg)
+ <use GRID.jpg>
+Package pdftex.def Info: GRID.jpg used on input line 646.
+(pdftex.def)             Requested size: 237.13594pt x 177.846pt.
+ [6 <./VIPeR.jpg> <./CUHK1.jpg> <./prid_450s.jpg>] (./egpaper_for_review.bbl (.
+/egpaper_for_review.brf)
 \tf@brf=\write3
 \openout3 = `egpaper_for_review.brf'.
 
@@ -453,40 +482,40 @@ Underfull \hbox (badness 1092) in paragraph at lines 36--36
 []\OT1/ptm/m/n/9 M. Faren-zena, L. Baz-zani, A. Pe-rina, V. Murino, and
  []
 
-
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+[7 <./GRID.jpg>]
 Underfull \hbox (badness 5970) in paragraph at lines 86--86
 \OT1/ptm/m/n/9 Lo-cal fisher dis-crim-i-nant anal-y-sis for pedes-trian re-
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
-[7 <./GRID.jpg>]
+
 Underfull \hbox (badness 5022) in paragraph at lines 125--125
 \OT1/ptm/m/n/9 Learn-ing Deep Fea-ture Rep-re-sen-ta-tions with Do-main
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1003.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1020.
  [8
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1003.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1020.
  (./egpaper_for_review.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1003.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1003.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1020.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1020.
 
 Package rerunfilecheck Info: File `egpaper_for_review.brf' has not changed.
-(rerunfilecheck)             Checksum: E5D738B26AE54088CB596694EAA7FCEC;1725.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1003.
+(rerunfilecheck)             Checksum: 1973829CCDE18FD5D93B3E38E616F28C;1739.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1020.
  ) 
 Here is how much of TeX's memory you used:
- 6838 strings out of 493089
- 98043 string characters out of 6134842
- 210386 words of memory out of 5000000
- 10115 multiletter control sequences out of 15000+600000
- 44187 words of font info for 100 fonts, out of 8000000 for 9000
+ 6912 strings out of 493089
+ 99100 string characters out of 6134842
+ 205600 words of memory out of 5000000
+ 10180 multiletter control sequences out of 15000+600000
+ 45813 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,30p,1575b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,13n,29p,1575b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
@@ -505,10 +534,10 @@ t/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on egpaper_for_review.pdf (8 pages, 1031599 bytes).
+Output written on egpaper_for_review.pdf (8 pages, 1087155 bytes).
 PDF statistics:
- 288 PDF objects out of 1000 (max. 8388607)
- 254 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 295 PDF objects out of 1000 (max. 8388607)
+ 259 compressed objects within 3 object streams
+ 71 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
