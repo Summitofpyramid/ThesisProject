@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 JUN 2017 14:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 JUL 2017 21:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -433,15 +433,15 @@ Underfull \hbox (badness 1442) in paragraph at lines 89--94
  []
 
 [2] [3]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 270.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 274.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 270.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 274.
 
-Underfull \hbox (badness 1024) in paragraph at lines 277--304
+Underfull \hbox (badness 1024) in paragraph at lines 281--308
 \OT1/ptm/m/n/10 Gallery folder con-tains 250 true match im-ages of the
  []
 
@@ -449,28 +449,28 @@ Underfull \hbox (badness 1024) in paragraph at lines 277--304
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
-<VIPeR.jpg, id=152, 2409.0pt x 1806.75pt>
+<VIPeR.jpg, id=155, 2409.0pt x 1806.75pt>
 File: VIPeR.jpg Graphic file (type jpg)
  <use VIPeR.jpg>
-Package pdftex.def Info: VIPeR.jpg used on input line 482.
+Package pdftex.def Info: VIPeR.jpg used on input line 486.
 (pdftex.def)             Requested size: 237.13594pt x 177.846pt.
 
-<CUHK1.jpg, id=153, 2409.0pt x 1806.75pt>
+<CUHK1.jpg, id=156, 2409.0pt x 1806.75pt>
 File: CUHK1.jpg Graphic file (type jpg)
  <use CUHK1.jpg>
-Package pdftex.def Info: CUHK1.jpg used on input line 522.
+Package pdftex.def Info: CUHK1.jpg used on input line 526.
 (pdftex.def)             Requested size: 237.13594pt x 177.846pt.
 
-<prid_450s.jpg, id=154, 2409.0pt x 1806.75pt>
+<prid_450s.jpg, id=157, 2409.0pt x 1806.75pt>
 File: prid_450s.jpg Graphic file (type jpg)
  <use prid_450s.jpg>
-Package pdftex.def Info: prid_450s.jpg used on input line 604.
+Package pdftex.def Info: prid_450s.jpg used on input line 608.
 (pdftex.def)             Requested size: 237.13594pt x 177.846pt.
 
-<GRID.jpg, id=155, 2409.0pt x 1806.75pt>
+<GRID.jpg, id=158, 2409.0pt x 1806.75pt>
 File: GRID.jpg Graphic file (type jpg)
  <use GRID.jpg>
-Package pdftex.def Info: GRID.jpg used on input line 646.
+Package pdftex.def Info: GRID.jpg used on input line 650.
 (pdftex.def)             Requested size: 237.13594pt x 177.846pt.
  [6 <./VIPeR.jpg> <./CUHK1.jpg> <./prid_450s.jpg>] (./egpaper_for_review.bbl (.
 /egpaper_for_review.brf)
@@ -495,22 +495,22 @@ Underfull \hbox (badness 5022) in paragraph at lines 125--125
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1020.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1024.
  [8
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1020.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1024.
  (./egpaper_for_review.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1020.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1020.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1024.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1024.
 
 Package rerunfilecheck Info: File `egpaper_for_review.brf' has not changed.
-(rerunfilecheck)             Checksum: 1973829CCDE18FD5D93B3E38E616F28C;1739.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1020.
+(rerunfilecheck)             Checksum: D888451EA6B59662DC015C07843393B7;1779.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1024.
  ) 
 Here is how much of TeX's memory you used:
- 6912 strings out of 493089
- 99100 string characters out of 6134842
+ 6913 strings out of 493089
+ 99113 string characters out of 6134842
  205600 words of memory out of 5000000
  10180 multiletter control sequences out of 15000+600000
  45813 words of font info for 102 fonts, out of 8000000 for 9000
@@ -534,10 +534,10 @@ t/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on egpaper_for_review.pdf (8 pages, 1087155 bytes).
+Output written on egpaper_for_review.pdf (8 pages, 1087683 bytes).
 PDF statistics:
- 295 PDF objects out of 1000 (max. 8388607)
- 259 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
+ 298 PDF objects out of 1000 (max. 8388607)
+ 262 compressed objects within 3 object streams
+ 72 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
