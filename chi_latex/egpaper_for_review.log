@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 JUL 2017 16:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 JUL 2017 21:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -438,19 +438,15 @@ Underfull \hbox (badness 2189) in paragraph at lines 101--103
  []
 
 [2] [3]
-Overfull \hbox (17.43721pt too wide) in paragraph at lines 232--255
- [][] 
- []
-
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 269.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 269.
- [4]
-<VIPeR.jpg, id=139, 2409.0pt x 1806.75pt>
+
+[4] <VIPeR.jpg, id=139, 2409.0pt x 1806.75pt>
 File: VIPeR.jpg Graphic file (type jpg)
  <use VIPeR.jpg>
 Package pdftex.def Info: VIPeR.jpg used on input line 481.
@@ -535,7 +531,7 @@ t/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on egpaper_for_review.pdf (8 pages, 1085933 bytes).
+Output written on egpaper_for_review.pdf (8 pages, 1085956 bytes).
 PDF statistics:
  297 PDF objects out of 1000 (max. 8388607)
  261 compressed objects within 3 object streams

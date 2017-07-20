@@ -242,8 +242,8 @@ the iteration process is summarized as in Table 1.
 
  \textbf{while}(not converge)\\
  \hspace{0.5cm} Update $t =  t + 1$;\\
- \hspace{0.5cm}  Find corresponding $\bm{x}_k$ for all $\bm{x}_i$, where $y_i \ne y_k$, so that \\ \hspace{0.5cm} $\bm{x}_i$ and $\bm{x}_k$ has minimal interclass distance;\\
- \hspace{0.5cm} Update gradient $\bm{G}_{t+1}$ with Eq. \eqref{gradient} ;\\
+ \hspace{0.5cm}  Find corresponding $\bm{x}_k$ for all $\bm{x}_i$, where $y_i \ne y_k$,  \\ \hspace{0.5cm} so that $\bm{x}_i$ and $\bm{x}_k$ has minimal interclass distance;\\
+ \hspace{0.5cm} Update gradient $\bm{G}_{t+1}$ with Eq. \eqref{gradient} with found $\bm{x}_k$;\\
  \hspace{0.5cm}  Update $\bm{M}$ with equation : $\bm{M}_{t+1} = \bm{M}_{t} - \lambda\bm{G}_t$;\\
  \hspace{0.5cm}  Project $\bm{M}_{t+1}$ to the semi-positive definite space; \\ 
 % \indent \indent by $\bm{M}_{t+1}= \bm{V}_{t+1}\bm{S}_{t+1}\bm{V}^T_{t+1}$;\\
