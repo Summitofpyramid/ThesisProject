@@ -11,6 +11,7 @@
 \usepackage{float}
 \usepackage{bm}
 \usepackage{booktabs}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \newcommand{\bftab}{\fontseries{b}\selectfont}
 
 % Include other packages here, before hyperref.
@@ -54,7 +55,7 @@ First line of institution2 address\\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-   In person re-identification (Re-ID), robust descriptors and metric are essential to improve accuracy. Mahalanobis distance based metric learning is a popular method for metric learning. However, for descriptors with high dimensionality (thousands or more), it is intractable to learn a high dimensional semi-definite positive (SPD) matrix without dimension reduction.  Many metric learning methods have been proposed to learn a subspace that preserves those discriminative information. However, few works have been done to study metric learning on those subspaces obtained after an initial dimension reduction. In this paper, a two-level structure of metric learning is proposed. The kernel local Fisher discriminant analysis (KLFDA) is used to reduce dimension taking advantage of the idea that kernelization method can greatly improve Re-ID performance \cite{KernelVersionMetrics}. Then a Mahalanobis distance metric is learned on the lower dimensional descriptors based on the constraint that the intraclass distance must be at least one unit smaller than the minimum interclass distance. This method turns to have state-of-the-art performance compared with other advanced metric learning methods.
+   In person re-identification (Re-ID), robust descriptors and metric are essential to improve accuracy. Mahalanobis distance based metric learning is a popular method for metric learning. However, for descriptors with high dimensionality (thousands or more), it is intractable to learn a high dimensional semi-definite positive (SPD) matrix without dimension reduction.  Many metric learning methods have been proposed to learn a subspace that preserves those discriminative information. However, few works have been done to study metric learning on those subspaces obtained after an initial dimension reduction. In this paper, a two-level structure of metric learning is proposed. The kernel local Fisher discriminant analysis (KLFDA) is used to reduce dimension taking advantage of the idea that kernelization method can greatly improve Re-ID performance \cite{KernelVersionMetrics}. Then a Mahalanobis distance metric is learned on the lower dimensional descriptors based on the constraint that the intraclass distance must be at least one unit smaller than the minimum interclass distance. This method turns out to have state-of-the-art performance compared with other advanced metric learning methods.
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
@@ -81,7 +82,7 @@ Person re-identification (Re-ID) has received increasing attention in recent yea
 %Metric learning 
 %\indent Among all those metric learning methods, Fisher discriminant analysis (FDA) proves to be one of advanced metrics to improve Re-ID performance. It tries to maximize the ration of interclass scatter matrix versus intraclass scatter distance and this problem is transformed as a eigenvalue decomposition problem. Local Fisher discriminant analysis combines locality preserving projection (LPP) with FDA to exploit locality of sample points. Besides, kernel method \cite{KernelVersionMetrics} has been shown to improve Re-ID performance since it exploits the nonlinearity of data.\\
 \indent For descriptors with high dimensionality, it is hard to directly learn an SPD matrix $\bm{M}$, especially when the small sample size $n (n<<d)$ is small. A popular method is to use principal component analysis (PCA) to reduce dimension. PCA is very popular for dimensionality reduction, but PCA is a global dimension reduction scheme. As a result, much interclass discriminative information will be lost after dimensionality reduction. In this paper kernel local Fisher discriminant analysis (KLFDA) \cite{KernelVersionMetrics} is used to reduce dimensionality. This supervised dimension reduction combines linear discriminant analysis and locality preserving projection. Moreover, the kernelization version of LFDA proves to improve performance and reduces computation cost. However, the use of metric learning on dimensionality reduced vectors by KLFDA hasn't been fully studied.\\
-\indent The contributions of this paper are as follows. (1) KLFDA and metric learning are combined together to improve Re-ID performance. Previous works mainly used KLFDA  \cite{KernelVersionMetrics} as a subspace learning method. Euclidean distance is then used to measure the similarity of dimension reduced descriptors. (2) Inspired by \cite{TDL}, we propose to learn a Mahalanobis distance matrix based on the constraint that intraclass distance is at least one unit smaller than the minimum interclass distance. Therefore, metric learning in the lower dimensional space is transformed into an optimization problem solved by an iterative process using gradient descent method. We compare the intraclass distance only with the minimum interclass distance in each iteration thus avoiding the need to compute every possible possible positive and negative pairs. Extensive experiments are performed on VIPeR, CUHK01, prid\_450s and GRID dataset. These ones demonstrated that the proposed method can produce state-of-the-art performance on some of these datasets.
+\indent The contributions of this paper are as follows. (1) KLFDA and metric learning are combined together to improve Re-ID performance. Previous works mainly used KLFDA  \cite{KernelVersionMetrics} as a subspace learning method. Euclidean distance is then used to measure the similarity of dimension reduced descriptors. (2) Inspired by \cite{TDL}, we propose to learn a Mahalanobis distance matrix based on the constraint that intraclass distance is at least one unit smaller than the minimum interclass distance. Therefore, metric learning in the lower dimensional space is transformed into an optimization problem solved by an iterative process using gradient descent method. We compare the intraclass distance only with the minimum interclass distance in each iteration thus avoiding the need to compute every possible possible positive and negative pairs. Extensive experiments are performed on VIPeR, CUHK01, Prid\_450s and GRID dataset. These ones demonstrated that the proposed method can produce state-of-the-art performance on some of these datasets.
 
 %-------------------------------------------------------------------------
 
@@ -89,7 +90,7 @@ Person re-identification (Re-ID) has received increasing attention in recent yea
 Descriptor design and metric learning are two core components in people Re-ID. In descriptor design, color, texture and their statistical properties are exploited to characterize individuals. In \cite{SDALF} Symmetry-Driven Accumulation of Local Features (SDALF) divides the human silhouette into head, torso and legs and extract features according to their symmetry and asymmetry axis. In \cite{LOMO} Local Maximal Occurrence (LOMO) uses overlapping samplings and creates local histograms of pixel features extracting maxima value along horizontal stripes. In \cite{GOG} hierarchical Gaussian descriptor constructs a two-level model from pixel features to patch features and from patch features to region features.\\
 \indent For metric learning,  \cite{LOMO} represents the within-class and between-class difference individually with a Gaussian model. The problem to distinguish different classes is transformed into maximize the probability ratio of between-class and within-class Gaussian distribution. In \cite{NFST} Null Foley-Sammon transform (NFST) is proposed to find a null space so that with this space the intraclass points collapse to a same point in the null space while interclass points are projected to different points.\\
 \indent Convolutional neural networks (CNN) have also been exploited in Re-ID. In \cite{RecurrentCNN}, the author proposes a recurrent neural network layer and temporal pooling to combine all time-steps data to generate a feature vector from a video sequence. In \cite{MultiCNN}, the author proposes a multi-channel layer based neural network to jointly learn both local body parts and whole body information from input person images.  In \cite{DeepfeatureCNN}, a convolutional neural network learning deep feature representations from multiple domains is proposed, and this work also proposes a domain-guided dropout algorithm when learning from different datasets. \\
-\indent There are many other works based on convolutional neural networks. However, person re-identification may be one of the areas where CNN performance may not perform as well as regular machine learning methods because of the small sample size problem (SSS). In most datasets, the sample size of each pedestrian is quite small. Especially in single-shot Re-ID only one frame is provided in each view for each person. This is why Re-ID more often relies on classical machine learning.\\
+\indent There are many other works based on convolutional neural networks. However, person re-identification may be one of the areas where CNN may not perform as well as regular machine learning methods because of the small sample size problem (SSS). In most datasets, the sample size of each pedestrian is quite small. Especially in single-shot Re-ID only one frame is provided in each view for each person. This is why Re-ID more often relies on classical machine learning.\\
 \indent In this paper, the Mahalanobis distance learning is motivated by the Top-push Distance Learning method described in \cite{TDL}. But first, dimension reduction is applied to a high-dimensional descriptor.
 
 %% metric learning
@@ -189,11 +190,11 @@ where $\gamma$ is a constant term.
 %\end{equation}
  %Therefore, Mahalanobis distance can be regarded as a variant of Euclidean distance. 
 % There are many methods proposed for metric learning[ ]. Inspired by [], in this paper, a similar metric learning based on iteration computation is used. For a  sample descriptor $\bm{x}_i$,  its positive pairwise set is defined as $\{\bm{x}_i,\bm{x}_j\}$, where class ID $y_i = y_j$. Also the negative pairwise set can be defined as $\{\bm{x}_i,\bm{x}_j\}$, where $y_i \ne y_j$. Similar with [PRDC], this method is also based on similarity comparison. The difference is in [PRDC], for all possible positive and negative pairs, the distance between positive pairs must be smaller than the distance between negative pairs. Since it has to compare possible positive and negative pairs, computation complexity will be quite huge.  To decrease complexity, a simplified version is proposed as the top-push distance metric learning[ ].  
-Top-push Distance metric learning is proposed in \cite{TDL}. In this paper, KLFDA and Top-push Distance metric learning are combined. We briefly review the Top-push Distance metric learning in this section. Since Re-ID is a ranking problem, it is desired that the rank 1 descriptor should be the right match. Instead of comparing all the possible positive and negative pairs, a simplified version is proposed that the intraclass distance should be at least one unit smaller than inter distance. This will decrease computation complexity quite much. Given a Mahalanobis matrix $\bm{M}$, for dimension reduced sample points $\bm{x}_i, i = 1,2,3,\cdots,n$, $n$ is the number of all samples. The requirement is distance between positive pair should be at least one unit smaller than the minimum of all negative distance. This can be denoted as 
+Top-push Distance metric learning is proposed in \cite{TDL}. This paper combines KLFDA and Top-push Distance metric learning to produce a robust re-identification method. We briefly review the Top-push Distance metric learning in this section. Since Re-ID is a ranking problem, it is desired that the rank 1 descriptor should be the right match. Instead of comparing all the possible positive and negative pairs, a simplified version was proposed in \cite{TDL} in which the intraclass distance should be at least one unit smaller than inter distance. Given a Mahalanobis matrix $\bm{M}$, for dimension reduced sample points $\bm{x}_i, i = 1,2,3,\cdots,n$, $n$ is the number of all samples. The requirement is that distance between positive pair should be at least one unit smaller than the minimum of all negative distance. This can be denoted as 
  \begin{equation}
  D(\bm{x}_i,\bm{x}_j) + \rho < \min D(\bm{x}_i,\bm{x}_k), y_i = y_j, y_i\ne y_k,
  \end{equation}
- $\rho$ is a slack variable and $\rho \in [0,1]$. This equation can be transformed into a optimization problem with respect to descriptor $\bm{x}_i$ as
+ $\rho$ is a slack variable and $\rho \in [0,1]$. This equation can be transformed into an optimization problem with respect to descriptor $\bm{x}_i$ as
  \begin{equation}\label{term2}
  \arg \min \sum_{y_i = y_j} \max \{D(\bm{x}_i,\bm{x}_j) -  \min_{ y_i\ne y_k} D(\bm{x}_i,\bm{x}_k)  + \rho, 0 \}.
  \end{equation}
@@ -205,7 +206,7 @@ Top-push Distance metric learning is proposed in \cite{TDL}. In this paper, KLFD
  \alpha \sum_{\bm{x}_i,\bm{x}_j,y_i=y_j}\max\{{D(\bm{x}_i,\bm{x}_j)-\min_{y_i\ne y_k}{D(\bm{x}_i,\bm{x}_k)}+\rho,0}\}.
  \end{aligned}
  \end{equation}
-This way the problem is transformed to an optimization problem. Notice that $D(\bm{x},\bm{y})$ can be denoted as 
+This way the problem is transformed into an optimization problem. Notice that $D(\bm{x},\bm{y})$ can be denoted as 
  \begin{equation}
  D(\bm{x},\bm{y}) = (\bm{x} - \bm{y})^T\bm{M}(\bm{x} - \bm{y})\\ = Tr(\bm{M}\bm{X}_{i,j}),
  \end{equation}
@@ -217,14 +218,14 @@ This way the problem is transformed to an optimization problem. Notice that $D(\
  \end{aligned}
  \end{equation}
  
- To minimize Eq. \eqref{targetfinal}, the gradient descent method is used. The gradient respect to $\bm{M}$ is computed as
+ To minimize Eq. \eqref{targetfinal}, the gradient descent method is used. The gradient with respect to $\bm{M}$ is computed as
  \begin{equation}\label{gradient}
  \begin{aligned}
  \bm{G} =\frac{\partial f}{\partial \bm{M}} = (1-\alpha) \sum_{y_i = y_j} \bm{X}_{i,j} \\
  + \alpha \sum_{y_i = y_j, y_i \ne y_k}(\bm{X}_{i,j} - \bm{X}_{i,k}),
  \end{aligned}
  \end{equation}
-the iteration process is summarized as in Table 1.
+the iteration process is summarized as in Table 1. Basically the set of all intraclass distances remain constant during this optimization process while the set of interclass distances is recomputed at each iteration in order to extract the minimal distances.
  \begin{table}[H]
  \centering
  \caption{Optimization algorithm of Mahalanobis distance matrix learning}
@@ -237,24 +238,24 @@ the iteration process is summarized as in Table 1.
  \textbf{Output} An SPD matrix\\
  \textbf{Initialization} \\
  Initialize $\bm{M}_0$ with eye matrix $\bm{I}$; \\
- Compute the initial target function value $f_0$ with $\bm{M}_0$;\\
- Iteration count  $t = 0$;\\
+ Initialize target function value $f_0$ with $\bm{M}_0$ using\\ Eq. \eqref{targetfinal};\\
+ Initialize Iteration count  $t = 0$;\\
 
  \textbf{while}(not converge)\\
- \hspace{0.5cm} Update $t =  t + 1$;\\
- \hspace{0.5cm}  Find corresponding $\bm{x}_k$ for all $\bm{x}_i$, where $y_i \ne y_k$,  \\ \hspace{0.5cm} so that $\bm{x}_i$ and $\bm{x}_k$ has minimal interclass distance;\\
- \hspace{0.5cm} Update gradient $\bm{G}_{t+1}$ with Eq. \eqref{gradient} with found $\bm{x}_k$;\\
- \hspace{0.5cm}  Update $\bm{M}$ with equation : $\bm{M}_{t+1} = \bm{M}_{t} - \lambda\bm{G}_t$;\\
- \hspace{0.5cm}  Project $\bm{M}_{t+1}$ to the semi-positive definite space; \\ 
+\tabitem Update $t =  t + 1$;\\
+\tabitem Find corresponding $\bm{x}_k$ for all $\bm{x}_i$, where $y_i \ne y_k$, \\ \hspace{0.30cm} so that $\bm{x}_i$ and $\bm{x}_k$ has minimal interclass distance;\\
+\tabitem Update gradient $\bm{G}_{t+1}$ with Eq. \eqref{gradient} with the found\\ \hspace{0.30cm}$\bm{X}_{i,k}$;\\
+\tabitem Update $\bm{M}$ with equation : $\bm{M}_{t+1} = \bm{M}_{t} - \lambda\bm{G}_t$;\\
+\tabitem Project $\bm{M}_{t+1}$ to the semi-positive definite space; \\ 
 % \indent \indent by $\bm{M}_{t+1}= \bm{V}_{t+1}\bm{S}_{t+1}\bm{V}^T_{t+1}$;\\
- \hspace{0.5cm}  Update the target value $f|_{\bm{M} = \bm{M}_{t+1}}$;\\
+\tabitem  Update the target value $f|_{\bm{M} = \bm{M}_{t+1}}$;\\
  \textbf{end while}  \\
  return $\bm{M}$\\
  \hline
  \end{tabular} 
  \end{table}
  
-In each iteration, to make sure the updated $\bm{M}$ is an SPD matrix, first a eigenvalue decomposition is performed on $\bm{M}$, and we have
+After each iteration, to make sure the updated $\bm{M}$ is an SPD matrix, first a eigenvalue decomposition is performed on $\bm{M}$, and we have
 \begin{equation}\label{SPDproject}
 \bm{M} = \bm{V}\bm{\Lambda}\bm{V}^T.
 \end{equation}
@@ -263,10 +264,10 @@ Here $\bm{\Lambda}$ is a diagonal matrix, and its diagonal elements are eigenval
 
  %% Experiment
 \section{Experiment}
-In this paper, we apply the proposed metric based on KLFDA and Mahalanobis distance learning to the GOG descriptor. First, KLFDA is applied to GOG descriptor to reduce the dimension to $C-1$, where $C$ is the number of person pairs in the training dataset. A transformation matrix $\bm{T}$ is generated in the dimension reduction. Second, from the dimension-reduced descriptors, a $(C-1) \times (C-1)$-dimensional SPD matrix $\bm{M}$ is learned based on the relative distance comparison. A gradient descent method is used to minimize the target function denoted by the Eq. \eqref{targetfinal}. With the trained SPD matrix $\bm{M}$, we compute the similarity scores and CMCs of the testing data.\\
-\indent The hierarchical Gaussian descriptor \cite{GOG} is used in this paper. This descriptor describes a local region in an image with hierarchical Gaussian distribution in which the mean and the covariance are all included in the parameters. The local region are divided into many overlapping patches at first. The pixels in each patch are first described with a vector $\bm{f} = (y, M_0,M_{90},M_{180},M_{270}, R, G, B)$. The patch is modelled with a multivariate Gaussian function based on all the pixels inside. The mean and covariance parameter are transformed into a one-dimensional vector so that the patches is described with this vector. A same process is repeated so that the region is modelled based on all the patches inside the region.
+In this paper, we apply the proposed metric based on KLFDA and Mahalanobis distance learning to the GOG descriptor. First, KLFDA is applied to GOG descriptor to reduce the dimension to $C-1$, where $C$ is the number of person pairs in the training dataset. A transformation matrix $\bm{T}$ is thus generated. Second, from the dimension-reduced descriptors, a $(C-1) \times (C-1)$-dimensional SPD matrix $\bm{M}$ is learned based on the relative distance comparison. A gradient descent method is used to minimize the target function denoted by the Eq. \eqref{targetfinal}. With the trained SPD matrix $\bm{M}$, the similarity scores between person image pairs can be computed.\\
+\indent The hierarchical GOG descriptor \cite{GOG} describes a local region in an image with hierarchical Gaussian distribution in which the mean and the covariance are all included in the parameters. The local region are divided into many overlapping patches at first. The pixels in each patch are first described with a vector $\bm{f} = (y, M_0,M_{90},M_{180},M_{270}, R, G, B)$. The patch is modelled with a multivariate Gaussian function based on all the pixels inside. The mean and covariance parameter are transformed into a one-dimensional vector so that the patches is described with this vector. A same process is repeated so that the region is modelled based on all the patches inside the region.
 
-There are two versions of Gaussian of Gaussian descriptor. The first one is extracted from RGB color space only; it is denoted as GOG$_\text{rgb}$. The second one is extracted from four color space \{RGB, HSV, Lab, nRGB\}. nRGB is the normalized RGB color space. For Gaussian of Gaussian descriptor in all the four color spaces, the dimensions are \{7567,7567,7567,4921\}. Therefore, the descriptor concatenating all four color spaces has a dimension of 27622.
+There are two versions of this Gaussian of Gaussian descriptor. The first one is extracted from RGB color space only; it is denoted as GOG$_\text{rgb}$. The second one is extracted from four color space \{RGB, HSV, Lab, nRGB\}. nRGB is the normalized RGB color space. For Gaussian of Gaussian descriptor in all the four color spaces, the dimensions are \{7567,7567,7567,4921\}. Therefore, the descriptor concatenating all four color spaces has a dimension of 27622.
 %\begin{equation}
 %nR = \frac{R}{R+G+B}, nG = \frac{G}{R+G+B}, nB = \frac{B}{R+G+B}.
 %\end{equation}
